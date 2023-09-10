@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.bg-main {
+  background-image: url("./assets/main.jpg");
+  background-size: cover; /* Adjust as needed */
+  background-repeat: no-repeat; /* Adjust as needed */
+  background-position: center;
+}
+
+body {
+  @apply text-secondary font-inter text-base leading-8;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply text-primary;
+}
+
+.h1 {
+  @apply text-4xl/[] font-semibold;
+}
+
+.h2 {
+  @apply text-3xl xl:text-[44px] font-semibold capitalize tracking-[0.44px];
+}
+
+.h3 {
+  @apply text-xl xl:text-[26px] font-semibold;
+}
+
+.h4 {
+  @apply text-xl xl:text-[26px] font-semibold capitalize;
+}
+
+.btn {
+  @apply rounded-full uppercase tracking-wide flex items-center justify-center transition-all;
+}
+
+.btn-sm {
+  @apply h-14 px-10;
+}
+
+.btn-lg {
+  @apply py-2 px-8;
+}
+
+.btn-accent {
+  @apply bg-accent text-white hover:bg-accent-secondary;
+}
+
+.btn-white {
+  @apply bg-white text-secondary hover:bg-white/90;
+}
+
+.btn-outline {
+  @apply bg-transparent text-secondary hover:bg-accent hover:border-transparent hover:text-white border-2 border-accent;
+}
+
+.input,
+.select {
+  @apply w-full rounded-lg h-[66px] outline-none border-[#dbdfddf] text-secondary font-light placeholder:font-light placeholder:text-secondary;
+}
+
+.input {
+  @apply px-4;
+}
+
+.section {
+  @apply py-12 xl:py-[150px];
+}
