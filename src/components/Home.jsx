@@ -18,13 +18,13 @@ const Home = () => {
               Ayo Kita <br />
               <span className="text-accent">Makmurkan</span> Masjid!
             </h1>
-            <p className="mb-10 md:max-w-lg">
+            <p className="mb-8 md:max-w-lg">
               Rasulullah SAW bersabda: &quot;Siapa yang pergi ke masjid pada
               pagi dan petang hari, Allah mempersiapkan jamuan untuknya di surga
               setiap kali ia pergi atau pulang.&quot;
               <br /> (HR. Bukhari dan Muslim).
             </p>
-            <button className="btn btn-lg btn-accent mx-auto lg:mx-0 mb-4 hover:shadow-[0_0_5px_0_#49cf97] transition-all duration-200">
+            <button className="btn btn-lg btn-accent mx-auto lg:mx-0 mb-8 hover:shadow-[0_0_5px_0_#49cf97] transition-all duration-200">
               Selengkapnya{" "}
               <span className="ml-2 text-xl">
                 <AiOutlineDownCircle />
