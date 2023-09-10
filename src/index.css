@@ -27,7 +27,7 @@ h6 {
 }
 
 .h2 {
-  @apply text-3xl xl:text-[44px] font-semibold capitalize tracking-[0.44px];
+  @apply text-3xl xl:text-[44px]/[50px] font-semibold capitalize tracking-[0.44px];
 }
 
 .h3 {

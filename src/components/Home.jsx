@@ -35,7 +35,7 @@ const Home = () => {
             <img
               src={mainImg}
               alt=""
-              className="w-[70%] max-lg:w-4/6 border-white shadow-[0_10px_0_0_rgba(255,255,255,0.8-0329)]"
+              className="lg:w-[70%] w-full border-white shadow-[0_10px_0_0_rgba(255,255,255,0.8-0329)]"
             />
           </div>
         </div>

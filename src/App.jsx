@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Home, Layout, NoPage } from "./components";
+import { Home, Layout, NoPage, Schedule } from "./components";
 
 const App = () => {
   return (
@@ -11,6 +11,7 @@ const App = () => {
             element={
               <>
                 <Home />
+                <Schedule />
               </>
             }
           />
