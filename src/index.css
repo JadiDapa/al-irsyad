@@ -10,7 +10,7 @@
 }
 
 body {
-  @apply text-secondary font-inter text-base leading-8;
+  @apply text-text1 font-inter text-base leading-8;
 }
 
 h1,
@@ -19,7 +19,7 @@ h3,
 h4,
 h5,
 h6 {
-  @apply text-primary;
+  @apply text-text2;
 }
 
 .h1 {
@@ -55,16 +55,16 @@ h6 {
 }
 
 .btn-white {
-  @apply bg-white text-secondary hover:bg-white/90;
+  @apply bg-white text-text1 hover:bg-white/90;
 }
 
 .btn-outline {
-  @apply bg-transparent text-secondary hover:bg-accent hover:border-transparent hover:text-white border-2 border-accent;
+  @apply bg-transparent text-text1 hover:bg-accent hover:border-transparent hover:text-white border-2 border-accent;
 }
 
 .input,
 .select {
-  @apply w-full rounded-lg h-[66px] outline-none border-[#dbdfddf] text-secondary font-light placeholder:font-light placeholder:text-secondary;
+  @apply w-full rounded-lg h-[66px] outline-none border-[#dbdfddf] text-text1 font-light placeholder:font-light placeholder:text-text1;
 }
 
 .input {

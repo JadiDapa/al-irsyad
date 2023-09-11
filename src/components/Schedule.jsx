@@ -16,22 +16,22 @@ const Schedule = () => {
           <div className="services-top flex items-center flex-col lg:flex-row lg:mb-[60px]">
             <h2 className="h2 text-white flex-1 mb-4 lg:mb-0 text-center lg:text-left">
               Jadwal Shalat <br />
-              Kota <span className="text-lime-300">Palembang</span>
+              Kota <span className="text-secondary-light">Palembang</span>
             </h2>
             <div className="lg:text-2xl text-white flex-1 lg:text-left max-w-2xl lg:max-w-none">
               <p className="mb-2">
                 Tanggal:{" "}
-                <span className="text-lime-300 font-bold">
+                <span className="text-secondary-light font-bold">
                   {`${new Date().toLocaleDateString()}`}
                 </span>
               </p>
               <p className="mb-2">
                 Sekarang: Waktu{" "}
-                <span className="text-lime-300 font-bold">Maghrib</span>
+                <span className="text-secondary-light font-bold">Maghrib</span>
               </p>
               <p>
                 Akan Datang: Waktu{" "}
-                <span className="text-lime-300 font-bold">Isya </span>
+                <span className="text-secondary-light font-bold">Isya </span>
                 (00 jam, 20 Menit lagi)
               </p>
             </div>
@@ -45,7 +45,7 @@ const Schedule = () => {
                     index === 4 ? "border-none" : "border-b"
                   } py-2 flex flex-row items-center gap-4 justify-between`}
                 >
-                  <div className="text-3xl max-[310px]:hidden text-accent">
+                  <div className="text-3xl max-[310px]:hidden text-primary">
                     {schedule.icon}
                   </div>
                   <h3 className="h3 ">{schedule.jadwal}</h3>
@@ -72,7 +72,7 @@ const Schedule = () => {
               >
                 <div
                   className={`mb-4 text-4xl  ${
-                    schedule.isActive ? " text-white" : "text-accent"
+                    schedule.isActive ? " text-white" : "text-primary"
                   }`}
                 >
                   {schedule.icon}

@@ -4,13 +4,24 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: "#242a2b",
-        secondary: "#808080",
+        primary: {
+          DEFAULT: "#31B553",
+          light: "#2DCC82",
+          dark: "#33CC2D",
+        },
+        secondary: {
+          DEFAULT: "#DAB96A",
+          light: "#E6D965",
+          dark: "#E6A065",
+        },
         accent: {
           DEFAULT: "#31B553",
           secondary: "#1A8357",
           tertiary: "#98c6cd",
         },
+        text1: "#808080",
+        text2: "#242a2b",
+
         grey: "#e8f0f1",
       },
       boxShadow: {

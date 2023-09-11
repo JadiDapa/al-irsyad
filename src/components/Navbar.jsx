@@ -72,20 +72,20 @@ export default function Navbar() {
       <div className="container mx-auto lg:relative flex flex-col lg:flex-row lg:justify-between gap-y-4 lg:gap-y-8">
         <div className="flex justify-center lg:justify-normal">
           <a href="#" className="flex justify-center items-center">
-            <img src={logo} alt="" className="w-16" />
-            <div className="font-arab text-3xl text-emerald-600 font-semibold">
+            <img src={logo} alt="" className="lg:w-16 w-48 max-lg:mb-2" />
+            <div className="hidden lg:block font-arab text-3xl text-emerald-600 font-semibold">
               AL-IRSYAD
             </div>
           </a>
         </div>
         <div className="flex flex-col gap-y-4 lg:flex-row lg:gap-x-10 lg:gap-y-0">
           <div className="flex justify-center items-center gap-x-2 lg:justify-normal">
-            <FaMapMarkerAlt className="text-2xl text-accent" />
-            <div className="text-secondary">Bukit Hijau, Palembang</div>
+            <FaMapMarkerAlt className="text-2xl text-primary" />
+            <div className="text-text1">Bukit Hijau, Palembang</div>
           </div>
           <div className="flex justify-center items-center gap-x-2 lg:justify-normal">
-            <BsFillTelephoneFill className="text-2xl text-accent" />
-            <div className="text-secondary">(+62)812 2300</div>
+            <BsFillTelephoneFill className="text-2xl text-primary" />
+            <div className="text-text1">(+62)812 2300</div>
           </div>
           <button className="btn btn-sm btn-outline w-60 lg:w-auto mx-auto lg:mx-0">
             kontak
@@ -97,7 +97,7 @@ export default function Navbar() {
             } shadow-2xl lg:hidden transition-all duration-300 z-20 `}
           >
             <div
-              className="mnav_close-btn bg-primary w-8 h-8 relative -right-full top-8 flex justify-center items-center rounded-tr-lg rounded-br-lg cursor-pointer transition-all"
+              className="mnav_close-btn bg-text2 w-8 h-8 relative -right-full top-8 flex justify-center items-center rounded-tr-lg rounded-br-lg cursor-pointer transition-all"
               onClick={() => setisOpen(!isOpen)}
             >
               {isOpen ? (
@@ -106,18 +106,18 @@ export default function Navbar() {
                 <BiMenuAltLeft className="close-btn text-2xl text-white" />
               )}
             </div>
-            <div className="px-12 flex flex-col gap-y-12 h-full">
+            <div className="px-12 flex flex-col gap-y-4 h-full">
               <a href="#" className="flex justify-center items-center">
-                <img src={logo} alt="" className="w-16" />
-                <div className="font-arab text-3xl text-emerald-600 font-semibold">
+                <img src={logo} alt="" className="w-40" />
+                {/* <div className="font-arab text-3xl text-emerald-600 font-semibold">
                   AL-IRSYAD
-                </div>
+                </div> */}
               </a>
               <ul className="flex flex-col gap-y-5">
                 <li>
                   <a
                     href="#"
-                    className="text-secondary hover:text-accent transition-all duration-300"
+                    className="text-text1 hover:text-primary transition-all duration-300"
                   >
                     Beranda
                   </a>
@@ -125,7 +125,7 @@ export default function Navbar() {
                 <li>
                   <a
                     href="#"
-                    className="text-secondary hover:text-accent transition-all duration-300"
+                    className="text-text1 hover:text-primary transition-all duration-300"
                   >
                     Profil
                   </a>
@@ -133,7 +133,7 @@ export default function Navbar() {
                 <li>
                   <a
                     href="#"
-                    className="text-secondary hover:text-accent transition-all duration-300"
+                    className="text-text1 hover:text-primary transition-all duration-300"
                   >
                     Organisasi
                   </a>
@@ -141,7 +141,7 @@ export default function Navbar() {
                 <li>
                   <a
                     href="#"
-                    className="text-secondary hover:text-accent transition-all duration-300"
+                    className="text-text1 hover:text-primary transition-all duration-300"
                   >
                     Kegiatan
                   </a>
@@ -149,7 +149,7 @@ export default function Navbar() {
                 <li>
                   <a
                     href="#"
-                    className="text-secondary hover:text-accent transition-all duration-300"
+                    className="text-text1 hover:text-primary transition-all duration-300"
                   >
                     Kontak
                   </a>
@@ -160,13 +160,13 @@ export default function Navbar() {
                 className="relative flex gap-x-[10px] items-center"
               >
                 <label htmlFor="search">
-                  <BiSearch className="text-2xl text-accent" />
+                  <BiSearch className="text-2xl text-primary" />
                 </label>
                 <input
                   type="text"
                   id="search"
                   placeholder="Search..."
-                  className="outline-none w-40 border-b-2 focus:border-b-2 focus:border-accent placeholder:italic"
+                  className="outline-none w-40 border-b-2 focus:border-b-2 focus:border-pritext-primary placeholder:italic"
                 />
               </form>
               <div
@@ -184,7 +184,7 @@ export default function Navbar() {
               <li>
                 <a
                   href="#"
-                  className="border-r pr-4 text-secondary hover:text-accent transition-all duration-300"
+                  className="border-r pr-4 text-text1 hover:text-primary transition-all duration-300"
                 >
                   Beranda
                 </a>
@@ -192,7 +192,7 @@ export default function Navbar() {
               <li>
                 <a
                   href="#"
-                  className="border-r pr-4 text-secondary hover:text-accent transition-all duration-300"
+                  className="border-r pr-4 text-text1 hover:text-primary transition-all duration-300"
                 >
                   Profil
                 </a>
@@ -200,7 +200,7 @@ export default function Navbar() {
               <li>
                 <a
                   href="#"
-                  className="border-r pr-4 text-secondary hover:text-accent transition-all duration-300"
+                  className="border-r pr-4 text-text1 hover:text-primary transition-all duration-300"
                 >
                   Organisasi
                 </a>
@@ -208,7 +208,7 @@ export default function Navbar() {
               <li>
                 <a
                   href="#"
-                  className="border-r pr-4 text-secondary hover:text-accent transition-all duration-300"
+                  className="border-r pr-4 text-text1 hover:text-primary transition-all duration-300"
                 >
                   Kegiatan
                 </a>
@@ -216,7 +216,7 @@ export default function Navbar() {
               <li>
                 <a
                   href="#"
-                  className="border-r pr-4 text-secondary hover:text-accent transition-all duration-300"
+                  className="border-r pr-4 text-text1 hover:text-primary transition-all duration-300"
                 >
                   Kontak
                 </a>
@@ -227,12 +227,12 @@ export default function Navbar() {
                 htmlFor="searchdesk"
                 className="flex justify-center items-center group"
               >
-                <BiSearch className="text-2xl text-accent" />
+                <BiSearch className="text-2xl text-primary" />
               </label>
               <input
                 type="text"
                 id="searchdesk"
-                className="outline-none w-[100px] focus:w-[180px] focus:border-b-2 focus:border-accent placeholder:italic placeholder:text-base transition-all duration-200"
+                className="outline-none w-[100px] focus:w-[180px] focus:border-b-2 focus:border-pritext-primary placeholder:italic placeholder:text-base transition-all duration-200"
                 placeholder="Search..."
               />
             </form>
