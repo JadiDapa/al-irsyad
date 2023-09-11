@@ -6,5 +6,6 @@ export { default as Hero } from "./Hero";
 export { default as Schedule } from "./Schedule";
 export { default as Footer } from "./Footer";
 export { default as Welcome } from "./Welcome";
+export { default as News } from "./News";
 
 export { default as Home } from "./Home";

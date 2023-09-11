@@ -43,6 +43,7 @@ export default {
     fontFamily: {
       inter: ["Inter"],
       arab: ["Lobster Two"],
+      play: ["Playfair Display"],
     },
   },
 
