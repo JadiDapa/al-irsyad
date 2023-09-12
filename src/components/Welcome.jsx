@@ -19,7 +19,7 @@ const Welcome = () => {
 
     // Clean up the interval on component unmount
     return () => clearInterval(intervalId);
-  }, [imageIndex]);
+  }, [imageIndex, galleryImages.length]);
 
   return (
     <section className="bg-grey">
