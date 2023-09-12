@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Hero, Home, Layout, NoPage, Schedule } from "./components";
+import { Home, Layout, NoPage } from "./components";
 
 const App = () => {
   return (
