@@ -12,3 +12,7 @@ export { default as Footer } from "./Footer";
 export { default as Welcome } from "./Welcome";
 export { default as News } from "./News";
 export { default as Plan } from "./Plan";
+export { default as Financial } from "./Financial";
+
+// Component
+export { default as FinancialTable } from "./FinancialTable";

@@ -1,4 +1,4 @@
-import { Hero, Schedule, Welcome, News, Plan } from "./";
+import { Hero, Schedule, Welcome, News, Plan, Financial } from "./";
 
 const Home = () => {
   return (
@@ -8,6 +8,7 @@ const Home = () => {
       <Welcome />
       <News />
       <Plan />
+      <Financial />
     </>
   );
 };
