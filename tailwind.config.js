@@ -28,6 +28,9 @@ export default {
         custom1: "0px 2px 40px 0px rgba(8, 70, 78, 0.08)",
         custom2: "0px 0px 30px 0px rgba(8, 73, 81, 0.08)",
       },
+      gridTemplateColumns: {
+        half: "minmax(0,50%) minmax(0,50%)",
+      },
     },
     container: {
       padding: {
@@ -44,6 +47,10 @@ export default {
       inter: ["Inter"],
       arab: ["Lobster Two"],
       play: ["Playfair Display"],
+    },
+    backgroundImage: {
+      "profile-picture": "url('./src/assets/profile.jpg)",
+      "footer-texture": "url('/img/footer-texture.png')",
     },
   },
 

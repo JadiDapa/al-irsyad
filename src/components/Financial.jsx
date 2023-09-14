@@ -2,11 +2,9 @@ import { useCallback, useEffect, useState } from "react";
 import { BiSolidDownArrow, BiSolidUpArrow } from "react-icons/bi";
 import { LuChevronsUp, LuChevronsDown } from "react-icons/lu";
 import FinancialTable from "./FinancialTable";
-import Select from "./Select";
 
 const Financial = () => {
   const [isDescend, setisDescend] = useState(true);
-  const [change, setChange] = useState(true);
 
   const [financials, setFinancials] = useState([
     {
@@ -77,6 +75,8 @@ const Financial = () => {
     },
   ]);
 
+  const [financialState, setFinancialState] = useState(financials);
+
   const formattedValue = (value) => {
     const splittedMoney = value.toString().split(".");
     splittedMoney[0] = splittedMoney[0].replace(/\B(?=(\d{3})+(?!\d))/g, ".");
@@ -96,22 +96,28 @@ const Financial = () => {
   const [money, setMoney] = useState(calculateTotalMoney());
 
   const handleDescend = () => {
-    const reversedFinancial = [...financials];
+    const reversedFinancial = [...financialState];
     reversedFinancial.reverse();
-    setFinancials(reversedFinancial);
+    setFinancialState(reversedFinancial);
     setisDescend(!isDescend);
   };
 
   const handleChange = (e) => {
-    switch (e.target.value) {
-      case "Uang-masuk":
-        
-        break;
-      case "Uang-keluar":
-        break;
-
-      default:
-        break;
+    const value = e.target.value;
+    console.log(value);
+    if (value === "Uang-masuk") {
+      const filteredFinancials = financials.filter(
+        (item) => item.status === true
+      );
+      setFinancialState(filteredFinancials);
+    } else if (value === "Uang-keluar") {
+      const filteredFinancials = financials.filter(
+        (item) => item.status === false
+      );
+      setFinancialState(filteredFinancials);
+    } else {
+      // Reset to the original financials
+      setFinancialState(financials);
     }
   };
 
@@ -154,14 +160,16 @@ const Financial = () => {
           <div className="bg-white px-3 py-2 rounded-lg flex flex-col mb-2 shadow-lg">
             <div className="w-full flex gap-4">
               <div className="">Filter Berdasarkan :</div>
-              <select className="transition-all duration-500 border-b-2">
+              <select
+                className="transition-all duration-500 border-b-2"
+                onChange={(e) => handleChange(e)}
+              >
                 <option className="outline-none mb-1 hover:bg-grey">
                   --pilih tampilan--
                 </option>
                 <option
                   className="outline-none mb-1 hover:bg-grey"
                   value="Uang-masuk-keluar"
-                  onChange={(e) => handleChange(e)}
                 >
                   Uang masuk-keluar
                 </option>
@@ -188,7 +196,7 @@ const Financial = () => {
           </div>
           <div className="bg-white px-3 py-4 rounded-lg shadow-xl">
             <FinancialTable
-              financials={financials.reverse()}
+              financials={financialState.reverse()}
               formattedValue={formattedValue}
             />
           </div>

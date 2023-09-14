@@ -1,0 +1,64 @@
+{
+  "news": [
+    {
+      "image": "/src/assets/news1.jpg",
+      "title": " Judul Berita Paling Terbaru tapi panjang banget cuyyy siapa sangkaa wkwkwk",
+      "date": "25-11-2023",
+      "category": "tausyiah"
+    },
+    {
+      "image": "/src/assets/news2.jpg",
+      "title": " Judul Berita Ke-2",
+      "date": "25-11-2023",
+      "category": "tausyiah"
+    },
+    {
+      "image": "/src/assets/news3.jpg",
+      "title": " Judul Berita Ke-3",
+      "date": "25-11-2023",
+      "category": "tausyiah"
+    },
+    {
+      "image": "/src/assets/news4.jpg",
+      "title": " Judul Berita Ke-4",
+      "date": "25-11-2023",
+      "category": "tausyiah"
+    },
+    {
+      "image": "/src/assets/news5.jpg",
+      "title": " Judul Berita Ke-5",
+      "date": "25-11-2023",
+      "category": "tausyiah"
+    },
+    {
+      "image": "/src/assets/news1.jpg",
+      "title": " Judul Berita 6",
+      "date": "25-11-2023",
+      "category": "tausyiah"
+    },
+    {
+      "image": "/src/assets/news2.jpg",
+      "title": " Judul Berita Ke-7",
+      "date": "25-11-2023",
+      "category": "tausyiah"
+    },
+    {
+      "image": "/src/assets/news3.jpg",
+      "title": " Judul Berita Ke-8",
+      "date": "25-11-2023",
+      "category": "tausyiah"
+    },
+    {
+      "image": "/src/assets/news4.jpg",
+      "title": " Judul Berita Ke-9",
+      "date": "25-11-2023",
+      "category": "tausyiah"
+    },
+    {
+      "image": "/src/assets/news5.jpg",
+      "title": " Judul Berita Ke-10",
+      "date": "25-11-2023",
+      "category": "tausyiah"
+    }
+  ]
+}

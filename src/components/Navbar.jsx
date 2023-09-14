@@ -1,71 +1,23 @@
 import logo from "../assets/logo.png";
 import { Link } from "react-router-dom";
-import { BiSearch, BiMenuAltRight, BiMenuAltLeft, BiX } from "react-icons/bi";
+import { BiSearch, BiMenuAltLeft, BiX } from "react-icons/bi";
+import { AiFillHome, AiFillInfoCircle } from "react-icons/ai";
+import { IoNewspaper } from "react-icons/io5";
+import { FaRupiahSign } from "react-icons/fa6";
 import { FaMapMarkerAlt } from "react-icons/fa";
-import { BsFillTelephoneFill } from "react-icons/bs";
+import { BsFillTelephoneFill, BsFillPeopleFill } from "react-icons/bs";
 import { useState } from "react";
-
-// const Navbar = () => {
-//   let Links = [
-//     { name: "Home", link: "/" },
-//     { name: "Profile", link: "/profile" },
-//     { name: "Organisasi", link: "/organisation" },
-//     { name: "Kegiatan", link: "/agenda" },
-//     { name: "Kontak", link: "/contact" },
-//   ];
-//   const [isOpen, setIsOpen] = useState(false);
-
-//   return (
-//     <div className="shadow-sm top-0 left-0 fixed w-full z-50 text-gray-100">
-//       <div className="flex items-center justify-between  py-4 lg:mx-24 mx-4">
-//         <div className="flex items-center gap-2">
-//           <img src={logo} alt="" className="w-8" />
-//           <div className="font-bold text-xl cursor-pointer font-inter text-emerald-500">
-//             AL-ISRAD
-//           </div>
-//         </div>
-
-//         <div className="text-3xl cursor-pointer md:hidden flex gap-2">
-//           <BiSearch />
-//           <div onClick={() => setIsOpen(!isOpen)}>
-//             {isOpen ? <BiX /> : <BiMenuAltRight />}
-//           </div>
-//         </div>
-
-//         <ul
-//           className={`md:flex md:items-center md:pb-0 pb-12 absolute md:static md:bg-transparent bg-white md:z-auto w-5/12 md:w-auto md:pl-0 pl-9 transition-all duration-300 ease-in top-[70px] ${
-//             isOpen ? "left-0 " : "-left-[100vw]"
-//           }`}
-//         >
-//           {Links.map((link, index) => (
-//             <li
-//               key={link.name}
-//               className={`md:ml-8 text-xl md:my-0 z-50 ${
-//                 index == 0 ? "mt-10 mb-7" : "my-7"
-//               }`}
-//             >
-//               <Link
-//                 to={link.link}
-//                 className=" hover:text-gray-400 duration-500"
-//               >
-//                 {link.name}
-//               </Link>
-//             </li>
-//           ))}
-//           <button
-//             className=" text-white font-inter py-2 px-6 rounded md:ml-8 outline
-//     duration-500"
-//           >
-//             Kelola Web
-//           </button>
-//         </ul>
-//       </div>
-//     </div>
-//   );
-// };
 
 export default function Navbar() {
   const [isOpen, setisOpen] = useState(false);
+
+  const links = [
+    { link: "/", name: "Beranda", icon: <AiFillHome /> },
+    { link: "/profil", name: "Profil", icon: <AiFillInfoCircle /> },
+    { link: "/kegiatan", name: "Kegiatan", icon: <IoNewspaper /> },
+    { link: "/finansial", name: "Finansial", icon: <FaRupiahSign /> },
+    { link: "/lembaga", name: "Lembaga", icon: <BsFillPeopleFill /> },
+  ];
 
   return (
     <header className="py-8 lg:pt-6 lg:pb-14 lg:px-10">
@@ -106,54 +58,22 @@ export default function Navbar() {
                 <BiMenuAltLeft className="close-btn text-2xl text-white" />
               )}
             </div>
-            <div className="px-12 flex flex-col gap-y-4 h-full">
+            <div className="px-12 flex flex-col gap-y-8 h-full">
               <a href="#" className="flex justify-center items-center">
                 <img src={logo} alt="" className="w-40" />
-                {/* <div className="font-arab text-3xl text-emerald-600 font-semibold">
-                  AL-IRSYAD
-                </div> */}
               </a>
               <ul className="flex flex-col gap-y-5">
-                <li>
-                  <a
-                    href="#"
-                    className="text-text1 hover:text-primary transition-all duration-300"
-                  >
-                    Beranda
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="text-text1 hover:text-primary transition-all duration-300"
-                  >
-                    Profil
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="text-text1 hover:text-primary transition-all duration-300"
-                  >
-                    Organisasi
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="text-text1 hover:text-primary transition-all duration-300"
-                  >
-                    Kegiatan
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="text-text1 hover:text-primary transition-all duration-300"
-                  >
-                    Kontak
-                  </a>
-                </li>
+                {links.map((link, index) => (
+                  <li key={index}>
+                    <Link
+                      to={link.link}
+                      className="text-text1 hover:text-primary transition-all duration-300 flex gap-2 items-center"
+                    >
+                      {link.icon}
+                      <span>{link.name}</span>
+                    </Link>
+                  </li>
+                ))}
               </ul>
               <form
                 action=""
@@ -181,46 +101,16 @@ export default function Navbar() {
           {/* Dekstop */}
           <nav className="bg-white absolute w-full left-0 -bottom-[86px] shadow-custom1 h-16 rounded-[10px] hidden lg:flex lg:items-center lg:justify-between lg:px-[50px]">
             <ul className="flex gap-x-4">
-              <li>
-                <a
-                  href="#"
-                  className="border-r pr-4 text-text1 hover:text-primary transition-all duration-300"
-                >
-                  Beranda
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="border-r pr-4 text-text1 hover:text-primary transition-all duration-300"
-                >
-                  Profil
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="border-r pr-4 text-text1 hover:text-primary transition-all duration-300"
-                >
-                  Organisasi
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="border-r pr-4 text-text1 hover:text-primary transition-all duration-300"
-                >
-                  Kegiatan
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="border-r pr-4 text-text1 hover:text-primary transition-all duration-300"
-                >
-                  Kontak
-                </a>
-              </li>
+              {links.map((link, index) => (
+                <li key={index}>
+                  <Link
+                    to={link.link}
+                    className="border-r pr-4 text-text1 hover:text-primary transition-all duration-300"
+                  >
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
             </ul>
             <form action="" className="relative flex gap-x-[10px]">
               <label

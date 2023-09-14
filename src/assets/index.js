@@ -7,3 +7,7 @@ export { default as news2 } from "./news2.jpg";
 export { default as news3 } from "./news3.jpg";
 export { default as news4 } from "./news4.jpg";
 export { default as news5 } from "./news5.jpg";
+
+export { default as tpa1 } from "./tpa1.jpg";
+
+export { default as profile } from "./profile.jpg";
