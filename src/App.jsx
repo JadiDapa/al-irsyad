@@ -5,6 +5,7 @@ import {
   Home,
   Layout,
   News,
+  NewsDetail,
   NoPage,
   Profile,
   Schedule,
@@ -24,6 +25,7 @@ const App = () => {
 
           <Route path="/kegiatan" element={<Activity />} />
           <Route path="/kegiatan/berita" element={<News />} />
+          <Route path="/kegiatan/berita/:title" element={<NewsDetail />} />
           <Route path="/kegiatan/rencana" element={<Schedule />} />
         </Route>
         <Route path="*" element={<NoPage />} />

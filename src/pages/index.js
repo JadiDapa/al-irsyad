@@ -9,6 +9,7 @@ export { default as VissionMission } from "./VissionMission";
 
 export { default as Activity } from "./Activity";
 export { default as News } from "./News";
+export { default as NewsDetail } from "./NewsDetail";
 export { default as Schedule } from "./Schedule";
 
 export { default as NoPage } from "./NoPage";

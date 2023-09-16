@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { news1, news2, news3, news4, news5 } from "../assets";
 import { BiRightArrow } from "react-icons/bi";
 
@@ -74,7 +75,7 @@ const News = () => {
                     index === 3 ? "max-lg:hidden" : ""
                   } `}
                 >
-                  <div className="">
+                  <Link to={`/kegiatan/berita/${news.title}`} className="">
                     <img
                       src={news.image}
                       alt=""
@@ -100,7 +101,7 @@ const News = () => {
                         </div>
                       </div>
                     </div>
-                  </div>
+                  </Link>
                 </div>
               );
             }
