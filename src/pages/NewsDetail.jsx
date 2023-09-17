@@ -23,26 +23,24 @@ const NewsDetail = () => {
     content: "",
   });
 
-  const [recentNews, setRecentNews] = useState({
-    image: "",
-    imageCaption: "",
-    title: "",
-    date: "",
-    category: "",
-    content: "",
-  });
+  const [recentNews, setRecentNews] = useState([
+    {
+      image: "",
+      imageCaption: "",
+      title: "",
+      date: "",
+      category: "",
+      content: "",
+    },
+  ]);
 
   useEffect(() => {
     axios.get("http://localhost:3000/news").then((res) => {
-      const fetchedNewsDetail = res.data.find((news) => news.title === title);
-      setNewsDetail(fetchedNewsDetail);
+      const fetchedNewsDetail = res.data;
+      setNewsDetail(fetchedNewsDetail.find((news) => news.title === title));
+      setRecentNews(fetchedNewsDetail.splice(-4).reverse());
     });
-
-    axios.get("http://localhost:3000/news").then((res) => {
-      const fetchedNewsDetail = res.data.splice(-3);
-      setRecentNews(fetchedNewsDetail);
-    });
-  }, [title]);
+  }, [recentNews, title]);
 
   return (
     <section className="pt-12 lg:pt-12 lg:px-10 overflow-hidden mb-16">
@@ -53,13 +51,13 @@ const NewsDetail = () => {
             {newsDetail.title}
           </h2>
           <div className="text-primary">Berita Masjid AL-ISYAD</div>
-          <div className="mb-4">Minggu, {newsDetail.ddate}</div>
+          <div className="mb-4">Minggu, {newsDetail.date}</div>
           <div className="flex items-center gap-4 mb-8">
             <div className="text-sm">Bagikan : </div>
             <BsFacebook className="text-2xl text-blue-500" />
             <FaXTwitter className="text-2xl text-slate-700" />
           </div>
-          <div className=" aspect-video overflow-hiiden">
+          <div className="w-full aspect-video overflow-hiiden">
             <img src={newsDetail.image} alt="" className="" />
           </div>
           <div className="text-sm  text-justify mb-8">
@@ -84,47 +82,42 @@ const NewsDetail = () => {
           </div>
         </div>
         <div className="w-3/12 text-slate-700">
-          <div className="">
-            <div className="pt-40">Berita Terbaru</div>
-            <div className="mb-3">
-              <div className="w-11/12 overflow-hidden aspect-video ">
-                <img src={news3} alt="" />
+          <div className="pt-[170px]">
+            <div className="uppercase font-semibold">Berita Terbaru</div>
+            <div className="w-14 h-1  mb-3 bg-red-600"></div>
+            <div className="mb-5">
+              <div className="w-11/12 overflow-hidden aspect-video mb-1">
+                <img src={recentNews[0].image} alt="" />
               </div>
-              <div className="w-4/5 text-justify leading-6">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+              <div className=" leading-5 text-[15px] font-[500]">
+                {recentNews[0].title}
+              </div>
+              <div className="text-red-500 uppercase text-sm">
+                {recentNews[0].category}{" "}
+                <span className="text-slate-500">| {recentNews[0].date}</span>
               </div>
             </div>
-            <div className="flex flex-col gap-6 leading-6">
-              <div className="flex gap-3">
-                <div className="w-2/5 overflow-hidden aspect-video ">
-                  <img src={news3} alt="" />
-                </div>
-                <div className="w-3/5">
-                  <div className="">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                  </div>
-                </div>
-              </div>
-              <div className="flex gap-3">
-                <div className="w-2/5 overflow-hidden aspect-video ">
-                  <img src={news3} alt="" />
-                </div>
-                <div className="w-3/5">
-                  <div className="">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                  </div>
-                </div>
-              </div>
-              <div className="flex gap-3">
-                <div className="w-2/5 overflow-hidden aspect-video ">
-                  <img src={news3} alt="" />
-                </div>
-                <div className="w-3/5">
-                  <div className="">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                  </div>
-                </div>
-              </div>
+            <div className="flex flex-col leading-6">
+              {recentNews.map((news, index) => {
+                if (index > 0) {
+                  return (
+                    <div key={index} className="flex gap-3 content-start">
+                      <div className="w-2/5 overflow-hidden aspect-[6/5]">
+                        <img src={news.image} alt="" className="object-cover" />
+                      </div>
+                      <div className="w-3/5">
+                        <div className="leading-5 text-[15px] font-[500] mb-2">
+                          {news.title}
+                        </div>
+                        <div className="text-red-500 uppercase text-sm">
+                          {news.category}{" "}
+                          <span className="text-slate-500">| {news.date}</span>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                }
+              })}
             </div>
           </div>
         </div>

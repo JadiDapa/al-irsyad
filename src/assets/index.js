@@ -11,3 +11,6 @@ export { default as news5 } from "./news5.jpg";
 export { default as tpa1 } from "./tpa1.jpg";
 
 export { default as profile } from "./profile.jpg";
+
+export { default as dot } from "./dot.svg";
+export { default as main } from "./main.png";
