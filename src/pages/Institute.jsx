@@ -4,21 +4,22 @@ import DotBg from "../assets/DotBg";
 import { BsArrowRightCircle } from "react-icons/bs";
 import { news1, news2, news3, news4 } from "../assets";
 
-const Activity = () => {
-  const links = [{ link: "/kegiatan", text: "Kegiatan" }];
+const Institute = () => {
+  const links = [{ link: "/lembaga", text: "Lembaga" }];
   return (
     <section id="home" className=" py-12 lg:px-12 overflow-hidden">
       <BreadCrumb links={links} />
       <div className="container mx-auto lg:px-5 ">
         <div className="text-center mt-8 mb-12">
           <h1 className="text-4xl text-text2 font-semibold font-play ">
-            Kegiatan Masjid{" "}
+            Lembaga Masjid{" "}
             <span className="font-arab tracking-wider text-primary font-bold">
               AL-IRSYAD
             </span>
           </h1>
           <div className="text-lg">
-            Agenda Kegiatan Termasuk Berita dan Rencana pada Masjid Al-Irsyad
+            Aspek Ekonomi Masjid Al-Irsyad mencakup Finansial, Sumbangan, dan
+            lainnya
           </div>
         </div>
         <div className="flex flex-wrap  justify-between relative">
@@ -31,31 +32,27 @@ const Activity = () => {
 
           <div className="w-1/2">
             <p className="text-justify indent-5">
-              Masjid AL-IRSYAD memiliki berbagai serangkaian kegiatan yang Lorem
-              ipsum dolor sit amet consectetur adipisicing elit. Labore
-              excepturi dolore eos asperiores, ipsa odio! Alias fuga sapiente
-              quam perferendis. At, nam. Ea soluta tempora veritatis ullam
-              tenetur eos rerum, voluptas voluptatum rem itaque, voluptates quod
-              debitis consequatur quaerat iste ex, voluptate porro! Recusandae,
-              id suscipit assumenda vitae incidunt cupiditate!
+              Masjid Al-Irsyad memiliki berbagai lembaga yang menaungi nya.
+              Beberapa Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+              Reprehenderit rerum enim voluptatibus quisquam minus, ducimus
+              consequatur nulla earum hic recusandae unde dolorem dolor cum
+              architecto fuga aut perspiciatis quasi nostrum!
             </p>
 
             <h2 className="text-3xl font-semibold text-primary mb-4 mt-8">
-              Berita Masjid Al-irsyad
+              TPA Masjid Al-Irsyad
             </h2>
             <p className="text-justify">
-              Masjid Al-Irysad akan mendokumentasikan setiap kegiatan nya di
-              dalam website ini. berikut Lorem ipsum dolor sit, amet consectetur
-              adipisicing elit. Sit necessitatibus velit facere? Debitis sed
-              adipisci cum consequuntur quos odit earum voluptates veritatis
-              dolore, perferendis, excepturi libero. Voluptatibus sint labore
-              quas perferendis nihil vitae eius excepturi? Illo molestiae
-              aspernatur odio? Recusandae.
+              Masjid Al-Irysad akan merekam setiap pengerluaran untuk yang di
+              butuhkan atau untuk pengembangan masjid. Lorem ipsum dolor sit
+              amet consectetur adipisicing elit. Eaque fugiat illo
+              necessitatibus ducimus similique dicta quos, velit delectus
+              repellat quasi.
             </p>
             <div className="mb-4"></div>
-            <Link to="/kegiatan/berita" className="">
+            <Link to="/lembaga/tpa" className="">
               <button className="flex justify-center items-center gap-2 bg-secondary text-white px-6 py-1 rounded-full uppercase max-lg:mb-12 hover:bg-secondary-dark transition-all duration-300">
-                Baca Berita{" "}
+                TENTANG TPA{" "}
                 <span className="text-xl">
                   <BsArrowRightCircle />
                 </span>
@@ -63,7 +60,7 @@ const Activity = () => {
             </Link>
 
             <h2 className="text-3xl font-semibold text-primary mb-4 mt-8">
-              Rencana Kegiatan Masjid Al-Irsyad
+              Lembaga Lainnya
             </h2>
             <p className="text-justify">
               Masjid Al-Irysad akan menyusun rangkaian kegiatan yang akan segera
@@ -73,9 +70,9 @@ const Activity = () => {
               debitis rerum labore nesciunt quaerat. Explicabo, fuga!
             </p>
             <div className="mb-4"></div>
-            <Link to="/kegiatan/rencana" className="">
+            <Link to="/lembaga/lainnya" className="">
               <button className="flex justify-center items-center gap-2 bg-secondary text-white px-6 py-1 rounded-full uppercase max-lg:mb-12 hover:bg-secondary-dark transition-all duration-300">
-                Lihat Rencana Kegiatan{" "}
+                DETAIL DONASI{" "}
                 <span className="text-xl">
                   <BsArrowRightCircle />
                 </span>
@@ -83,9 +80,9 @@ const Activity = () => {
             </Link>
           </div>
           <div className="w-5/12">
-            <div className="">
-              <div className="flex w-full mb-16">
-                <div className="">
+            <div className="w-full mb-16">
+              <div className="w-full mb-16">
+                <div className="justify-end flex">
                   <div className="p-2 rounded-md shadow-xl w-5/12 ">
                     <img
                       src={news1}
@@ -97,7 +94,7 @@ const Activity = () => {
               </div>
 
               <div className="w-full mb-16">
-                <div className="justify-end flex">
+                <div className="">
                   <div className=" p-2 rounded-md shadow-xl w-5/12 ">
                     <img
                       src={news2}
@@ -109,22 +106,10 @@ const Activity = () => {
               </div>
 
               <div className="flex w-full mb-16">
-                <div className="">
-                  <div className=" p-2 rounded-md shadow-xl w-5/12 ">
-                    <img
-                      src={news3}
-                      alt=""
-                      className="rounded-md w-full aspect-[4/3]"
-                    />
-                  </div>
-                </div>
-              </div>
-
-              <div className="w-full mb-16">
                 <div className="justify-end flex">
                   <div className=" p-2 rounded-md shadow-xl w-5/12 ">
                     <img
-                      src={news4}
+                      src={news3}
                       alt=""
                       className="rounded-md w-full aspect-[4/3]"
                     />
@@ -139,4 +124,4 @@ const Activity = () => {
   );
 };
 
-export default Activity;
+export default Institute;

@@ -10,7 +10,7 @@ const Schedule = () => {
     { jadwal: "Isya'", waktu: "19.09", icon: <LuMoonStar />, isActive: false },
   ];
   return (
-    <section id="schedule" className="my-14 lg:px-10">
+    <section id="shalat" className="my-14 lg:px-10">
       <div className="bg-services bg-cover bg-no-repeat max-w-[1466px] mx-4 lg:mx-auto rounded-[20px] lg:pt-[70px] px-2 lg:px-10 relative lg:h-[300px] max-lg:p-8 flex items-center lg:items-start -z-10 bg-accent">
         <div className="lg:container mx-auto">
           <div className="services-top flex items-center flex-col lg:flex-row lg:mb-[60px]">

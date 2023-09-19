@@ -1,6 +1,7 @@
 import { BreadCrumb } from "../components";
 import { news2 } from "../assets";
 import { Link } from "react-router-dom";
+import DotBg from "../assets/DotBg";
 
 const VissionMission = () => {
   const links = [
@@ -10,46 +11,24 @@ const VissionMission = () => {
   return (
     <section id="home" className=" py-12 lg:pt-12 px-8 overflow-hidden">
       <BreadCrumb links={links} />
-      <svg
-        width="100%"
-        height="100%"
-        className="-z-10 absolute w-7/12 top-[325px] left-10"
-      >
-        <pattern
-          id="pattern-circles"
-          x="0"
-          y="0"
-          width="50"
-          height="50"
-          patternUnits="userSpaceOnUse"
-          patternContentUnits="userSpaceOnUse"
-        >
-          <circle
-            id="pattern-circle"
-            cx="10"
-            cy="10"
-            r="1.6257413380501518"
-            fill="#d3d3d3"
-          ></circle>
-        </pattern>
+      <div className="text-center mb-12 ">
+        <h1 className="text-4xl font-semibold text-text2  mt-8 tracking-wide font-play">
+          Visi & Misi Masjid
+          <span className="font-arab uppercase text-primary"> Al-Irsyad</span>
+        </h1>
+        <div className="text-lg">Visi dan Misi Jamaah Masjid Al-Irsyad</div>
+      </div>
 
-        <rect
-          id="rect"
-          x="0"
-          y="0"
-          width="100%"
-          height="100%"
-          fill="url(#pattern-circles)"
-        ></rect>
-      </svg>
-      <h1 className="text-4xl font-semibold text-text2 text-center my-12 tracking-wide">
-        Visi & Misi Masjid
-        <span className="font-arab uppercase text-primary"> Al-Irsyad</span>
-      </h1>
-      <div className="grid lg:grid-cols-[minmax(0,55%)_minmax(0,_35%)] gap-[5%] lg:px-10">
+      <div className="grid lg:grid-cols-[minmax(0,55%)_minmax(0,_35%)] gap-[5%] lg:px-10 relative">
+        <div className="absolute opacity-[15%] top-0 left-8 grid grid-cols-2 -z-50">
+          <DotBg />
+          <DotBg />
+          <DotBg />
+          <DotBg />
+        </div>
         <div className="">
-          <div className="mb-4">
-            <h2 className="font-play text-2xl tracking-wider mb-2 font-semibold">
+          <div className="mb-8">
+            <h2 className="text-3xl text-primary tracking-widest mb-2 font-semibold">
               Visi :
             </h2>
             <p className="text-xl text-slate-600">
@@ -58,7 +37,7 @@ const VissionMission = () => {
             </p>
           </div>
           <div className="">
-            <h2 className="font-play text-2xl tracking-wider mb-2 font-semibold">
+            <h2 className="text-3xl text-primary tracking-widest mb-2 font-semibold">
               Misi :
             </h2>
             <ol className="list-decimal list-inside pl-4">

@@ -36,7 +36,7 @@ const News = () => {
     },
   ];
   return (
-    <section className="my-12">
+    <section className="my-12" id="berita">
       <div className="text text-center mb-6">
         <h2 className="h2 font-play">Berita & Informasi</h2>
         <p className="text-lg">Berita terbaru dari Masjid Al-Irsyad</p>

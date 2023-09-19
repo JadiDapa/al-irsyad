@@ -7,8 +7,10 @@ import {
   BiLogoTwitter,
 } from "react-icons/bi";
 import { BsFillTelephoneFill, BsEnvelopeAtFill } from "react-icons/bs";
+import Login from "./Login";
+import { useState } from "react";
 
-const Footer = () => {
+const Footer = ({ showLogin, setShowLogin }) => {
   return (
     <footer className="footer pt-12 lg:pt-[76px] bg-grey">
       <div className="container mx-auto pb-12 lg:pb-[100px]">
@@ -139,11 +141,14 @@ const Footer = () => {
       </div>
       <div className="py-[20px] border-t">
         <div className="container mx-auto text-center">
-          <div className="">
+          <div
+            className="hover:text-primary-light transition-all duration-300 cursor-pointer"
+            onClick={() => setShowLogin(!showLogin)}
+          >
             Dewan Operasional Masjid AL-IRSYAD <br /> 2023
           </div>
         </div>
-      </div>
+      </div>{" "}
     </footer>
   );
 };

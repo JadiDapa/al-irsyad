@@ -3,7 +3,7 @@ import { BsArrowRightCircle } from "react-icons/bs";
 
 const Tpa = () => {
   return (
-    <section className="mb-12 pb-12">
+    <section className="mb-12 pb-12" id="tpa">
       <div className="text text-center mb-12">
         <h2 className="h2 font-play">Lembaga Masjid Al-Irsyad</h2>
         <p className="text-lg">

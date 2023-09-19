@@ -12,11 +12,35 @@ export default function Navbar() {
   const [isOpen, setisOpen] = useState(false);
 
   const links = [
-    { link: "/", name: "Beranda", icon: <AiFillHome /> },
-    { link: "/profil", name: "Profil", icon: <AiFillInfoCircle /> },
-    { link: "/kegiatan", name: "Kegiatan", icon: <IoNewspaper /> },
-    { link: "/finansial", name: "Finansial", icon: <FaRupiahSign /> },
-    { link: "/lembaga", name: "Lembaga", icon: <BsFillPeopleFill /> },
+    [
+      { link: "/", name: "Home", icon: <AiFillHome /> },
+      { link: "#shalat", name: "Shalat" },
+      { link: "#sambutan", name: "Sambutan" },
+      { link: "#berita", name: "Berita" },
+      { link: "#rencana", name: "Rencana" },
+      { link: "#keuangan", name: "Keuangan" },
+      { link: "#tpa", name: "TPA" },
+    ],
+    [
+      { link: "/profil", name: "Profil", icon: <AiFillInfoCircle /> },
+      { link: "/profil/sejarah", name: "Sejarah" },
+      { link: "/profil/visi-misi", name: "Visi Misi" },
+    ],
+    [
+      { link: "/kegiatan", name: "Kegiatan", icon: <IoNewspaper /> },
+      { link: "/kegiatan/berita", name: "Berita" },
+      { link: "/kegiatan/rencana", name: "Rencana" },
+    ],
+    [
+      { link: "/ekonomi", name: "Ekonomi", icon: <FaRupiahSign /> },
+      { link: "/ekonomi/finansial", name: "Finansial" },
+      { link: "/ekonomi/donasi", name: "Donasi" },
+    ],
+    [
+      { link: "/lembaga", name: "Lembaga", icon: <FaRupiahSign /> },
+      { link: "/lembaga/tpa", name: "TPA" },
+      { link: "/lembaga/organisasi", name: "Lainnya" },
+    ],
   ];
 
   return (
@@ -62,6 +86,7 @@ export default function Navbar() {
               <a href="#" className="flex justify-center items-center">
                 <img src={logo} alt="" className="w-40" />
               </a>
+
               <ul className="flex flex-col gap-y-5">
                 {links.map((link, index) => (
                   <li key={index}>
@@ -75,6 +100,7 @@ export default function Navbar() {
                   </li>
                 ))}
               </ul>
+
               <form
                 action=""
                 className="relative flex gap-x-[10px] items-center"
@@ -99,17 +125,72 @@ export default function Navbar() {
             </div>
           </nav>
           {/* Dekstop */}
-          <nav className="bg-white absolute w-full left-0 -bottom-[86px] shadow-custom1 h-16 rounded-[10px] hidden lg:flex lg:items-center lg:justify-between lg:px-[50px]">
-            <ul className="flex gap-x-4">
+          <nav className="bg-white absolute w-full left-0 -bottom-[86px] shadow-custom1 h-16 rounded-[10px] hidden lg:flex lg:items-center lg:px-[50px] lg:justify-between">
+            <ul className="flex">
               {links.map((link, index) => (
-                <li key={index}>
-                  <Link
-                    to={link.link}
-                    className="border-r pr-4 text-text1 hover:text-primary transition-all duration-300"
-                  >
-                    {link.name}
-                  </Link>
-                </li>
+                // <li key={index}>
+                //   <Link
+                //     to={link.link}
+                //     className="border-r pr-4 text-text1 hover:text-primary transition-all duration-300"
+                //   >
+                //     {link.name}
+                //   </Link>
+                // </li>
+                // <DropDown key={index} main={link.name} index={index} />
+                <div
+                  key={index}
+                  className={`dropdown-parent border-r-4 border-dotted ${
+                    index === 0 && "pl-0"
+                  } px-6 border-slate-200 text-text1`}
+                >
+                  <div className="dropdown group inline-block relative ">
+                    <Link
+                      to={link[0].link}
+                      className="inline-flex items-center hover:text-primary"
+                    >
+                      <span className="mr-1">{link[0].name}</span>
+
+                      <svg
+                        className="fill-current h-4 w-4"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 20 20"
+                      >
+                        <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+                      </svg>
+                    </Link>
+                    <ul className="dropdown-menu group absolute hidden group-hover:block w-32 transition-all duration-300 -translate-x-4 border-b-2 border-primary pt-2">
+                      {index > 0
+                        ? link.map((sublink, index) => {
+                            if (index > 0) {
+                              return (
+                                <li key={index} className="">
+                                  <Link
+                                    className="rounded-t bg-white hover:text-primary py-1 px-4 block whitespace-no-wrap"
+                                    to={sublink.link}
+                                  >
+                                    {sublink.name}
+                                  </Link>
+                                </li>
+                              );
+                            }
+                          })
+                        : link.map((sublink, index) => {
+                            if (index > 0) {
+                              return (
+                                <li key={index} className="">
+                                  <a
+                                    className="rounded-t bg-white hover:text-primary py-1 px-4 block whitespace-no-wrap"
+                                    href={sublink.link}
+                                  >
+                                    {sublink.name}
+                                  </a>
+                                </li>
+                              );
+                            }
+                          })}
+                    </ul>
+                  </div>
+                </div>
               ))}
             </ul>
             <form action="" className="relative flex gap-x-[10px]">

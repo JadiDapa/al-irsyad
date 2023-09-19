@@ -1,9 +1,9 @@
 import { useCallback, useEffect, useState } from "react";
-import { BiSolidDownArrow, BiSolidUpArrow } from "react-icons/bi";
 import { LuChevronsUp, LuChevronsDown } from "react-icons/lu";
-import FinancialTable from "./FinancialTable";
+import FinancialTable from "../components/FinancialTable";
+import { BreadCrumb } from "../components";
 
-const Financial = () => {
+const Finance = () => {
   const [isDescend, setisDescend] = useState(true);
 
   const [financials, setFinancials] = useState([
@@ -125,15 +125,26 @@ const Financial = () => {
     setMoney(calculateTotalMoney());
   }, [calculateTotalMoney]);
 
+  const links = [
+    { link: "/ekonomi", text: "Ekonomi" },
+    { link: "/ekonomi/finansial", text: "Finansial" },
+  ];
+
   return (
-    <section className="mb-12 py-12 bg-grey" id="keuangan">
-      <div className="text text-center mb-12">
-        <h2 className="h2 font-play">Pemasukan & Pengeluaran Keuangan</h2>
+    <section className="mt-12 mb-12 lg:px-12">
+      <BreadCrumb links={links} />
+      <div className="text text-center my-8">
+        <h2 className="text-4xl text-text2 font-semibold font-play">
+          Pemasukan & Pengeluaran Keuangan Masjid{" "}
+          <span className="font-arab tracking-wider text-primary font-bold">
+            Al-IRSYAD
+          </span>
+        </h2>
         <p className="text-lg">
           Daftar uang masuk dan keluar dari keuangan Masjid Al-Irsyad
         </p>
       </div>
-      <div className="container mx-auto grid lg:grid-cols-[minmax(0,40%)_minmax(0,_60%)] gap-x-6">
+      <div className="container mx-auto hidden md:grid  gap-x-24 gap-y-8 relative pt-8 mt-8">
         <div className="total borderrounded-lg px-4 ">
           <h2 className="text-3xl text-slate-700 font-semibold ">
             Total Dana Masjid Al-Irsyad
@@ -142,18 +153,6 @@ const Financial = () => {
             Agustus 2023
           </div>
           <div className="text-4xl text-primary font-bold mb-4">Rp {money}</div>
-          <div className="">
-            <div className="text-lg">
-              Berikut adalah daftar yang menyangkut ke seluruh pengelolaan dana,
-              seperti uang infak, donasi, dan lainnya.
-            </div>
-            <a
-              href=""
-              className="text-secondary mt-4 underline cursor-pointer hover:text-secondary-light"
-            >
-              Lihat pemasukan dan pengeluaran bulan sebelumnya &raquo;
-            </a>
-          </div>
         </div>
 
         <div className="table">
@@ -206,4 +205,4 @@ const Financial = () => {
   );
 };
 
-export default Financial;
+export default Finance;

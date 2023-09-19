@@ -1,9 +1,10 @@
 import { useCallback, useEffect, useState } from "react";
-import { BiSolidDownArrow, BiSolidUpArrow } from "react-icons/bi";
 import { LuChevronsUp, LuChevronsDown } from "react-icons/lu";
-import FinancialTable from "./FinancialTable";
+import FinancialTable from "../components/FinancialTable";
+import { BreadCrumb } from "../components";
+import DonationTable from "../components/DonationTable";
 
-const Financial = () => {
+const Donation = () => {
   const [isDescend, setisDescend] = useState(true);
 
   const [financials, setFinancials] = useState([
@@ -105,12 +106,12 @@ const Financial = () => {
   const handleChange = (e) => {
     const value = e.target.value;
     console.log(value);
-    if (value === "Uang-masuk") {
+    if (value === "donatur") {
       const filteredFinancials = financials.filter(
         (item) => item.status === true
       );
       setFinancialState(filteredFinancials);
-    } else if (value === "Uang-keluar") {
+    } else if (value === "penerima") {
       const filteredFinancials = financials.filter(
         (item) => item.status === false
       );
@@ -125,40 +126,29 @@ const Financial = () => {
     setMoney(calculateTotalMoney());
   }, [calculateTotalMoney]);
 
+  const links = [
+    { link: "/ekonomi", text: "Ekonomi" },
+    { link: "/ekonomi/donasi", text: "Donasi" },
+  ];
+
   return (
-    <section className="mb-12 py-12 bg-grey" id="keuangan">
-      <div className="text text-center mb-12">
-        <h2 className="h2 font-play">Pemasukan & Pengeluaran Keuangan</h2>
-        <p className="text-lg">
-          Daftar uang masuk dan keluar dari keuangan Masjid Al-Irsyad
+    <section className="mt-12 mb-12 lg:px-12">
+      <BreadCrumb links={links} />
+      <div className="text text-center my-8">
+        <h2 className="text-4xl text-text2 font-semibold font-play">
+          Infak & Donasis Masjid{" "}
+          <span className="font-arab tracking-wider text-primary font-bold">
+            Al-IRSYAD
+          </span>
+        </h2>
+        <p className="text-lg capitalize">
+          Daftar Infak dan Donasi Masjid baik sebagai penerima atau pemberi
         </p>
       </div>
-      <div className="container mx-auto grid lg:grid-cols-[minmax(0,40%)_minmax(0,_60%)] gap-x-6">
-        <div className="total borderrounded-lg px-4 ">
-          <h2 className="text-3xl text-slate-700 font-semibold ">
-            Total Dana Masjid Al-Irsyad
-          </h2>
-          <div className="mb-2 text-2xl font-semibold text-secondary">
-            Agustus 2023
-          </div>
-          <div className="text-4xl text-primary font-bold mb-4">Rp {money}</div>
-          <div className="">
-            <div className="text-lg">
-              Berikut adalah daftar yang menyangkut ke seluruh pengelolaan dana,
-              seperti uang infak, donasi, dan lainnya.
-            </div>
-            <a
-              href=""
-              className="text-secondary mt-4 underline cursor-pointer hover:text-secondary-light"
-            >
-              Lihat pemasukan dan pengeluaran bulan sebelumnya &raquo;
-            </a>
-          </div>
-        </div>
-
+      <div className="container mx-auto hidden md:grid  gap-x-24 gap-y-8 relative pt-8 mt-8">
         <div className="table">
           <div className="bg-white px-3 py-2 rounded-lg flex flex-col mb-2 shadow-lg">
-            <div className="w-full flex gap-4">
+            <div className="w-full flex gap-14">
               <div className="">Filter Berdasarkan :</div>
               <select
                 className="transition-all duration-500 border-b-2"
@@ -169,21 +159,21 @@ const Financial = () => {
                 </option>
                 <option
                   className="outline-none mb-1 hover:bg-grey"
-                  value="Uang-masuk-keluar"
+                  value="semua-donasi"
                 >
-                  Uang masuk-keluar
+                  Semua Donasi
                 </option>
                 <option
                   className="outline-none mb-1 hover:bg-grey"
-                  value="Uang-masuk"
+                  value="donatur"
                 >
-                  Uang masuk
+                  Donatur
                 </option>
                 <option
                   className="outline-none mb-1 hover:bg-grey"
-                  value="Uang-keluar"
+                  value="penerima"
                 >
-                  Uang keluar
+                  Penerima
                 </option>
               </select>
               <button
@@ -195,7 +185,7 @@ const Financial = () => {
             </div>
           </div>
           <div className="bg-white px-3 py-4 rounded-lg shadow-xl">
-            <FinancialTable
+            <DonationTable
               financials={financialState.reverse()}
               formattedValue={formattedValue}
             />
@@ -206,4 +196,4 @@ const Financial = () => {
   );
 };
 
-export default Financial;
+export default Donation;

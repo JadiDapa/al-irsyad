@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { gallery1, gallery2, gallery3 } from "../assets";
 import { BsArrowRightCircle } from "react-icons/bs";
+import { Link } from "react-router-dom";
 
 const Welcome = () => {
   const galleryImages = [gallery1, gallery2, gallery3];
@@ -22,7 +23,7 @@ const Welcome = () => {
   }, [imageIndex, galleryImages.length]);
 
   return (
-    <section className="bg-grey">
+    <section className="bg-grey" id="sambutan">
       <div className="container flex-col lg:flex-row mx-auto py-12 flex gap-x-12">
         <div className="text px-1 lg:w-6/12 flex-1 justify-between">
           <h2 className="text-4xl font-light text-center xl:text-left mb-6 leading-[3rem]">
@@ -57,12 +58,14 @@ const Welcome = () => {
               jangkau. terima kasih.
             </p>
           </div>
-          <button className="flex justify-center items-center gap-2 bg-secondary text-white px-6 py-2 rounded-full uppercase max-lg:mb-12 hover:bg-secondary-dark transition-all duration-300">
-            Profil Lengkap{" "}
-            <span className="text-xl">
-              <BsArrowRightCircle />
-            </span>
-          </button>
+          <Link to="/profil">
+            <button className="flex justify-center items-center gap-2 bg-secondary text-white px-6 py-2 rounded-full uppercase max-lg:mb-12 hover:bg-secondary-dark transition-all duration-300">
+              Profil Lengkap{" "}
+              <span className="text-xl">
+                <BsArrowRightCircle />
+              </span>
+            </button>
+          </Link>
         </div>
         <div className="image flex-1 h-[520px] relative mt-6  flex justify-end px-12">
           <div className="w-full lg:w-[500px] h-[500px] border-[16px] border-gray-50 rounded-lg overflow-hidden relative bottom-[20px] left-[25px] shadow-2xl bg-gray-50"></div>

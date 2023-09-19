@@ -2,6 +2,7 @@ import { BreadCrumb } from "../components";
 import { gallery1, gallery2 } from "../assets";
 import dot from "../assets/dot.svg";
 import { Link } from "react-router-dom";
+import DotBg from "../assets/DotBg";
 
 const History = () => {
   const links = [
@@ -33,45 +34,28 @@ const History = () => {
     <section id="home" className=" py-12 lg:pt-12 px-8 overflow-hidden">
       <BreadCrumb links={links} />
       <div className="container mx-auto h-full lg:px-10 mt-8">
-        <svg
-          width="100%"
-          height="100%"
-          className="-z-10 absolute w-7/12 top-[325px] left-10"
-        >
-          <pattern
-            id="pattern-circles"
-            x="0"
-            y="0"
-            width="50"
-            height="50"
-            patternUnits="userSpaceOnUse"
-            patternContentUnits="userSpaceOnUse"
-          >
-            <circle
-              id="pattern-circle"
-              cx="10"
-              cy="10"
-              r="1.6257413380501518"
-              fill="#d3d3d3"
-            ></circle>
-          </pattern>
-
-          <rect
-            id="rect"
-            x="0"
-            y="0"
-            width="100%"
-            height="100%"
-            fill="url(#pattern-circles)"
-          ></rect>
-        </svg>
-        <h1 className="text-4xl font-semibold text-text2 text-center mb-8 tracking-wide">
-          Sejarah Masjid{" "}
-          <span className="font-arab uppercase text-primary">Al-Irsyad</span>
-        </h1>
-        <div className="grid lg:grid-cols-[minmax(0,65%)_minmax(0,_25%)] gap-[5%]">
+        <div className="  text-center mb-8 tracking-wide ">
+          <h1 className="font-play text-4xl font-semibold text-text2">
+            Sejarah Masjid{" "}
+            <span className="font-arab uppercase text-primary">Al-Irsyad</span>
+          </h1>
+          <div className="text-lg">
+            Sejarah Perkembangan Masjid Al-Irsyad dari masa ke masa
+          </div>
+        </div>
+        <div className="grid lg:grid-cols-[minmax(0,65%)_minmax(0,_25%)] gap-[5%] relative">
+          <div className="absolute opacity-[20%] top-0 left-0 grid grid-cols-2 scale-[65%] origin-top-left -z-50">
+            <DotBg />
+            <DotBg />
+            <DotBg />
+            <DotBg />
+            <DotBg />
+            <DotBg />
+            <DotBg />
+            <DotBg />
+          </div>
           <div className="">
-            <h2 className="text-xl font-semibold mt-4 tracking-wide mb-4">
+            <h2 className="text-3xl font-semibold mt-4 tracking-wide mb-4 text-primary">
               Sejarah Singkat :
             </h2>
             <div className="w-[85%] text-justify">
@@ -106,6 +90,15 @@ const History = () => {
                 iusto! Cumque, id.
               </p>
             </div>
+            <div className="text-secondary mt-8 flex items-center gap-6">
+              <div className="text-lg font-semibold">Baca : </div>
+              <div className="rounded-md px-2 py-1 shadow-lg bg-white">
+                <Link to="/profil">Profil Masjid</Link>
+              </div>
+              <div className="rounded-md px-2 py-1 shadow-lg bg-white">
+                <Link to="/profil/visi-misi">Visi & Misi</Link>
+              </div>
+            </div>
           </div>
           <ol className="relative border-l border-green-300 mt-5">
             {histories.map((history, index) => (
@@ -129,15 +122,6 @@ const History = () => {
               </li>
             ))}
           </ol>
-        </div>
-      </div>
-      <div className="text-secondary lg:px-10 mt-8 flex items-center gap-6">
-        <div className="text-lg font-semibold">Baca : </div>
-        <div className="rounded-md px-2 py-1 shadow-lg bg-white">
-          <Link to="/profil">Profil Masjid</Link>
-        </div>
-        <div className="rounded-md px-2 py-1 shadow-lg bg-white">
-          <Link to="/profil/visi-misi">Visi & Misi</Link>
         </div>
       </div>
     </section>
