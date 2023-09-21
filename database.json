@@ -80,7 +80,7 @@
         "/src/assets/news3.jpg"
       ],
       "title": " Judul Berita Paling Terbaru tapi panjang banget cuyyy siapa sangkaa wkwkwk",
-      "status": true,
+      "status": "Donatur",
       "content": "Palembang, Masjid AL-ISYAD -- Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis deleniti nesciunt illo atque hic ut quae voluptas necessitatibus perspiciatis impedit commodi aperiam assumenda quidem alias totam inventore delectus vero voluptatum, et ab quas aliquam amet natus. Quos aut ratione nihil distinctio. Itaque sunt ratione veniam dicta consequuntur nesciunt qui ipsum?. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aut minus soluta et earum! Unde dolore corrupti laudantium magni ducimus quos error blanditiis non, ipsam tempore? Itaque nobis dolor, quisquam expedita odio iusto repudiandae temporibus necessitatibus nostrum ab error, totam asperiores corporis culpa voluptatem id distinctio possimus provident excepturi. Sint deserunt, quam impedit asperiores quo libero quas consequatur aperiam ullam odit eius. Nostrum excepturi officia maxime cupiditate, commodi ducimus incidunt? Facilis inventore sunt doloribus, dolor voluptas quia dolorum ullam harum eveniet placeat sapiente a quasi, ipsa vitae tempore atque iure quam. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi hic, aliquid expedita eveniet odio perspiciatis ab enim, aperiam magni beatae, similique doloremque id veniam dolor molestias repellendus? Laborum optio exercitationem quaerat dolores eius omnis aperiam quibusdam autem deleniti voluptatem consequatur tempora illo neque dignissimos quo ipsum incidunt, accusamus sit impedit veritatis temporibus cum? Ut perspiciatis facere quo! Consectetur, reprehenderit corporis. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam soluta excepturi tempora cupiditate quasi deserunt. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Amet natus molestiae minima, magni nihil deleniti, aliquam veritatis ducimus nulla debitis quia quis tempora tenetur facere placeat! Nihil, fugit quas. Rerum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident molestias ad quae cum molestiae incidunt, architecto placeat veritatis exercitationem rerum voluptas voluptate facere. Quis, sapiente ad necessitatibus, deleniti nesciunt adipisci illo dicta earum minus iure veritatis voluptatibus tempora. Culpa cum repellendus, dolor ad"
     },
     {
@@ -91,7 +91,7 @@
         "/src/assets/news3.jpg"
       ],
       "title": " Judul Berita Ke-2",
-      "status": true,
+      "status": "Donatur",
       "content": "Palembang, Masjid AL-ISYAD -- Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis deleniti nesciunt illo atque hic ut quae voluptas necessitatibus perspiciatis impedit commodi aperiam assumenda quidem alias totam inventore delectus vero voluptatum, et ab quas aliquam amet natus. Quos aut ratione nihil distinctio. Itaque sunt ratione veniam dicta consequuntur nesciunt qui ipsum?. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aut minus soluta et earum! Unde dolore corrupti laudantium magni ducimus quos error blanditiis non, ipsam tempore? Itaque nobis dolor, quisquam expedita odio iusto repudiandae temporibus necessitatibus nostrum ab error, totam asperiores corporis culpa voluptatem id distinctio possimus provident excepturi. Sint deserunt, quam impedit asperiores quo libero quas consequatur aperiam ullam odit eius. Nostrum excepturi officia maxime cupiditate, commodi ducimus incidunt? Facilis inventore sunt doloribus, dolor voluptas quia dolorum ullam harum eveniet placeat sapiente a quasi, ipsa vitae tempore atque iure quam. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi hic, aliquid expedita eveniet odio perspiciatis ab enim, aperiam magni beatae, similique doloremque id veniam dolor molestias repellendus? Laborum optio exercitationem quaerat dolores eius omnis aperiam quibusdam autem deleniti voluptatem consequatur tempora illo neque dignissimos quo ipsum incidunt, accusamus sit impedit veritatis temporibus cum? Ut perspiciatis facere quo! Consectetur, reprehenderit corporis. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam soluta excepturi tempora cupiditate quasi deserunt. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Amet natus molestiae minima, magni nihil deleniti, aliquam veritatis ducimus nulla debitis quia quis tempora tenetur facere placeat! Nihil, fugit quas. Rerum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident molestias ad quae cum molestiae incidunt, architecto placeat veritatis exercitationem rerum voluptas voluptate facere. Quis, sapiente ad necessitatibus, deleniti nesciunt adipisci illo dicta earum minus iure veritatis voluptatibus tempora. Culpa cum repellendus, dolor ad"
     },
     {
@@ -102,8 +102,7 @@
         "/src/assets/news3.jpg"
       ],
       "title": " Judul Berita Ke-3",
-      "status": "25-11-2023",
-      "category": false,
+      "status": "Penerima",
       "content": "Palembang, Masjid AL-ISYAD -- Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis deleniti nesciunt illo atque hic ut quae voluptas necessitatibus perspiciatis impedit commodi aperiam assumenda quidem alias totam inventore delectus vero voluptatum, et ab quas aliquam amet natus. Quos aut ratione nihil distinctio. Itaque sunt ratione veniam dicta consequuntur nesciunt qui ipsum?. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aut minus soluta et earum! Unde dolore corrupti laudantium magni ducimus quos error blanditiis non, ipsam tempore? Itaque nobis dolor, quisquam expedita odio iusto repudiandae temporibus necessitatibus nostrum ab error, totam asperiores corporis culpa voluptatem id distinctio possimus provident excepturi. Sint deserunt, quam impedit asperiores quo libero quas consequatur aperiam ullam odit eius. Nostrum excepturi officia maxime cupiditate, commodi ducimus incidunt? Facilis inventore sunt doloribus, dolor voluptas quia dolorum ullam harum eveniet placeat sapiente a quasi, ipsa vitae tempore atque iure quam. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi hic, aliquid expedita eveniet odio perspiciatis ab enim, aperiam magni beatae, similique doloremque id veniam dolor molestias repellendus? Laborum optio exercitationem quaerat dolores eius omnis aperiam quibusdam autem deleniti voluptatem consequatur tempora illo neque dignissimos quo ipsum incidunt, accusamus sit impedit veritatis temporibus cum? Ut perspiciatis facere quo! Consectetur, reprehenderit corporis. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam soluta excepturi tempora cupiditate quasi deserunt. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Amet natus molestiae minima, magni nihil deleniti, aliquam veritatis ducimus nulla debitis quia quis tempora tenetur facere placeat! Nihil, fugit quas. Rerum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident molestias ad quae cum molestiae incidunt, architecto placeat veritatis exercitationem rerum voluptas voluptate facere. Quis, sapiente ad necessitatibus, deleniti nesciunt adipisci illo dicta earum minus iure veritatis voluptatibus tempora. Culpa cum repellendus, dolor ad"
     },
     {
@@ -114,7 +113,7 @@
         "/src/assets/news3.jpg"
       ],
       "title": " Judul Berita Ke-4",
-      "status": false,
+      "status": "Penerima",
       "content": "Palembang, Masjid AL-ISYAD -- Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis deleniti nesciunt illo atque hic ut quae voluptas necessitatibus perspiciatis impedit commodi aperiam assumenda quidem alias totam inventore delectus vero voluptatum, et ab quas aliquam amet natus. Quos aut ratione nihil distinctio. Itaque sunt ratione veniam dicta consequuntur nesciunt qui ipsum?. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aut minus soluta et earum! Unde dolore corrupti laudantium magni ducimus quos error blanditiis non, ipsam tempore? Itaque nobis dolor, quisquam expedita odio iusto repudiandae temporibus necessitatibus nostrum ab error, totam asperiores corporis culpa voluptatem id distinctio possimus provident excepturi. Sint deserunt, quam impedit asperiores quo libero quas consequatur aperiam ullam odit eius. Nostrum excepturi officia maxime cupiditate, commodi ducimus incidunt? Facilis inventore sunt doloribus, dolor voluptas quia dolorum ullam harum eveniet placeat sapiente a quasi, ipsa vitae tempore atque iure quam. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi hic, aliquid expedita eveniet odio perspiciatis ab enim, aperiam magni beatae, similique doloremque id veniam dolor molestias repellendus? Laborum optio exercitationem quaerat dolores eius omnis aperiam quibusdam autem deleniti voluptatem consequatur tempora illo neque dignissimos quo ipsum incidunt, accusamus sit impedit veritatis temporibus cum? Ut perspiciatis facere quo! Consectetur, reprehenderit corporis. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam soluta excepturi tempora cupiditate quasi deserunt. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Amet natus molestiae minima, magni nihil deleniti, aliquam veritatis ducimus nulla debitis quia quis tempora tenetur facere placeat! Nihil, fugit quas. Rerum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident molestias ad quae cum molestiae incidunt, architecto placeat veritatis exercitationem rerum voluptas voluptate facere. Quis, sapiente ad necessitatibus, deleniti nesciunt adipisci illo dicta earum minus iure veritatis voluptatibus tempora. Culpa cum repellendus, dolor ad"
     },
     {
@@ -125,7 +124,7 @@
         "/src/assets/news3.jpg"
       ],
       "title": " Judul Berita Ke-5",
-      "status": false,
+      "status": "Penerima",
       "content": "Palembang, Masjid AL-ISYAD -- Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis deleniti nesciunt illo atque hic ut quae voluptas necessitatibus perspiciatis impedit commodi aperiam assumenda quidem alias totam inventore delectus vero voluptatum, et ab quas aliquam amet natus. Quos aut ratione nihil distinctio. Itaque sunt ratione veniam dicta consequuntur nesciunt qui ipsum?. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aut minus soluta et earum! Unde dolore corrupti laudantium magni ducimus quos error blanditiis non, ipsam tempore? Itaque nobis dolor, quisquam expedita odio iusto repudiandae temporibus necessitatibus nostrum ab error, totam asperiores corporis culpa voluptatem id distinctio possimus provident excepturi. Sint deserunt, quam impedit asperiores quo libero quas consequatur aperiam ullam odit eius. Nostrum excepturi officia maxime cupiditate, commodi ducimus incidunt? Facilis inventore sunt doloribus, dolor voluptas quia dolorum ullam harum eveniet placeat sapiente a quasi, ipsa vitae tempore atque iure quam. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi hic, aliquid expedita eveniet odio perspiciatis ab enim, aperiam magni beatae, similique doloremque id veniam dolor molestias repellendus? Laborum optio exercitationem quaerat dolores eius omnis aperiam quibusdam autem deleniti voluptatem consequatur tempora illo neque dignissimos quo ipsum incidunt, accusamus sit impedit veritatis temporibus cum? Ut perspiciatis facere quo! Consectetur, reprehenderit corporis. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam soluta excepturi tempora cupiditate quasi deserunt. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Amet natus molestiae minima, magni nihil deleniti, aliquam veritatis ducimus nulla debitis quia quis tempora tenetur facere placeat! Nihil, fugit quas. Rerum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident molestias ad quae cum molestiae incidunt, architecto placeat veritatis exercitationem rerum voluptas voluptate facere. Quis, sapiente ad necessitatibus, deleniti nesciunt adipisci illo dicta earum minus iure veritatis voluptatibus tempora. Culpa cum repellendus, dolor ad"
     },
     {
@@ -136,7 +135,7 @@
         "/src/assets/news3.jpg"
       ],
       "title": " Judul Berita 6",
-      "status": true,
+      "status": "Donatur",
       "content": "Palembang, Masjid AL-ISYAD -- Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis deleniti nesciunt illo atque hic ut quae voluptas necessitatibus perspiciatis impedit commodi aperiam assumenda quidem alias totam inventore delectus vero voluptatum, et ab quas aliquam amet natus. Quos aut ratione nihil distinctio. Itaque sunt ratione veniam dicta consequuntur nesciunt qui ipsum?. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aut minus soluta et earum! Unde dolore corrupti laudantium magni ducimus quos error blanditiis non, ipsam tempore? Itaque nobis dolor, quisquam expedita odio iusto repudiandae temporibus necessitatibus nostrum ab error, totam asperiores corporis culpa voluptatem id distinctio possimus provident excepturi. Sint deserunt, quam impedit asperiores quo libero quas consequatur aperiam ullam odit eius. Nostrum excepturi officia maxime cupiditate, commodi ducimus incidunt? Facilis inventore sunt doloribus, dolor voluptas quia dolorum ullam harum eveniet placeat sapiente a quasi, ipsa vitae tempore atque iure quam. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi hic, aliquid expedita eveniet odio perspiciatis ab enim, aperiam magni beatae, similique doloremque id veniam dolor molestias repellendus? Laborum optio exercitationem quaerat dolores eius omnis aperiam quibusdam autem deleniti voluptatem consequatur tempora illo neque dignissimos quo ipsum incidunt, accusamus sit impedit veritatis temporibus cum? Ut perspiciatis facere quo! Consectetur, reprehenderit corporis. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam soluta excepturi tempora cupiditate quasi deserunt. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Amet natus molestiae minima, magni nihil deleniti, aliquam veritatis ducimus nulla debitis quia quis tempora tenetur facere placeat! Nihil, fugit quas. Rerum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident molestias ad quae cum molestiae incidunt, architecto placeat veritatis exercitationem rerum voluptas voluptate facere. Quis, sapiente ad necessitatibus, deleniti nesciunt adipisci illo dicta earum minus iure veritatis voluptatibus tempora. Culpa cum repellendus, dolor ad"
     },
     {
@@ -147,7 +146,7 @@
         "/src/assets/news3.jpg"
       ],
       "title": " Judul Berita Ke-7",
-      "status": true,
+      "status": "Donatur",
       "content": "Palembang, Masjid AL-ISYAD -- Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis deleniti nesciunt illo atque hic ut quae voluptas necessitatibus perspiciatis impedit commodi aperiam assumenda quidem alias totam inventore delectus vero voluptatum, et ab quas aliquam amet natus. Quos aut ratione nihil distinctio. Itaque sunt ratione veniam dicta consequuntur nesciunt qui ipsum?. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aut minus soluta et earum! Unde dolore corrupti laudantium magni ducimus quos error blanditiis non, ipsam tempore? Itaque nobis dolor, quisquam expedita odio iusto repudiandae temporibus necessitatibus nostrum ab error, totam asperiores corporis culpa voluptatem id distinctio possimus provident excepturi. Sint deserunt, quam impedit asperiores quo libero quas consequatur aperiam ullam odit eius. Nostrum excepturi officia maxime cupiditate, commodi ducimus incidunt? Facilis inventore sunt doloribus, dolor voluptas quia dolorum ullam harum eveniet placeat sapiente a quasi, ipsa vitae tempore atque iure quam. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi hic, aliquid expedita eveniet odio perspiciatis ab enim, aperiam magni beatae, similique doloremque id veniam dolor molestias repellendus? Laborum optio exercitationem quaerat dolores eius omnis aperiam quibusdam autem deleniti voluptatem consequatur tempora illo neque dignissimos quo ipsum incidunt, accusamus sit impedit veritatis temporibus cum? Ut perspiciatis facere quo! Consectetur, reprehenderit corporis. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam soluta excepturi tempora cupiditate quasi deserunt. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Amet natus molestiae minima, magni nihil deleniti, aliquam veritatis ducimus nulla debitis quia quis tempora tenetur facere placeat! Nihil, fugit quas. Rerum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident molestias ad quae cum molestiae incidunt, architecto placeat veritatis exercitationem rerum voluptas voluptate facere. Quis, sapiente ad necessitatibus, deleniti nesciunt adipisci illo dicta earum minus iure veritatis voluptatibus tempora. Culpa cum repellendus, dolor ad"
     },
     {
@@ -158,7 +157,7 @@
         "/src/assets/news3.jpg"
       ],
       "title": " Judul Berita Ke-8",
-      "status": false,
+      "status": "Penerima",
       "content": "Palembang, Masjid AL-ISYAD -- Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis deleniti nesciunt illo atque hic ut quae voluptas necessitatibus perspiciatis impedit commodi aperiam assumenda quidem alias totam inventore delectus vero voluptatum, et ab quas aliquam amet natus. Quos aut ratione nihil distinctio. Itaque sunt ratione veniam dicta consequuntur nesciunt qui ipsum?. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aut minus soluta et earum! Unde dolore corrupti laudantium magni ducimus quos error blanditiis non, ipsam tempore? Itaque nobis dolor, quisquam expedita odio iusto repudiandae temporibus necessitatibus nostrum ab error, totam asperiores corporis culpa voluptatem id distinctio possimus provident excepturi. Sint deserunt, quam impedit asperiores quo libero quas consequatur aperiam ullam odit eius. Nostrum excepturi officia maxime cupiditate, commodi ducimus incidunt? Facilis inventore sunt doloribus, dolor voluptas quia dolorum ullam harum eveniet placeat sapiente a quasi, ipsa vitae tempore atque iure quam. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi hic, aliquid expedita eveniet odio perspiciatis ab enim, aperiam magni beatae, similique doloremque id veniam dolor molestias repellendus? Laborum optio exercitationem quaerat dolores eius omnis aperiam quibusdam autem deleniti voluptatem consequatur tempora illo neque dignissimos quo ipsum incidunt, accusamus sit impedit veritatis temporibus cum? Ut perspiciatis facere quo! Consectetur, reprehenderit corporis. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam soluta excepturi tempora cupiditate quasi deserunt. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Amet natus molestiae minima, magni nihil deleniti, aliquam veritatis ducimus nulla debitis quia quis tempora tenetur facere placeat! Nihil, fugit quas. Rerum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident molestias ad quae cum molestiae incidunt, architecto placeat veritatis exercitationem rerum voluptas voluptate facere. Quis, sapiente ad necessitatibus, deleniti nesciunt adipisci illo dicta earum minus iure veritatis voluptatibus tempora. Culpa cum repellendus, dolor ad"
     },
     {
@@ -169,7 +168,7 @@
         "/src/assets/news3.jpg"
       ],
       "title": " Judul Berita Ke-9",
-      "status": true,
+      "status": "Donatur",
       "content": "Palembang, Masjid AL-ISYAD -- Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis deleniti nesciunt illo atque hic ut quae voluptas necessitatibus perspiciatis impedit commodi aperiam assumenda quidem alias totam inventore delectus vero voluptatum, et ab quas aliquam amet natus. Quos aut ratione nihil distinctio. Itaque sunt ratione veniam dicta consequuntur nesciunt qui ipsum?. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aut minus soluta et earum! Unde dolore corrupti laudantium magni ducimus quos error blanditiis non, ipsam tempore? Itaque nobis dolor, quisquam expedita odio iusto repudiandae temporibus necessitatibus nostrum ab error, totam asperiores corporis culpa voluptatem id distinctio possimus provident excepturi. Sint deserunt, quam impedit asperiores quo libero quas consequatur aperiam ullam odit eius. Nostrum excepturi officia maxime cupiditate, commodi ducimus incidunt? Facilis inventore sunt doloribus, dolor voluptas quia dolorum ullam harum eveniet placeat sapiente a quasi, ipsa vitae tempore atque iure quam. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi hic, aliquid expedita eveniet odio perspiciatis ab enim, aperiam magni beatae, similique doloremque id veniam dolor molestias repellendus? Laborum optio exercitationem quaerat dolores eius omnis aperiam quibusdam autem deleniti voluptatem consequatur tempora illo neque dignissimos quo ipsum incidunt, accusamus sit impedit veritatis temporibus cum? Ut perspiciatis facere quo! Consectetur, reprehenderit corporis. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam soluta excepturi tempora cupiditate quasi deserunt. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Amet natus molestiae minima, magni nihil deleniti, aliquam veritatis ducimus nulla debitis quia quis tempora tenetur facere placeat! Nihil, fugit quas. Rerum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident molestias ad quae cum molestiae incidunt, architecto placeat veritatis exercitationem rerum voluptas voluptate facere. Quis, sapiente ad necessitatibus, deleniti nesciunt adipisci illo dicta earum minus iure veritatis voluptatibus tempora. Culpa cum repellendus, dolor ad"
     },
     {
@@ -180,8 +179,102 @@
         "/src/assets/news3.jpg"
       ],
       "title": " Judul Berita Ke-10",
-      "status": "false",
+      "status": "Penerima",
       "content": "Palembang, Masjid AL-ISYAD -- Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis deleniti nesciunt illo atque hic ut quae voluptas necessitatibus perspiciatis impedit commodi aperiam assumenda quidem alias totam inventore delectus vero voluptatum, et ab quas aliquam amet natus. Quos aut ratione nihil distinctio. Itaque sunt ratione veniam dicta consequuntur nesciunt qui ipsum?. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aut minus soluta et earum! Unde dolore corrupti laudantium magni ducimus quos error blanditiis non, ipsam tempore? Itaque nobis dolor, quisquam expedita odio iusto repudiandae temporibus necessitatibus nostrum ab error, totam asperiores corporis culpa voluptatem id distinctio possimus provident excepturi. Sint deserunt, quam impedit asperiores quo libero quas consequatur aperiam ullam odit eius. Nostrum excepturi officia maxime cupiditate, commodi ducimus incidunt? Facilis inventore sunt doloribus, dolor voluptas quia dolorum ullam harum eveniet placeat sapiente a quasi, ipsa vitae tempore atque iure quam. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi hic, aliquid expedita eveniet odio perspiciatis ab enim, aperiam magni beatae, similique doloremque id veniam dolor molestias repellendus? Laborum optio exercitationem quaerat dolores eius omnis aperiam quibusdam autem deleniti voluptatem consequatur tempora illo neque dignissimos quo ipsum incidunt, accusamus sit impedit veritatis temporibus cum? Ut perspiciatis facere quo! Consectetur, reprehenderit corporis. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam soluta excepturi tempora cupiditate quasi deserunt. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Amet natus molestiae minima, magni nihil deleniti, aliquam veritatis ducimus nulla debitis quia quis tempora tenetur facere placeat! Nihil, fugit quas. Rerum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident molestias ad quae cum molestiae incidunt, architecto placeat veritatis exercitationem rerum voluptas voluptate facere. Quis, sapiente ad necessitatibus, deleniti nesciunt adipisci illo dicta earum minus iure veritatis voluptatibus tempora. Culpa cum repellendus, dolor ad"
+    }
+  ],
+  "plans": [
+    {
+      "plan": "Infak ke pesantren bla bla bla berupa bahan makanan dan uang tunai pada tangga 20 Oktober, 2023",
+      "added": "12 September, 2023",
+      "estimated": "15 September 2023",
+      "completed": true,
+      "image": "/src/assets/news1.jpg",
+      "detail": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Expedita quo suscipit a sint eligendi explicabo quaerat autem molestias dolorem quis! Nostrum dolores expedita praesentium architecto maiores ad, in quibusdam sequi delectus non voluptatum consequatur maxime quis dolor consequuntur? Deserunt libero officia ab sed repellendus temporibus voluptas eveniet qui, aut doloribus. Rerum dolorum ipsa beatae voluptates accusantium, modi vitae delectus facilis iusto possimus, corporis omnis. At mollitia vero eveniet magni ipsum? Officiis corrupti, assumenda quis totam saepe soluta maxime sit, ducimus voluptatum pariatur itaque, voluptate explicabo amet corporis illo illum nam laboriosam magnam ipsa necessitatibus! Nobis, quo, explicabo culpa ratione in quaerat aperiam inventore voluptate esse delectus cumque ipsam fuga sequi vel. Hic eum quo quidem eius accusamus laboriosam odio minus reprehenderit voluptatum quae iure iusto consequatur eligendi, tenetur alias amet unde repellendus perferendis soluta? Quod earum quisquam distinctio quidem asperiores adipisci dolorem accusantium veritatis magnam, possimus est placeat libero, laborum qui nobis nihil amet, perspiciatis voluptatibus aperiam. Magnam, iusto blanditiis minima illo reiciendis incidunt ratione quidem dolorem, soluta veritatis iure molestiae vero sapiente omnis ipsa exercitationem ut quibusdam perspiciatis eveniet totam labore, quo assumenda. Doloribus hic reiciendis illum tenetur sunt, dignissimos rerum magnam officia praesentium at aperiam, voluptas aliquam voluptatem?"
+    },
+    {
+      "plan": "Infak ke pesantren bla bla bla berupa bahan makanan dan uang tunai pada tangga 20 Oktober, 2023",
+      "added": "12 September, 2023",
+      "estimated": "15 September 2023",
+      "completed": false,
+      "image": "/src/assets/news1.jpg",
+      "detail": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Expedita quo suscipit a sint eligendi explicabo quaerat autem molestias dolorem quis! Nostrum dolores expedita praesentium architecto maiores ad, in quibusdam sequi delectus non voluptatum consequatur maxime quis dolor consequuntur? Deserunt libero officia ab sed repellendus temporibus voluptas eveniet qui, aut doloribus. Rerum dolorum ipsa beatae voluptates accusantium, modi vitae delectus facilis iusto possimus, corporis omnis. At mollitia vero eveniet magni ipsum? Officiis corrupti, assumenda quis totam saepe soluta maxime sit, ducimus voluptatum pariatur itaque, voluptate explicabo amet corporis illo illum nam laboriosam magnam ipsa necessitatibus! Nobis, quo, explicabo culpa ratione in quaerat aperiam inventore voluptate esse delectus cumque ipsam fuga sequi vel. Hic eum quo quidem eius accusamus laboriosam odio minus reprehenderit voluptatum quae iure iusto consequatur eligendi, tenetur alias amet unde repellendus perferendis soluta? Quod earum quisquam distinctio quidem asperiores adipisci dolorem accusantium veritatis magnam, possimus est placeat libero, laborum qui nobis nihil amet, perspiciatis voluptatibus aperiam. Magnam, iusto blanditiis minima illo reiciendis incidunt ratione quidem dolorem, soluta veritatis iure molestiae vero sapiente omnis ipsa exercitationem ut quibusdam perspiciatis eveniet totam labore, quo assumenda. Doloribus hic reiciendis illum tenetur sunt, dignissimos rerum magnam officia praesentium at aperiam, voluptas aliquam voluptatem?"
+    },
+    {
+      "plan": "Infak ke pesantren bla bla bla berupa bahan makanan dan uang tunai pada tangga 20 Oktober, 2023",
+      "added": "12 September, 2023",
+      "estimated": "15 September 2023",
+      "completed": false,
+      "image": "/src/assets/news1.jpg",
+      "detail": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Expedita quo suscipit a sint eligendi explicabo quaerat autem molestias dolorem quis! Nostrum dolores expedita praesentium architecto maiores ad, in quibusdam sequi delectus non voluptatum consequatur maxime quis dolor consequuntur? Deserunt libero officia ab sed repellendus temporibus voluptas eveniet qui, aut doloribus. Rerum dolorum ipsa beatae voluptates accusantium, modi vitae delectus facilis iusto possimus, corporis omnis. At mollitia vero eveniet magni ipsum? Officiis corrupti, assumenda quis totam saepe soluta maxime sit, ducimus voluptatum pariatur itaque, voluptate explicabo amet corporis illo illum nam laboriosam magnam ipsa necessitatibus! Nobis, quo, explicabo culpa ratione in quaerat aperiam inventore voluptate esse delectus cumque ipsam fuga sequi vel. Hic eum quo quidem eius accusamus laboriosam odio minus reprehenderit voluptatum quae iure iusto consequatur eligendi, tenetur alias amet unde repellendus perferendis soluta? Quod earum quisquam distinctio quidem asperiores adipisci dolorem accusantium veritatis magnam, possimus est placeat libero, laborum qui nobis nihil amet, perspiciatis voluptatibus aperiam. Magnam, iusto blanditiis minima illo reiciendis incidunt ratione quidem dolorem, soluta veritatis iure molestiae vero sapiente omnis ipsa exercitationem ut quibusdam perspiciatis eveniet totam labore, quo assumenda. Doloribus hic reiciendis illum tenetur sunt, dignissimos rerum magnam officia praesentium at aperiam, voluptas aliquam voluptatem?"
+    }
+  ],
+  "financial": [
+    {
+      "date": "1/09/2023",
+      "title": "Infak pesantren JadiDapa",
+      "status": true,
+      "value": "1000000"
+    },
+    {
+      "date": "3/09/2023",
+      "title": "Infak pesantren JadiDapa",
+      "status": false,
+      "value": "200000"
+    },
+    {
+      "date": "4/09/2023",
+      "title": "Infak pesantren JadiDapa",
+      "status": false,
+      "value": "400000"
+    },
+    {
+      "date": "7/09/2023",
+      "title": "Infak pesantren JadiDapa",
+      "status": true,
+      "value": "5000000"
+    },
+    {
+      "date": "8/09/2023",
+      "title": "Infak pesantren JadiDapa",
+      "status": true,
+      "value": "100000"
+    },
+    {
+      "date": "10/09/2023",
+      "title": "Infak pesantren JadiDapa",
+      "status": false,
+      "value": "100000"
+    },
+    {
+      "date": "12/09/2023",
+      "title": "Infak pesantren JadiDapa",
+      "status": true,
+      "value": "400000"
+    },
+    {
+      "date": "12/09/2023",
+      "title": "Infak pesantren JadiDapa",
+      "status": false,
+      "value": "5000000"
+    },
+    {
+      "date": "15/09/2023",
+      "title": "Infak pesantren JadiDapa",
+      "status": true,
+      "value": "700000"
+    },
+    {
+      "date": "19/09/2023",
+      "title": "Infak pesantren JadiDapa",
+      "status": false,
+      "value": "1000000"
+    },
+    {
+      "date": "21/09/2023",
+      "title": "Infak pesantren JadiDapa",
+      "status": true,
+      "value": "100000"
     }
   ]
 }

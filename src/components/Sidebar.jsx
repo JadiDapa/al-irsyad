@@ -4,7 +4,7 @@ import { TbMoneybag, TbLogout2 } from "react-icons/tb";
 import { BiDonateHeart } from "react-icons/bi";
 import { BsNewspaper } from "react-icons/bs";
 import { AiOutlineSchedule } from "react-icons/ai";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const Sidebar = () => {
   const links = [
@@ -15,6 +15,7 @@ const Sidebar = () => {
     { nama: "Donasi", link: "/admin/donasi", icon: <BiDonateHeart /> },
     { nama: "Keluar", link: "/", icon: <TbLogout2 /> },
   ];
+  const location = useLocation();
   return (
     <>
       <aside
@@ -36,7 +37,11 @@ const Sidebar = () => {
               <li key={index} className="mb-2">
                 <Link
                   to={link.link}
-                  className="flex items-center py-2 pl-5 text-gray-900 rounded-lg  hover:bg-primary hover:text-white group"
+                  className={`flex items-center py-2 pl-5 text-gray-600 rounded-lg transition-all duration-200 ${
+                    location.pathname === link.link
+                      ? "bg-primary text-white"
+                      : "hover:bg-primary hover:text-white group"
+                  }`}
                 >
                   <div className="text-2xl">{link.icon}</div>
                   <span className="ml-3 text-lg">{link.nama}</span>

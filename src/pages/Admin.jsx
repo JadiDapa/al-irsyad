@@ -1,6 +1,11 @@
 import { FiSearch } from "react-icons/fi";
 import { Link } from "react-router-dom";
 import { adminIcon } from "../assets";
+import { AiOutlineHome } from "react-icons/ai";
+import { TbMoneybag, TbLogout2 } from "react-icons/tb";
+import { BiDonateHeart } from "react-icons/bi";
+import { BsNewspaper } from "react-icons/bs";
+import { AiOutlineSchedule } from "react-icons/ai";
 
 function Admin() {
   return (
@@ -19,12 +24,12 @@ function Admin() {
         </div>
         <div className="flex gap-6">
           <div className="w-5/12">
-            <div className="wfull bg-white rounded-md shadow-md px-4 py-6 pb-8 relative overflow-hidden">
-              <div className="text-2xl text-text2 font-semibold">
+            <div className="wfull bg-white rounded-md shadow-md p-4 relative overflow-hidden h-48">
+              <div className="text-2xl text-gray-600 font-semibold">
                 Selamat Datang, Admin! ⚙️
               </div>
               <p className="text-sm mb-4">Kelola data dengan hati hati </p>
-              <div className="text-2xl font-semibold text-primary mb-1">
+              <div className="text-2xl font-semibold text-primary mt-4 mb-4">
                 {new Date().toLocaleDateString()}
               </div>
               <Link className="bg-primary text-white py-2 px-4 rounded-md ">
@@ -38,7 +43,59 @@ function Admin() {
               />
             </div>
           </div>
-          <div className="border w-7/12 h-96"></div>
+          <div className=" w-7/12 h-96">
+            <div className="w-full bg-white rounded-md shadow-md p-4 relative overflow-hidden h-48 flex flex-col justify-between">
+              <div className="text-2xl text-gray-600 font-semibold">
+                Rangkuman Data
+              </div>
+              <div className="grid grid-cols-2 gap-y-3 ">
+                <div className="flex items-center gap-2">
+                  <div className="text-xl w-10 h-10 flex items-center justify-center text-primary bg-green-100 rounded-full">
+                    <BsNewspaper />
+                  </div>
+                  <div className="">
+                    <div className="leading-6 text-2xl font-semibold text-slate-600">
+                      64
+                    </div>
+                    <div className="leading-6 font-[500]">Berita</div>
+                  </div>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="text-xl w-10 h-10 flex items-center justify-center text-yellow-500 bg-yellow-100 rounded-full">
+                    <AiOutlineSchedule />
+                  </div>
+                  <div className="">
+                    <div className="leading-6 text-2xl font-semibold text-slate-600">
+                      12
+                    </div>
+                    <div className="leading-6 font-[500]">Rencana</div>
+                  </div>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="text-xl w-10 h-10 flex items-center justify-center text-sky-500 bg-sky-100 rounded-full">
+                    <TbMoneybag />
+                  </div>
+                  <div className="">
+                    <div className="leading-6 text-2xl font-semibold text-slate-600">
+                      90
+                    </div>
+                    <div className="leading-6 font-[500]">Finansial</div>
+                  </div>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="text-xl w-10 h-10 flex items-center justify-center text-red-500 bg-red-100 rounded-full">
+                    <BiDonateHeart />
+                  </div>
+                  <div className="">
+                    <div className="leading-6 text-2xl font-semibold text-slate-600">
+                      4
+                    </div>
+                    <div className="leading-6 font-[500]">Donasi</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

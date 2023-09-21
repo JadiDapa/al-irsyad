@@ -13,11 +13,15 @@ import {
   Finance,
   Economy,
   Donation,
+  Institute,
+  Tpa,
+  Admin,
+  AdminLayout,
+  DataBerita,
+  DataDonasi,
+  DataFinansial,
+  DataRencana,
 } from "./pages";
-import Institute from "./pages/Institute";
-import Tpa from "./pages/Tpa";
-import Admin from "./pages/Admin";
-import AdminLayout from "./pages/AdminLayout";
 
 const App = () => {
   return (
@@ -43,10 +47,12 @@ const App = () => {
           <Route path="/lembaga/tpa" element={<Tpa />} />
           <Route path="/lembaga/donasi" element={<Donation />} />
         </Route>
-        <Route path="/admin" element={<AdminLayout />} >
+        <Route path="/admin" element={<AdminLayout />}>
           <Route path="/admin" element={<Admin />} />
-          {/* <Route path="/lembaga/tpa" element={<Tpa />} />
-          <Route path="/lembaga/donasi" element={<Donation />} /> */}
+          <Route path="/admin/berita" element={<DataBerita />} />
+          <Route path="/admin/rencana" element={<DataRencana />} />
+          <Route path="/admin/finansial" element={<DataFinansial />} />
+          <Route path="/admin/donasi" element={<DataDonasi />} />
         </Route>
         <Route path="*" element={<NoPage />} />
       </Routes>

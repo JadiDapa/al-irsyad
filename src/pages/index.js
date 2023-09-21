@@ -16,4 +16,14 @@ export { default as Economy } from "./Economy";
 export { default as Finance } from "./Finance";
 export { default as Donation } from "./Donation";
 
+export { default as Institute } from "./Institute";
+export { default as Tpa } from "./Tpa";
+
+export { default as Admin } from "./Admin";
+export { default as AdminLayout } from "./AdminLayout";
+export { default as DataBerita } from "./DataBerita";
+export { default as DataRencana } from "./DataRencana";
+export { default as DataFinansial } from "./DataFinansial";
+export { default as DataDonasi } from "./DataDonasi";
+
 export { default as NoPage } from "./NoPage";
