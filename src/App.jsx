@@ -16,6 +16,8 @@ import {
 } from "./pages";
 import Institute from "./pages/Institute";
 import Tpa from "./pages/Tpa";
+import Admin from "./pages/Admin";
+import AdminLayout from "./pages/AdminLayout";
 
 const App = () => {
   return (
@@ -40,6 +42,11 @@ const App = () => {
           <Route path="/lembaga" element={<Institute />} />
           <Route path="/lembaga/tpa" element={<Tpa />} />
           <Route path="/lembaga/donasi" element={<Donation />} />
+        </Route>
+        <Route path="/admin" element={<AdminLayout />} >
+          <Route path="/admin" element={<Admin />} />
+          {/* <Route path="/lembaga/tpa" element={<Tpa />} />
+          <Route path="/lembaga/donasi" element={<Donation />} /> */}
         </Route>
         <Route path="*" element={<NoPage />} />
       </Routes>

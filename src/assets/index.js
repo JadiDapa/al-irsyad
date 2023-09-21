@@ -14,3 +14,5 @@ export { default as profile } from "./profile.jpg";
 
 export { default as dot } from "./dot.svg";
 export { default as main } from "./main.png";
+
+export { default as adminIcon } from "./adminIcon.png";
