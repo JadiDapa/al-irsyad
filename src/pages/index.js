@@ -26,4 +26,9 @@ export { default as DataRencana } from "./DataRencana";
 export { default as DataFinansial } from "./DataFinansial";
 export { default as DataDonasi } from "./DataDonasi";
 
+export { default as AddNews } from "./AddNews";
+export { default as AddPlan } from "./AddPlan";
+export { default as AddFinancial } from "./AddFinancial";
+export { default as AddDonation } from "./AddDonation";
+
 export { default as NoPage } from "./NoPage";

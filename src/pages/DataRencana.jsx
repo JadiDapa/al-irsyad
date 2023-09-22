@@ -30,12 +30,15 @@ const DataRencana = () => {
             <input type="text" placeholder="Cari rencana & jadwal" />
           </div>
           <div className="">
-            <div className="py-0.5 px-3 bg-primary text-white rounded-md flex items-center gap-2">
+            <Link
+              to={"/tambah-rencana"}
+              className="py-0.5 px-3 bg-primary text-white rounded-md flex items-center gap-2"
+            >
               Tambah Rencana{" "}
               <span className="text-2xl">
                 <AiOutlinePlusCircle />
               </span>
-            </div>
+            </Link>
           </div>
         </div>
         <div className="my-3 flex justify-between">

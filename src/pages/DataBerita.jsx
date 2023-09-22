@@ -9,13 +9,6 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 
 const DataBerita = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [modalId, setModalId] = useState(null);
-  function handleClose(index = null) {
-    setIsOpen(!isOpen);
-    setModalId(index);
-  }
-
   const [news, setNews] = useState([]);
 
   useEffect(() => {
@@ -34,12 +27,15 @@ const DataBerita = () => {
             <input type="text" placeholder="Cari berita..." />
           </div>
           <div className="">
-            <div className="py-0.5 px-3 bg-primary text-white rounded-md flex items-center gap-2">
+            <Link
+              to="/tambah-berita"
+              className="py-0.5 px-3 bg-primary text-white rounded-md flex items-center gap-2"
+            >
               Tambah Data{" "}
               <span className="text-2xl">
                 <AiOutlinePlusCircle />
               </span>
-            </div>
+            </Link>
           </div>
         </div>
         <div className="my-3 flex justify-between">

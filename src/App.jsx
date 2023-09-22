@@ -21,6 +21,10 @@ import {
   DataDonasi,
   DataFinansial,
   DataRencana,
+  AddNews,
+  AddPlan,
+  AddFinancial,
+  AddDonation,
 } from "./pages";
 
 const App = () => {
@@ -54,6 +58,11 @@ const App = () => {
           <Route path="/admin/finansial" element={<DataFinansial />} />
           <Route path="/admin/donasi" element={<DataDonasi />} />
         </Route>
+        <Route path="/tambah-berita" element={<AddNews />} />
+        <Route path="/tambah-rencana" element={<AddPlan />} />
+        <Route path="/tambah-finansial" element={<AddFinancial />} />
+        <Route path="/tambah-donasi" element={<AddDonation />} />
+
         <Route path="*" element={<NoPage />} />
       </Routes>
     </BrowserRouter>
