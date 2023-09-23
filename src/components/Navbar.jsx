@@ -14,12 +14,12 @@ export default function Navbar() {
   const links = [
     [
       { link: "/", name: "Home", icon: <AiFillHome /> },
-      { link: "#shalat", name: "Shalat" },
-      { link: "#sambutan", name: "Sambutan" },
-      { link: "#berita", name: "Berita" },
-      { link: "#rencana", name: "Rencana" },
-      { link: "#keuangan", name: "Keuangan" },
-      { link: "#tpa", name: "TPA" },
+      { link: "/#shalat", name: "Shalat" },
+      { link: "/#sambutan", name: "Sambutan" },
+      { link: "/#berita", name: "Berita" },
+      { link: "/#rencana", name: "Rencana" },
+      { link: "/#keuangan", name: "Keuangan" },
+      { link: "/#tpa", name: "TPA" },
     ],
     [
       { link: "/profil", name: "Profil", icon: <AiFillInfoCircle /> },
@@ -87,17 +87,43 @@ export default function Navbar() {
                 <img src={logo} alt="" className="w-40" />
               </a>
 
-              <ul className="flex flex-col gap-y-5">
+              <ul className="flex flex-col gap-y-5 ">
                 {links.map((link, index) => (
-                  <li key={index}>
-                    <Link
-                      to={link.link}
-                      className="text-text1 hover:text-primary transition-all duration-300 flex gap-2 items-center"
-                    >
-                      {link.icon}
-                      <span>{link.name}</span>
-                    </Link>
-                  </li>
+                  <div
+                    key={index}
+                    className={`dropdown-parent border-slate-200 text-text1 `}
+                  >
+                    <div className="dropdown group inline-block relative ">
+                      <Link
+                        to={link[0].link}
+                        className="inline-flex items-center hover:text-primary"
+                      >
+                        <span className="mr-1">{link[0].name}</span>
+
+                        <svg
+                          className="fill-current h-4 w-4"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 20 20"
+                        >
+                          <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+                        </svg>
+                      </Link>
+                      <ul className="dropdown-menu group  hidden group-hover:block w-32 transition-all duration-300 -translate-x-4 border-b-2 border-primary pt-2 bg-white">
+                        {link.map((sublink, index) => {
+                          return (
+                            <li key={index} className="bg-white z-50">
+                              <Link
+                                className="rounded-t bg-white hover:text-primary py-1 px-4 block whitespace-no-wrap"
+                                to={sublink.link}
+                              >
+                                {sublink.name}
+                              </Link>
+                            </li>
+                          );
+                        })}
+                      </ul>
+                    </div>
+                  </div>
                 ))}
               </ul>
 
@@ -128,15 +154,6 @@ export default function Navbar() {
           <nav className="bg-white absolute w-full left-0 -bottom-[86px] shadow-custom1 h-16 rounded-[10px] hidden lg:flex lg:items-center lg:px-[50px] lg:justify-between">
             <ul className="flex">
               {links.map((link, index) => (
-                // <li key={index}>
-                //   <Link
-                //     to={link.link}
-                //     className="border-r pr-4 text-text1 hover:text-primary transition-all duration-300"
-                //   >
-                //     {link.name}
-                //   </Link>
-                // </li>
-                // <DropDown key={index} main={link.name} index={index} />
                 <div
                   key={index}
                   className={`dropdown-parent border-r-4 border-dotted ${
