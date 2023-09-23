@@ -31,7 +31,7 @@ const Schedule = () => {
       const scheduleTimeInSeconds = toSecond(schedule.waktu);
 
       if (currentTimeInSeconds < scheduleTimeInSeconds) {
-        return `${schedule.jadwal} | ${schedule.waktu}`;
+        return `${schedule.jadwal} `;
       }
     }
 
@@ -59,16 +59,37 @@ const Schedule = () => {
     return "";
   }
 
+  function getCurrentPrayerTime(currentTime, schedules) {
+    const currentTimeInSeconds = toSecond(currentTime);
+
+    // Iterate through the schedules to find the current prayer time
+    for (let i = 0; i < schedules.length; i++) {
+      const schedule = schedules[i];
+      const scheduleTimeInSeconds = toSecond(schedule.waktu);
+
+      if (currentTimeInSeconds >= scheduleTimeInSeconds) {
+        return `${schedule.jadwal}`;
+      }
+    }
+
+    // If there is no ongoing prayer, return a message
+    return "Isya";
+  }
+
   useEffect(() => {
     let date = new Date().getDate();
-    let month = new Date().getMonth();
+    let month = new Date().getMonth() + 1;
     let year = new Date().getFullYear();
+    console.log(date);
+    console.log(month);
+    console.log(year);
     axios
       .get(
         `https://api.myquran.com/v1/sholat/jadwal/0816/${year}/${month}/${date}`
       )
       .then((res) => {
         const jadwal = res.data.data.jadwal;
+        console.log(jadwal);
         setSchedules([
           {
             jadwal: "Shubuh",
@@ -121,7 +142,10 @@ const Schedule = () => {
               </p>
               <p className="mb-2">
                 Sekarang: Waktu{" "}
-                <span className="text-secondary-light font-bold">Isya</span>
+                <span className="text-secondary-light font-bold">
+                  {" "}
+                  {getCurrentPrayerTime(currentTime(), schedules)}
+                </span>
               </p>
               <p>
                 Akan Datang: Waktu{" "}
