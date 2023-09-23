@@ -108,7 +108,10 @@ export default function Navbar() {
                           <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
                         </svg>
                       </Link>
-                      <ul className="dropdown-menu group  hidden group-hover:block w-32 transition-all duration-300 -translate-x-4 border-b-2 border-primary pt-2 bg-white">
+                      <ul
+                        className="dropdown-menu group  hidden group-hover:block w-32 transition-all duration-300 -translate-x-4 border-b-2 border-primary pt-2 bg-white"
+                        onClick={() => setisOpen(!isOpen)}
+                      >
                         {link.map((sublink, index) => {
                           return (
                             <li key={index} className="bg-white z-50">
