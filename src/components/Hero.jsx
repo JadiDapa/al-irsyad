@@ -1,6 +1,7 @@
 import { FaMosque } from "react-icons/fa";
 import { AiOutlineDownCircle } from "react-icons/ai";
 import mainImg from "../assets/main.png";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
@@ -18,24 +19,26 @@ const Hero = () => {
               Ayo Kita <br />
               <span className="text-primary">Makmurkan</span> Masjid!
             </h1>
-            <p className="mb-8 md:max-w-lg">
+            <p className="mb-8 md:max-w-4xl lg:max-w-lg">
               Rasulullah SAW bersabda: &quot;Siapa yang pergi ke masjid pada
               pagi dan petang hari, Allah mempersiapkan jamuan untuknya di surga
               setiap kali ia pergi atau pulang.&quot;
               <br /> (HR. Bukhari dan Muslim).
             </p>
-            <button className="btn btn-lg btn-accent mx-auto lg:mx-0 mb-8 hover:shadow-[0_0_5px_0_#49cf97] transition-all duration-200">
-              Selengkapnya{" "}
-              <span className="ml-2 text-xl">
-                <AiOutlineDownCircle />
-              </span>
-            </button>
+            <Link to={"/profil"} className="">
+              <button className="btn btn-lg btn-accent mx-auto lg:mx-0 mb-8 hover:shadow-[0_0_5px_0_#49cf97] transition-all duration-200">
+                Selengkapnya{" "}
+                <span className="ml-2 text-xl">
+                  <AiOutlineDownCircle />
+                </span>
+              </button>
+            </Link>{" "}
           </div>
-          <div className="heroImg flex max-w-[814px] self-end justify-end">
+          <div className="heroImg flex max-w-[814px] md:self-end md:justify-end max-md:w-9/12">
             <img
               src={mainImg}
               alt=""
-              className="lg:w-[70%] w-full border-white shadow-[0_10px_0_0_rgba(255,255,255,0.8-0329)]"
+              className="lg:sm-[70%] sm: mx-auto w-full border-white shadow-[0_10px_0_0_rgba(255,255,255,0.8-0329)]"
             />
           </div>
         </div>

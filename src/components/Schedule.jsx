@@ -67,8 +67,12 @@ const Schedule = () => {
       const schedule = schedules[i];
       const scheduleTimeInSeconds = toSecond(schedule.waktu);
 
-      if (currentTimeInSeconds >= scheduleTimeInSeconds) {
-        return `${schedule.jadwal}`;
+      if (currentTimeInSeconds < scheduleTimeInSeconds) {
+        if (i === 0) {
+          return "Isya";
+        } else {
+          return schedules[i - 1].jadwal;
+        }
       }
     }
 
@@ -80,16 +84,14 @@ const Schedule = () => {
     let date = new Date().getDate();
     let month = new Date().getMonth() + 1;
     let year = new Date().getFullYear();
-    console.log(date);
-    console.log(month);
-    console.log(year);
+
     axios
       .get(
         `https://api.myquran.com/v1/sholat/jadwal/0816/${year}/${month}/${date}`
       )
       .then((res) => {
         const jadwal = res.data.data.jadwal;
-        console.log(jadwal);
+
         setSchedules([
           {
             jadwal: "Shubuh",
@@ -127,27 +129,26 @@ const Schedule = () => {
   }, []);
 
   return (
-    <section id="shalat" className="my-14 lg:px-10">
-      <div className="bg-services bg-cover bg-no-repeat max-w-[1466px] mx-4 lg:mx-auto rounded-[20px] lg:pt-[70px] px-2 lg:px-10 relative lg:h-[300px] max-lg:p-8 flex items-center lg:items-start -z-10 bg-accent">
-        <div className="lg:container mx-auto">
-          <div className="services-top flex items-center flex-col lg:flex-row lg:mb-[60px]">
-            <h2 className="h2 text-white flex-1 mb-4 lg:mb-0 text-center lg:text-left">
+    <section id="shalat" className="my-14 md:px-10">
+      <div className="bg-services bg-cover bg-no-repeat max-w-[1466px] mx-4 md:mx-auto rounded-[20px] md:pt-[70px] px-2 md:px-10 relative md:h-[330px] max-md:p-8 flex items-center md:items-start -z-10 bg-accent">
+        <div className="container mx-auto">
+          <div className="services-top flex items-center flex-col md:flex-row ">
+            <h2 className="h2 text-white flex-1 mb-4 md:mb-0 text-center md:text-left">
               Jadwal Shalat <br />
               Kota <span className="text-secondary-light">Palembang</span>
             </h2>
-            <div className="lg:text-2xl text-white flex-1 lg:text-left max-w-2xl lg:max-w-none">
-              <p className="mb-2">
+            <div className="lg:text-2xl sm:text-xl text-white flex-1 md:text-left max-w-2xl md:max-w-none">
+              <p className="md:mb-2">
                 Tanggal:{" "}
                 <span className="text-secondary-light font-bold">{date}</span>
               </p>
-              <p className="mb-2">
+              <p className="md:mb-2 ">
                 Sekarang: Waktu{" "}
                 <span className="text-secondary-light font-bold">
-                  {" "}
                   {getCurrentPrayerTime(currentTime(), schedules)}
                 </span>
               </p>
-              <p>
+              <p className="mb-4">
                 Akan Datang: Waktu{" "}
                 <span className="text-secondary-light font-bold">
                   {getNextPrayerTime(currentTime(), schedules)}
@@ -156,7 +157,7 @@ const Schedule = () => {
               </p>
             </div>
           </div>
-          <div className="lg:hidden flex-col flex rounded-lg bg-white px-4">
+          <div className="md:hidden flex-col flex rounded-lg bg-white px-4">
             {schedules.map((schedule, index) => {
               return (
                 <div
@@ -178,8 +179,8 @@ const Schedule = () => {
           </div>
         </div>
       </div>
-      <div className="container mx-auto lg:-mt-[85px] mt-6">
-        <div className="lg:grid lg:grid-cols-5 gap-5 px-8 lg:px-0 hidden">
+      <div className="container mx-auto md:-mt-[85px] mt-6">
+        <div className="md:grid md:grid-cols-5 gap-5 px-8 md:px-0 hidden">
           {schedules.map((schedule, index) => {
             const nextSchedule = schedules[index + 1];
             const currentTimeInSeconds = toSecond(currentTime());

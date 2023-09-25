@@ -26,6 +26,7 @@ import {
   AddFinancial,
   AddDonation,
 } from "./pages";
+import Organisasi from "./pages/Organization";
 
 const App = () => {
   return (
@@ -49,7 +50,7 @@ const App = () => {
 
           <Route path="/lembaga" element={<Institute />} />
           <Route path="/lembaga/tpa" element={<Tpa />} />
-          <Route path="/lembaga/donasi" element={<Donation />} />
+          <Route path="/lembaga/organisasi" element={<Organisasi />} />
         </Route>
         <Route path="/admin" element={<AdminLayout />}>
           <Route path="/admin" element={<Admin />} />

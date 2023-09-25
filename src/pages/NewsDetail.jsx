@@ -1,9 +1,8 @@
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { BreadCrumb } from "../components";
 import { BsFacebook } from "react-icons/bs";
 import { FaXTwitter } from "react-icons/fa6";
 import { useEffect, useState } from "react";
-import { news2, news3 } from "../assets";
 import axios from "axios";
 
 const NewsDetail = () => {
@@ -38,7 +37,7 @@ const NewsDetail = () => {
     axios.get("http://localhost:3000/news").then((res) => {
       const fetchedNewsDetail = res.data;
       setNewsDetail(fetchedNewsDetail.find((news) => news.title === title));
-      setRecentNews(fetchedNewsDetail.splice(-4).reverse());
+      setRecentNews(fetchedNewsDetail.splice(-5).reverse());
     });
   }, [recentNews, title]);
 
@@ -85,23 +84,32 @@ const NewsDetail = () => {
           <div className="pt-[170px]">
             <div className="uppercase font-semibold">Berita Terbaru</div>
             <div className="w-14 h-1  mb-3 bg-red-600"></div>
-            <div className="mb-5">
-              <div className="w-11/12 overflow-hidden aspect-video mb-1">
-                <img src={recentNews[0].image} alt="" />
-              </div>
-              <div className=" leading-5 text-[15px] font-[500]">
-                {recentNews[0].title}
-              </div>
-              <div className="text-red-500 uppercase text-sm">
-                {recentNews[0].category}{" "}
-                <span className="text-slate-500">| {recentNews[0].date}</span>
-              </div>
-            </div>
+            {recentNews[0].title !== newsDetail.title && (
+              <Link
+                to={`/kegiatan/berita/${recentNews[0].title}`}
+                className="mb-5"
+              >
+                <div className="w-11/12 overflow-hidden aspect-video mb-1">
+                  <img src={recentNews[0].image} alt="" />
+                </div>
+                <div className=" leading-5 text-[15px] font-[500]">
+                  {recentNews[0].title}
+                </div>
+                <div className="text-red-500 uppercase text-sm mb-5">
+                  {recentNews[0].category}{" "}
+                  <span className="text-slate-500">| {recentNews[0].date}</span>
+                </div>
+              </Link>
+            )}
             <div className="flex flex-col leading-6">
               {recentNews.map((news, index) => {
-                if (index > 0) {
+                if (index > 0 && news.title !== newsDetail.title) {
                   return (
-                    <div key={index} className="flex gap-3 content-start">
+                    <Link
+                      to={`/kegiatan/berita/${news.title}`}
+                      key={index}
+                      className="flex gap-3 content-start"
+                    >
                       <div className="w-2/5 overflow-hidden aspect-[6/5]">
                         <img src={news.image} alt="" className="object-cover" />
                       </div>
@@ -114,7 +122,7 @@ const NewsDetail = () => {
                           <span className="text-slate-500">| {news.date}</span>
                         </div>
                       </div>
-                    </div>
+                    </Link>
                   );
                 }
               })}

@@ -34,7 +34,7 @@ export default {
     },
     container: {
       padding: {
-        DEFAULT: "15px",
+        DEFAULT: "24px",
       },
     },
     screens: {
