@@ -26,15 +26,15 @@ const News = () => {
       <div className="text text-center mb-6">
         <h2 className="h2 font-play">
           Berita Masjid{" "}
-          <span className="text-primary font-arab">AL-IRSYAD</span>
+          <span className="text-primary font-arab max-md:block">AL-IRSYAD</span>
         </h2>
-        <p className="text-lg">
+        <p className="md:text-lg max-md:leading-6">
           Daftar lengkap berita dan informasi yang terjadi di Masjid Al-Irsyad
         </p>
       </div>
       {news.length !== 0 && (
         <>
-          <div className="container grid mx-auto justify-between lg:grid-cols-half grid-cols-1 gap-x-3 mb-2">
+          <div className="container lg:grid mx-auto justify-between grid-cols-half hidden gap-x-3 mb-2">
             <Link
               to={`/kegiatan/berita/${news[0].title}`}
               className="big p-2 shadow-lg rounded-md hover:-translate-y-1 duration-150 cursor-pointer"
@@ -90,41 +90,43 @@ const News = () => {
               })}
             </div>
           </div>
-          <div className="w-full gap-x-4 gap-y-4 container grid grid-cols-4 mx-auto">
-            {news.map((news, index) => {
-              if (index > 4) {
+          <div className=" lg:hidden container mx-auto ">
+            <div className="w-full mt-12">
+              {news.map((news, index) => {
                 return (
                   <Link
                     to={`/kegiatan/berita/${news.title}`}
                     key={index}
-                    className={`containersm  p-2 shadow-lg rounded-md hover:-translate-y-1 duration-150 cursor-pointer ${
-                      index === 3 ? "max-lg:hidden" : ""
-                    } `}
+                    className="w-full flex gap-x-4 mb-4 leading-6 text-text2"
                   >
-                    <div className="">
+                    <div className="w-[30%] aspect-square overflow-hidden rounded-md">
                       <img
                         src={news.image}
                         alt=""
-                        className="w-full aspect-video"
+                        className="object-cover h-full mx-auto"
                       />
-                      <div className="flex justify-between flex-col h-[70px]">
-                        <div className="line-clamp-2 text-lg text-text2 leading-5 mt-1">
-                          {news.title}
-                        </div>
-                        <div className="flex justify-between items-center">
-                          <div className="mr-4 uppercase text-sm  text-primary-light font-semibold tracking-wide">
-                            {news.category}
-                          </div>
-                          <div className="text-sm text-red-600 font-semibold">
-                            {news.date}
-                          </div>
-                        </div>
+                    </div>
+                    <div className="w-[70%]">
+                      <div className="line-clamp-3  md:text-lg font-[500] leading-6">
+                        {news.title}
                       </div>
+                      <div className="text-primary uppercase text-sm">
+                        {news.category}
+                      </div>
+                      <div className="text-sm text-slate-500">{news.date}</div>
                     </div>
                   </Link>
                 );
-              }
-            })}
+              })}
+              <div className="sm:w-9/12 w-full  mx-auto block lg:hidden mt-8 ">
+                <Link
+                  to={`/kegiatan/berita`}
+                  className="text-center flex justify-center items-center gap-2 bg-secondary text-xl  p-2 rounded-full text-white drop-shadow-md hover:bg-secondary-light transition duration-300"
+                >
+                  Baca Berita Lainnya <BiRightArrow />
+                </Link>
+              </div>
+            </div>
           </div>
         </>
       )}

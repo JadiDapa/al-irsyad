@@ -6,7 +6,7 @@ import DotBg from "../assets/DotBg";
 const links = [{ link: "/profile", text: "Profil" }];
 const Profile = () => {
   return (
-    <section id="home" className=" py-12 lg:px-12 overflow-hidden">
+    <section id="home" className=" py-12 max-md:pb-0 lg:px-12 overflow-hidden">
       <BreadCrumb links={links} />
       <div className="container mx-auto lg:px-5 ">
         <div className="text-center mt-8">
@@ -20,7 +20,7 @@ const Profile = () => {
             Profile dan Tentang Masjid Al-Irsyad Bukit Hijau, Palembang
           </div>
         </div>
-        <div className="flex flex-wrap  justify-between relative">
+        <div className="lg:flex flex-wrap  justify-between relative">
           <div className="absolute opacity-[15%] top-12 left-10 grid grid-cols-2 -z-50">
             <DotBg />
             <DotBg />
@@ -28,11 +28,11 @@ const Profile = () => {
             <DotBg />
           </div>
 
-          <div className=" w-1/2">
+          <div className="lg:w-1/2">
             <h2 className="text-3xl font-semibold text-primary mb-4 mt-12">
               Masjid Al-Irsyad ?
             </h2>
-            <p className="text-justify">
+            <p className="lg:w-[85%] w-full lg:text-base lg:leading-[29px] leading-7">
               Masjid AL-IRSYAD adalah masjid yang terletak di Bukit Hijau
               Palembang, Jalan bla bla bla. Masjid Ini dapat dikenali dengan bla
               bla bla Lorem ipsum dolor, sit amet consectetur adipisicing elit.
@@ -48,7 +48,7 @@ const Profile = () => {
             <h2 className="text-3xl font-semibold text-primary mb-4 mt-8">
               Ada Apa di Masjid Al-Irsyad
             </h2>
-            <p className="text-justify">
+            <p className="md:w-[85%] w-full lg:text-base lg:leading-[29px] leading-7">
               Masjid AL-IRSYAD adalah masjid yang terletak di Bukit Hijau
               Palembang, Jalan bla bla bla. Masjid Ini dapat dikenali dengan bla
               bla bla Lorem ipsum dolor, sit amet consectetur adipisicing elit.
@@ -61,23 +61,30 @@ const Profile = () => {
               voluptatibus libero sit?
             </p>
           </div>
-          <div
-            className="w-5/12 
-          "
-          >
+          <div className="text-secondary mt-8 items-center gap-6 flex lg:hidden px-4  ">
+            <div className=" font-semibold">Baca: </div>
+            <div className="rounded-md px-1 py-0.5 shadow-md bg-white">
+              <Link to="/profil/sejarah">Sejarah</Link>
+            </div>
+            <div className="rounded-md px-1 py-0.5 shadow-md bg-white">
+              <Link to="/profil/visi-misi">Visi & Misi</Link>
+            </div>
+          </div>
+
+          <div className="lg:w-5/12">
             <div className="mt-8">
               <img src={main} alt="" />
             </div>
           </div>
         </div>
-      </div>
-      <div className="text-secondary lg:px-4 mt-8 flex items-center gap-6">
-        <div className="text-lg font-semibold">Selanjutnya : </div>
-        <div className="rounded-md px-2 py-1 shadow-lg bg-white">
-          <Link to="/profil/sejarah">Sejarah</Link>
-        </div>
-        <div className="rounded-md px-2 py-1 shadow-lg bg-white">
-          <Link to="/profil/visi-misi">Visi & Misi</Link>
+        <div className="text-secondary mt-8 items-center gap-6 lg:flex  hidden px-4  ">
+          <div className=" font-semibold">Baca: </div>
+          <div className="rounded-md px-1 py-0.5 shadow-md bg-white">
+            <Link to="/profil/sejarah">Sejarah</Link>
+          </div>
+          <div className="rounded-md px-1 py-0.5 shadow-md bg-white">
+            <Link to="/profil/visi-misi">Visi & Misi</Link>
+          </div>
         </div>
       </div>
     </section>

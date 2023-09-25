@@ -31,19 +31,19 @@ const History = () => {
     },
   ];
   return (
-    <section id="home" className=" py-12 lg:pt-12 px-8 overflow-hidden">
+    <section id="home" className=" py-12 md:pt-12 md:px-8 overflow-hidden">
       <BreadCrumb links={links} />
-      <div className="container mx-auto h-full lg:px-10 mt-8">
+      <div className="container mx-auto h-full md:px-10 mt-8">
         <div className="  text-center mb-8 tracking-wide ">
           <h1 className="font-play text-4xl font-semibold text-text2">
             Sejarah Masjid{" "}
             <span className="font-arab uppercase text-primary">Al-Irsyad</span>
           </h1>
-          <div className="text-lg">
+          <div className="text-lg max-md:mt-4">
             Sejarah Perkembangan Masjid Al-Irsyad dari masa ke masa
           </div>
         </div>
-        <div className="grid lg:grid-cols-[minmax(0,65%)_minmax(0,_25%)] gap-[5%] relative">
+        <div className="grid md:grid-cols-[minmax(0,65%)_minmax(0,_35%)] md:gap-[5%] gap-y-4 relative">
           <div className="absolute opacity-[20%] top-0 left-0 grid grid-cols-2 scale-[65%] origin-top-left -z-50">
             <DotBg />
             <DotBg />
@@ -55,10 +55,10 @@ const History = () => {
             <DotBg />
           </div>
           <div className="">
-            <h2 className="text-3xl font-semibold mt-4 tracking-wide mb-4 text-primary">
+            <h2 className="text-3xl font-semibold lg:mt-4 mt-2 tracking-wide mb-4 text-primary">
               Sejarah Singkat :
             </h2>
-            <div className="w-[85%] text-justify">
+            <div className="md:w-[85%] w-full lg:text-base leading-[29px]">
               <p className="mb-4">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod
                 totam consequatur magni delectus voluptates aliquam corrupti,
@@ -90,7 +90,7 @@ const History = () => {
                 iusto! Cumque, id.
               </p>
             </div>
-            <div className="text-secondary mt-8 flex items-center gap-6">
+            <div className="text-secondary mt-8 items-center gap-6 md:flex hidden">
               <div className="text-lg font-semibold">Baca : </div>
               <div className="rounded-md px-2 py-1 shadow-lg bg-white">
                 <Link to="/profil">Profil Masjid</Link>
@@ -100,7 +100,7 @@ const History = () => {
               </div>
             </div>
           </div>
-          <ol className="relative border-l border-green-300 mt-5">
+          <ol className="relative border-l border-green-300 md:mt-5 max-md:max-w-sm max-w-[300px]">
             {histories.map((history, index) => (
               <li key={index} className="mb-4 ml-4 clear-both">
                 <div className="absolute w-3 h-3 bg-primary outline outline-primary-light outline-1 rounded-full mt-1.5 -left-1.5 border "></div>
@@ -122,6 +122,15 @@ const History = () => {
               </li>
             ))}
           </ol>
+        </div>
+      </div>
+      <div className="text-secondary mt-8 items-center gap-6 flex md:hidden px-4  ">
+        <div className=" font-semibold">Baca : </div>
+        <div className="rounded-md px-1 py-0.5 shadow-md bg-white">
+          <Link to="/profil">Profil Masjid</Link>
+        </div>
+        <div className="rounded-md px-1 py-0.5 shadow-md bg-white">
+          <Link to="/profil/visi-misi">Visi & Misi</Link>
         </div>
       </div>
     </section>
