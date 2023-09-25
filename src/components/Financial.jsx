@@ -1,5 +1,4 @@
 import { useCallback, useEffect, useState } from "react";
-import { BiSolidDownArrow, BiSolidUpArrow } from "react-icons/bi";
 import { LuChevronsUp, LuChevronsDown } from "react-icons/lu";
 import FinancialTable from "./FinancialTable";
 
@@ -133,17 +132,17 @@ const Financial = () => {
           Daftar uang masuk dan keluar dari keuangan Masjid Al-Irsyad
         </p>
       </div>
-      <div className="container mx-auto grid lg:grid-cols-[minmax(0,40%)_minmax(0,_60%)] gap-x-6">
-        <div className="total borderrounded-lg px-4 ">
-          <h2 className="text-3xl text-slate-700 font-semibold ">
+      <div className="container w-full mx-auto grid lg:grid-cols-[minmax(0,40%)_minmax(0,_60%)] gap-x-6 overflow-hidden">
+        <div className="total md:px-4 w-full">
+          <h2 className="md:text-3xl text-xl text-slate-700 font-semibold ">
             Total Dana Masjid Al-Irsyad
           </h2>
-          <div className="mb-2 text-2xl font-semibold text-secondary">
+          <div className="mb-2 md:text-2xl text-lg font-semibold text-secondary">
             Agustus 2023
           </div>
           <div className="text-4xl text-primary font-bold mb-4">Rp {money}</div>
-          <div className="">
-            <div className="text-lg">
+          <div className="sm:w-full ">
+            <div className="md:text-lg text-base">
               Berikut adalah daftar yang menyangkut ke seluruh pengelolaan dana,
               seperti uang infak, donasi, dan lainnya.
             </div>
@@ -158,8 +157,8 @@ const Financial = () => {
 
         <div className="table">
           <div className="bg-white px-3 py-2 rounded-lg flex flex-col mb-2 shadow-lg">
-            <div className="w-full flex gap-4">
-              <div className="">Filter Berdasarkan :</div>
+            <div className="w-full flex gap-4 max-md:justify-between">
+              <div className="max-md:hidden ">Filter Berdasarkan :</div>
               <select
                 className="transition-all duration-500 border-b-2"
                 onChange={(e) => handleChange(e)}
@@ -194,12 +193,10 @@ const Financial = () => {
               </button>
             </div>
           </div>
-          <div className="bg-white px-3 py-4 rounded-lg shadow-xl">
-            <FinancialTable
-              financials={financialState.reverse()}
-              formattedValue={formattedValue}
-            />
-          </div>
+          <FinancialTable
+            financials={financialState.reverse()}
+            formattedValue={formattedValue}
+          />
         </div>
       </div>
     </section>

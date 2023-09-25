@@ -18,6 +18,8 @@ export { default as Donation } from "./Donation";
 
 export { default as Institute } from "./Institute";
 export { default as Tpa } from "./Tpa";
+export { default as Majelis } from "./Majelis";
+export { default as Fakm } from "./Fakm";
 
 export { default as Admin } from "./Admin";
 export { default as AdminLayout } from "./AdminLayout";

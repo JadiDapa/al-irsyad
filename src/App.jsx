@@ -25,6 +25,8 @@ import {
   AddPlan,
   AddFinancial,
   AddDonation,
+  Majelis,
+  Fakm,
 } from "./pages";
 import Organisasi from "./pages/Organization";
 
@@ -50,7 +52,8 @@ const App = () => {
 
           <Route path="/lembaga" element={<Institute />} />
           <Route path="/lembaga/tpa" element={<Tpa />} />
-          <Route path="/lembaga/organisasi" element={<Organisasi />} />
+          <Route path="/lembaga/majelis" element={<Majelis />} />
+          <Route path="/lembaga/fakm" element={<Fakm />} />
         </Route>
         <Route path="/admin" element={<AdminLayout />}>
           <Route path="/admin" element={<Admin />} />

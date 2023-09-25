@@ -19,7 +19,7 @@ export default function Navbar() {
       { link: "/#berita", name: "Berita" },
       { link: "/#rencana", name: "Rencana" },
       { link: "/#keuangan", name: "Keuangan" },
-      { link: "/#tpa", name: "TPA" },
+      { link: "/#lembaga", name: "Lembaga" },
     ],
     [
       { link: "/profil", name: "Profil", icon: <AiFillInfoCircle /> },
@@ -39,7 +39,8 @@ export default function Navbar() {
     [
       { link: "/lembaga", name: "Lembaga", icon: <FaRupiahSign /> },
       { link: "/lembaga/tpa", name: "TPA" },
-      { link: "/lembaga/organisasi", name: "Lainnya" },
+      { link: "/lembaga/majelis", name: "Majelis" },
+      { link: "/lembaga/fakm", name: "Fakm" },
     ],
   ];
 

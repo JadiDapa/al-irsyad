@@ -50,8 +50,10 @@ const Plan = () => {
 
   return (
     <section className="mt-20 mb-12" id="rencana">
-      <div className="text text-center mb-12">
-        <h2 className="h2 font-play">Rencana Acara & Kegiatan</h2>
+      <div className="text text-center mb-12 px-3">
+        <h2 className="h2 font-play text-center mx-auto">
+          Rencana Acara & Kegiatan
+        </h2>
         <p className="text-lg">
           Rencana kegiatan di Masjid Al-Irsyad kedepannya
         </p>
@@ -105,11 +107,12 @@ const Plan = () => {
                     handleClose={handleClose}
                     plan={plan}
                     index={index}
+                    modalId={modalId}
                   />
                 )}
                 <div
                   key={index}
-                  className="rencana px-4 mb-5 relative group overflow-hidden rounded-lg hover:shadow-sm"
+                  className="rencana mb-5 relative group overflow-hidden rounded-lg hover:shadow-sm"
                 >
                   <div className="flex gap-3 ">
                     <div className="text-red-400 text-2xl font-semibold">
@@ -118,7 +121,7 @@ const Plan = () => {
                     <div className="text-justify overflow-hidden">
                       <div
                         className="border-b-2 line-clamp-3 text-sm  leading-[14px] pb-[1.5px] "
-                        onClick={() => handleClose()}
+                        onClick={() => handleClose(index)}
                       >
                         {plan.text}
                       </div>
@@ -137,7 +140,7 @@ const Plan = () => {
           }
         })}
       </div>
-      <div className="text-center mt-6 text-xl text-secondary underline cursor-pointer hover:text-secondary-dark">
+      <div className="text-center mt-6 md:text-xl text-base text-secondary underline cursor-pointer hover:text-secondary-dark">
         <a href="#">Lihat agenda acara & kegiatan yang lainnya &raquo;</a>
       </div>
     </section>

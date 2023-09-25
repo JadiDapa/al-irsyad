@@ -9,7 +9,6 @@ const News = () => {
   useEffect(() => {
     axios.get("http://localhost:3000/news").then((res) => {
       const reversedNews = res.data.reverse();
-      console.log(reversedNews);
       setNews(reversedNews);
     });
   }, []);
@@ -81,9 +80,9 @@ const News = () => {
               <div className="text-2xl text-secondary drop-shadow-lg font-semibold text-center">
                 Baca Berita Lainnya
               </div>
-              <di className="text-4xl bg-secondary p-4 rounded-full text-white drop-shadow-md group-hover:-translate-y-1 transition-all duration-150 group-hover:bg-secondary-light">
+              <div className="text-4xl bg-secondary p-4 rounded-full text-white drop-shadow-md group-hover:-translate-y-1 transition-all duration-150 group-hover:bg-secondary-light">
                 <BiRightArrow />
-              </di>
+              </div>
             </Link>
           </div>
         </div>
@@ -117,7 +116,7 @@ const News = () => {
                 );
               }
             })}
-            <div className="w-9/12 mx-auto block lg:hidden mt-8 ">
+            <div className="sm:w-9/12 w-full  mx-auto block lg:hidden mt-8 ">
               <Link
                 to={`/kegiatan/berita`}
                 className="text-center flex justify-center items-center gap-2 bg-secondary text-xl  p-2 rounded-full text-white drop-shadow-md hover:bg-secondary-light transition duration-300"
