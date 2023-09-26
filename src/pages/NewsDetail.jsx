@@ -44,8 +44,8 @@ const NewsDetail = () => {
   return (
     <section className="pt-12 lg:pt-12 lg:px-10 overflow-hidden mb-16">
       <BreadCrumb links={links} />
-      <div className="flex gap-12">
-        <div className="text mb-6 px-10 w-8/12 border-r">
+      <div className="md:flex block gap-12">
+        <div className="text mb-6 px-10 md:w-8/12 border-r">
           <h2 className="text-slate-800 text-4xl font-semibold mb-1">
             {newsDetail.title}
           </h2>
@@ -80,8 +80,8 @@ const NewsDetail = () => {
             <FaXTwitter className="text-2xl text-slate-700" />
           </div>
         </div>
-        <div className="w-3/12 text-slate-700">
-          <div className="pt-[170px]">
+        <div className="md:w-3/12 max-md:px-10 text-slate-700">
+          <div className="md:pt-[170px]">
             <div className="uppercase font-semibold">Berita Terbaru</div>
             <div className="w-14 h-1  mb-3 bg-red-600"></div>
             {recentNews[0].title !== newsDetail.title && (
