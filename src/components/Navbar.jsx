@@ -94,7 +94,7 @@ export default function Navbar() {
                     key={index}
                     className={`dropdown-parent border-slate-200 text-text1 `}
                   >
-                    <div className="dropdown group inline-block relative ">
+                    <div className=" group inline-block relative ">
                       <Link
                         to={link[0].link}
                         className="inline-flex items-center hover:text-primary"
@@ -114,16 +114,18 @@ export default function Navbar() {
                         onClick={() => setisOpen(!isOpen)}
                       >
                         {link.map((sublink, index) => {
-                          return (
-                            <li key={index} className="bg-white z-50">
-                              <Link
-                                className="rounded-t bg-white hover:text-primary py-1 px-4 block whitespace-no-wrap"
-                                to={sublink.link}
-                              >
-                                {sublink.name}
-                              </Link>
-                            </li>
-                          );
+                          if (index > 0) {
+                            return (
+                              <li key={index} className="bg-white z-50">
+                                <Link
+                                  className="rounded-t bg-white hover:text-primary py-1 px-4 block whitespace-no-wrap"
+                                  to={sublink.link}
+                                >
+                                  {sublink.name}
+                                </Link>
+                              </li>
+                            );
+                          }
                         })}
                       </ul>
                     </div>

@@ -4,6 +4,7 @@ import { news1, news2, news3, news4, news5 } from "../assets";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import Pagination from "../components/Pagination";
 
 const News = () => {
   const links = [
@@ -21,14 +22,14 @@ const News = () => {
   }, []);
 
   return (
-    <section className=" pt-12 lg:pt-12 lg:px-10 overflow-hidden">
+    <section className="py-12 lg:pt-12 lg:px-8 px-2 overflow-hidden">
       <BreadCrumb links={links} />
-      <div className="text text-center mb-6">
-        <h2 className="h2 font-play">
+      <div className="text text-center my-6 mx-4">
+        <h2 className="text-3xl font-semibold text-text2  mt-8 tracking-wide font-play mb-2">
           Berita Masjid{" "}
-          <span className="text-primary font-arab max-md:block">AL-IRSYAD</span>
+          <span className="text-primary font-arab">AL-IRSYAD</span>
         </h2>
-        <p className="md:text-lg max-md:leading-6">
+        <p className="lg:text-lg text-base max-lg:mt-2">
           Daftar lengkap berita dan informasi yang terjadi di Masjid Al-Irsyad
         </p>
       </div>
@@ -118,18 +119,13 @@ const News = () => {
                   </Link>
                 );
               })}
-              <div className="sm:w-9/12 w-full  mx-auto block lg:hidden mt-8 ">
-                <Link
-                  to={`/kegiatan/berita`}
-                  className="text-center flex justify-center items-center gap-2 bg-secondary text-xl  p-2 rounded-full text-white drop-shadow-md hover:bg-secondary-light transition duration-300"
-                >
-                  Baca Berita Lainnya <BiRightArrow />
-                </Link>
-              </div>
             </div>
           </div>
         </>
       )}
+      <div className="mb-8 mt-4">
+        <Pagination />
+      </div>
     </section>
   );
 };

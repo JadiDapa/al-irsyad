@@ -7,22 +7,22 @@ import { news1, news2, news3, news4 } from "../assets";
 const Economy = () => {
   const links = [{ link: "/ekonomi", text: "Ekonomi" }];
   return (
-    <section id="home" className=" py-12 lg:px-12 overflow-hidden">
+    <section id="home" className="py-12 lg:pt-12 lg:px-8 px-2 overflow-hidden">
       <BreadCrumb links={links} />
       <div className="container mx-auto lg:px-5 ">
         <div className="text-center mt-8 mb-12">
           <h1 className="text-4xl text-text2 font-semibold font-play ">
             Ekonomi Masjid{" "}
-            <span className="font-arab tracking-wider text-primary font-bold">
+            <span className="max-lg:block font-arab tracking-wider text-primary font-bold">
               AL-IRSYAD
             </span>
           </h1>
-          <div className="text-lg">
+          <div className="lg:text-lg text-base max-lg:mt-2">
             Aspek Ekonomi Masjid Al-Irsyad mencakup Finansial, Sumbangan, dan
             lainnya
           </div>
         </div>
-        <div className="flex flex-wrap  justify-between relative">
+        <div className="lg:flex flex-wrap  justify-between relative">
           <div className="absolute opacity-[15%] top-12 left-10 grid grid-cols-2 -z-50">
             <DotBg />
             <DotBg />
@@ -30,8 +30,8 @@ const Economy = () => {
             <DotBg />
           </div>
 
-          <div className="w-1/2">
-            <p className="text-justify indent-5">
+          <div className="lg:w-1/2">
+            <p className="md:w-[85%] w-full lg:text-base leading-[29px]">
               Masjid Al-Irsyad akan menerima berbagai bentuk sumbangan untuk di
               gunakan dalam perkembangan masjid. Kami juga akan menyumbangkan
               harisl Lorem ipsum dolor sit amet consectetur adipisicing elit. At
@@ -43,7 +43,7 @@ const Economy = () => {
             <h2 className="text-3xl font-semibold text-primary mb-4 mt-8">
               Finansial Masjid Al-Irsyad
             </h2>
-            <p className="text-justify">
+            <p className="md:w-[85%] w-full lg:text-base leading-[29px]">
               Masjid Al-Irysad akan merekam setiap pengerluaran untuk yang di
               butuhkan atau untuk pengembangan masjid. Lorem ipsum dolor sit
               amet consectetur adipisicing elit. Eaque fugiat illo
@@ -63,7 +63,7 @@ const Economy = () => {
             <h2 className="text-3xl font-semibold text-primary mb-4 mt-8">
               Infak & Donasi Masjid Al-Irsyad
             </h2>
-            <p className="text-justify">
+            <p className="md:w-[85%] w-full lg:text-base leading-[29px]">
               Masjid Al-Irysad akan menyusun rangkaian kegiatan yang akan segera
               di laksanakan kedepannya. Lorem ipsum dolor sit amet consectetur
               adipisicing elit. Perspiciatis aspernatur quam ipsam quia, aliquid
@@ -80,11 +80,11 @@ const Economy = () => {
               </button>
             </Link>
           </div>
-          <div className="w-5/12">
+          <div className="lg:w-5/12">
             <div className="w-full mb-16">
               <div className="w-full mb-16">
                 <div className="justify-end flex">
-                  <div className="p-2 rounded-md shadow-xl w-5/12 ">
+                  <div className="p-2 rounded-md shadow-xl lg:w-5/12 ">
                     <img
                       src={news1}
                       alt=""
@@ -96,7 +96,7 @@ const Economy = () => {
 
               <div className="w-full mb-16">
                 <div className="">
-                  <div className=" p-2 rounded-md shadow-xl w-5/12 ">
+                  <div className=" p-2 rounded-md shadow-xl lg:w-5/12 ">
                     <img
                       src={news2}
                       alt=""
@@ -106,7 +106,7 @@ const Economy = () => {
                 </div>
               </div>
 
-              <div className="flex w-full mb-16">
+              <div className="lg:flex hidden w-full mb-16">
                 <div className="justify-end flex">
                   <div className=" p-2 rounded-md shadow-xl w-5/12 ">
                     <img
