@@ -59,10 +59,13 @@ const Plan = () => {
     <section className="py-12 lg:pt-12 lg:px-8 px-2 overflow-hidden">
       <BreadCrumb links={links} />
       <div className="text text-center mb-12 px-3">
-        <h2 className="h2 font-play text-center mx-auto">
-          Rencana Acara & Kegiatan
+        <h2 className="text-3xl font-semibold text-text2  mt-8 tracking-wide font-play mb-2">
+          Rencana Acara & Kegiatan Masjid{" "}
+          <span className="font-arab tracking-wider text-primary font-bold">
+            AL-IRSYAD
+          </span>
         </h2>
-        <p className="text-lg">
+        <p className="lg:text-lg text-base max-lg:mt-2">
           Rencana kegiatan di Masjid Al-Irsyad kedepannya
         </p>
       </div>

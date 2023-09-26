@@ -7,7 +7,7 @@ import { news1, news2, news3, news4 } from "../assets";
 const Activity = () => {
   const links = [{ link: "/kegiatan", text: "Kegiatan" }];
   return (
-    <section id="home" className="py-12 lg:pt-12 lg:px-8 px-2 overflow-hidden">
+    <section className="py-12 lg:pt-12 lg:px-8 px-2 overflow-hidden">
       <BreadCrumb links={links} />
       <div className="container mx-auto lg:px-5 ">
         <div className="text-center mt-8 mb-12">

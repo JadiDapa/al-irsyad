@@ -3,7 +3,7 @@ import { BiSolidDownArrow, BiSolidUpArrow } from "react-icons/bi";
 const FinancialTable = ({ financials, formattedValue }) => {
   return (
     <div className="md:bg-white md:px-3 md:py-4 md:rounded-lg md:shadow-xl">
-      <table className="w-full lg:min-h-[428px] md:block hidden">
+      <table className="w-full lg:min-h-[428px] max-md:hidden">
         <tbody>
           <tr className="border-b-2 border-slate-300 w-full font-semibold">
             <td className="pl-2 w-2/12">TANGGAL</td>

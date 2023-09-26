@@ -5,20 +5,20 @@ import DotBg from "../assets/DotBg";
 
 const Tpa = () => {
   const links = [
-    { link: "/lembaga", text: "Lenbaga" },
+    { link: "/lembaga", text: "Lembaga" },
     { link: "/lembaga/tpa", text: "TPA" },
   ];
 
   return (
-    <section id="home" className=" py-12 lg:pt-12 px-8 overflow-hidden">
+    <section id="home" className="py-12 md:pt-12 md:px-8 px-2 overflow-hidden">
       <BreadCrumb links={links} />
-      <div className="container mx-auto h-full lg:px-10 mt-8">
-        <div className="  text-center mb-8 tracking-wide ">
-          <h1 className="font-play text-4xl font-semibold text-text2">
+      <div className="container mx-auto md:px-5">
+        <div className="text-center mt-8 mb-12">
+          <h1 className="text-3xl font-semibold text-text2  mt-8 tracking-wide font-play mb-2">
             TPA Masjid{" "}
             <span className="font-arab uppercase text-primary">Al-Irsyad</span>
           </h1>
-          <div className="text-lg">
+          <div className="md:text-lg text-base max-md:mt-2">
             Taman Pendidikan Al-Qur'an (TPA) khusus Masjid Al-Irsyad
           </div>
         </div>
@@ -33,12 +33,12 @@ const Tpa = () => {
             <DotBg />
             <DotBg />
           </div>
-          <div className="grid lg:grid-cols-[minmax(0,65%)_minmax(0,_34%)] gap-[5%] mb-12">
+          <div className="grid  md:grid-cols-[minmax(0,65%)_minmax(0,_34%)] mb-12">
             <div className="">
               <h2 className="text-3xl font-semibold mt-4 tracking-wide mb-4 text-primary">
                 Apa Itu TPA Al-Irsyad
               </h2>
-              <div className="w-[85%] text-justify">
+              <div className="md:w-[85%] w-full md:text-base leading-[29px]">
                 <p className="mb-4">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod
                   totam consequatur magni delectus voluptates aliquam corrupti,
@@ -51,8 +51,8 @@ const Tpa = () => {
                 </p>
               </div>
             </div>
-            <div className=" mt-12">
-              <div className="p-3 shadow-lg rounlg">
+            <div className="md:mt-12">
+              <div className="p-3 shadow-lg rounded-lg">
                 <img
                   src={news4}
                   alt=""
@@ -61,22 +61,13 @@ const Tpa = () => {
               </div>
             </div>
           </div>
-          <div className="grid lg:grid-cols-[minmax(0,34%)_minmax(0,_65%)] gap-[5%]">
-            <div className=" mt-12">
-              <div className="p-3 shadow-lg rounlg">
-                <img
-                  src={news5}
-                  alt=""
-                  className="w-full aspect-video rounded-lg"
-                />
-              </div>
-            </div>
-            <div className="flex flex-col items-end">
-              <h2 className="text-3xl font-semibold mt-4 tracking-wide mb-4 text-primary text-end">
+          <div className="grid md:grid-cols-[minmax(0,34%)_minmax(0,_65%)]">
+            <div className="flex flex-col items-end md:order-2">
+              <h2 className="text-3xl font-semibold mt-4 tracking-wide mb-4 text-primary md:text-end">
                 Agenda TPA Al-Irsyad
               </h2>
-              <div className="w-[85%] justify-end text-justify">
-                <p className="mb-4">
+              <div className="md:w-[85%] w-full md:text-base leading-[29px]">
+                <p className="mb-4 md:text-end">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod
                   totam consequatur magni delectus voluptates aliquam corrupti,
                   dignissimos nihil eius asperiores velit perferendis quasi, ut
@@ -86,6 +77,15 @@ const Tpa = () => {
                   Dicta fugit doloremque minus quo! Facilis corrupti accusantium
                   ea iusto! Cumque, id.
                 </p>
+              </div>
+            </div>
+            <div className="md:order-1 md:mt-12">
+              <div className="p-3 shadow-lg rounlg">
+                <img
+                  src={news5}
+                  alt=""
+                  className="w-full aspect-video rounded-lg"
+                />
               </div>
             </div>
           </div>

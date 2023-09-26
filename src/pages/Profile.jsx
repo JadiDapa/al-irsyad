@@ -6,17 +6,17 @@ import DotBg from "../assets/DotBg";
 const links = [{ link: "/profile", text: "Profil" }];
 const Profile = () => {
   return (
-    <section id="home" className=" py-12 max-md:pb-0 lg:px-12 overflow-hidden">
+    <section id="home" className="py-12 lg:pt-12 lg:px-8 px-2 overflow-hidden">
       <BreadCrumb links={links} />
       <div className="container mx-auto lg:px-5 ">
-        <div className="text-center mt-8">
-          <h1 className="text-4xl text-text2 font-semibold font-play ">
+        <div className="text-center mt-8 mb-12">
+          <h1 className="text-3xl font-semibold text-text2  mt-8 tracking-wide font-play mb-2">
             Profile Masjid{" "}
             <span className="font-arab tracking-wider text-primary font-bold">
               AL-IRSYAD
             </span>
           </h1>
-          <div className="text-lg">
+          <div className="lg:text-lg text-base max-lg:mt-2">
             Profile dan Tentang Masjid Al-Irsyad Bukit Hijau, Palembang
           </div>
         </div>

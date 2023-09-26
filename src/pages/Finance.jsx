@@ -2,6 +2,7 @@ import { useCallback, useEffect, useState } from "react";
 import { LuChevronsUp, LuChevronsDown } from "react-icons/lu";
 import FinancialTable from "../components/FinancialTable";
 import { BreadCrumb } from "../components";
+import Pagination from "../components/Pagination";
 
 const Finance = () => {
   const [isDescend, setisDescend] = useState(true);
@@ -131,20 +132,20 @@ const Finance = () => {
   ];
 
   return (
-    <section className="mt-12 mb-12 lg:px-12">
+    <section className="py-12 lg:pt-12 lg:px-8 px-2 overflow-hidden">
       <BreadCrumb links={links} />
-      <div className="text text-center my-8">
-        <h2 className="text-4xl text-text2 font-semibold font-play">
+      <div className="text text-center my-6 mx-4">
+        <h2 className="text-3xl font-semibold text-text2  mt-8 tracking-wide font-play mb-2">
           Pemasukan & Pengeluaran Keuangan Masjid{" "}
           <span className="font-arab tracking-wider text-primary font-bold">
             Al-IRSYAD
           </span>
         </h2>
-        <p className="text-lg">
+        <p className="lg:text-lg text-base max-lg:mt-2">
           Daftar uang masuk dan keluar dari keuangan Masjid Al-Irsyad
         </p>
       </div>
-      <div className="container mx-auto hidden md:grid  gap-x-24 gap-y-8 relative pt-8 mt-8">
+      <div className="container mx-auto md:grid  gap-x-24 gap-y-8 relative pt-8 mt-8">
         <div className="total borderrounded-lg px-4 ">
           <h2 className="text-3xl text-slate-700 font-semibold ">
             Total Dana Masjid Al-Irsyad
@@ -193,12 +194,15 @@ const Finance = () => {
               </button>
             </div>
           </div>
-          <div className="bg-white px-3 py-4 rounded-lg shadow-xl">
-            <FinancialTable
-              financials={financialState.reverse()}
-              formattedValue={formattedValue}
-            />
-          </div>
+
+          <FinancialTable
+            financials={financialState.reverse()}
+            formattedValue={formattedValue}
+          />
+        </div>
+
+        <div className="mb-8 mt-4">
+          <Pagination />
         </div>
       </div>
     </section>

@@ -31,15 +31,15 @@ const History = () => {
     },
   ];
   return (
-    <section id="home" className=" py-12 md:pt-12 md:px-8 overflow-hidden">
+    <section id="home" className="py-12 lg:pt-12 lg:px-8 px-2 overflow-hidden">
       <BreadCrumb links={links} />
       <div className="container mx-auto h-full md:px-10 mt-8">
         <div className="  text-center mb-8 tracking-wide ">
-          <h1 className="font-play text-4xl font-semibold text-text2">
+          <h1 className="text-3xl font-semibold text-text2  mt-8 tracking-wide font-play mb-2">
             Sejarah Masjid{" "}
             <span className="font-arab uppercase text-primary">Al-Irsyad</span>
           </h1>
-          <div className="text-lg max-md:mt-4">
+          <div className="lg:text-lg text-base max-lg:mt-2">
             Sejarah Perkembangan Masjid Al-Irsyad dari masa ke masa
           </div>
         </div>

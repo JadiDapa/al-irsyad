@@ -3,6 +3,7 @@ import { LuChevronsUp, LuChevronsDown } from "react-icons/lu";
 import FinancialTable from "../components/FinancialTable";
 import { BreadCrumb } from "../components";
 import DonationTable from "../components/DonationTable";
+import Pagination from "../components/Pagination";
 
 const Donation = () => {
   const [isDescend, setisDescend] = useState(true);
@@ -135,20 +136,20 @@ const Donation = () => {
     <section className="mt-12 mb-12 lg:px-12">
       <BreadCrumb links={links} />
       <div className="text text-center my-8">
-        <h2 className="text-4xl text-text2 font-semibold font-play">
-          Infak & Donasis Masjid{" "}
+        <h2 className="text-3xl font-semibold text-text2  mt-8 tracking-wide font-play mb-2">
+          Infak & Donasi Masjid{" "}
           <span className="font-arab tracking-wider text-primary font-bold">
             Al-IRSYAD
           </span>
         </h2>
-        <p className="text-lg capitalize">
+        <p className="lg:text-lg text-base max-lg:mt-2 capitalize">
           Daftar Infak dan Donasi Masjid baik sebagai penerima atau pemberi
         </p>
       </div>
-      <div className="container mx-auto hidden md:grid  gap-x-24 gap-y-8 relative pt-8 mt-8">
-        <div className="table">
-          <div className="bg-white px-3 py-2 rounded-lg flex flex-col mb-2 shadow-lg">
-            <div className="w-full flex gap-14">
+      <div className="container mx-auto md:grid  gap-x-24 gap-y-8 relative pt-8 mt-8 w-full">
+        <div className="table w-full">
+          <div className="bg-white px-3 py-2 rounded-lg flex flex-col mb-2 shadow-lg w-full">
+            <div className="w-full flex md:gap-14 max-md:justify-between">
               <div className="">Filter Berdasarkan :</div>
               <select
                 className="transition-all duration-500 border-b-2"
@@ -184,13 +185,14 @@ const Donation = () => {
               </button>
             </div>
           </div>
-          <div className="bg-white px-3 py-4 rounded-lg shadow-xl">
-            <DonationTable
-              financials={financialState.reverse()}
-              formattedValue={formattedValue}
-            />
-          </div>
+          <DonationTable
+            financials={financialState.reverse()}
+            formattedValue={formattedValue}
+          />
         </div>
+      </div>
+      <div className="mb-8 mt-4">
+        <Pagination />
       </div>
     </section>
   );

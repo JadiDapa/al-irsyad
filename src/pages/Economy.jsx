@@ -11,7 +11,7 @@ const Economy = () => {
       <BreadCrumb links={links} />
       <div className="container mx-auto lg:px-5 ">
         <div className="text-center mt-8 mb-12">
-          <h1 className="text-4xl text-text2 font-semibold font-play ">
+          <h1 className="text-3xl font-semibold text-text2  mt-8 tracking-wide font-play mb-2">
             Ekonomi Masjid{" "}
             <span className="max-lg:block font-arab tracking-wider text-primary font-bold">
               AL-IRSYAD
