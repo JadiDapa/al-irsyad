@@ -97,3 +97,50 @@ h6 {
   transform: scaleX(1);
   transform-origin: left;
 }
+
+.ql-size-small {
+  @apply text-xs;
+}
+
+.ql-size-large {
+  @apply text-xl;
+}
+
+.display-quill h1 {
+  @apply text-4xl;
+}
+
+.display-quill h2 {
+  @apply text-2xl;
+}
+
+.display-quill ol li {
+  @apply list-decimal list-inside indent-4;
+}
+
+.display-quill ul li {
+  @apply list-disc list-inside indent-4;
+}
+
+.display-quill .ql-indent-1 {
+  @apply indent-8;
+}
+
+.display-quill .ql-indent-2 {
+  @apply indent-16;
+}
+
+.display-quill .ql-align-center {
+  @apply text-center;
+}
+.display-quill .ql-align-right {
+  @apply text-right;
+}
+
+.display-quill .ql-align-left {
+  @apply text-left;
+}
+
+.display-quill a {
+  @apply underline cursor-pointer;
+}

@@ -1,31 +1,46 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { logo } from "../assets";
 import TextEditor from "../components/TextEditor";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import { format } from "date-fns";
 
-const AddPlan = () => {
+const EditPlan = () => {
   const [title, setTitle] = useState("");
   const [status, setStatus] = useState(null);
   const [estimated, setEstimated] = useState("");
   const [image, setImage] = useState("");
   const [caption, setCaption] = useState("");
   const [content, setContent] = useState("");
-  const [titleVd, setTitleVd] = useState("Judul harus di isi");
-  const [statusVd, setStatusVd] = useState("Pilih Status");
-  const [estimatedVd, setEstimatedVd] = useState(
-    "Tanggal Estimasi harus di isi"
-  );
-  const [captionVd, setCaptionVd] = useState("Keterangan Gambar harus di isi");
-  const [contentVd, setContentVd] = useState("Konten Berita harus di isi");
-  const [imageVd, setImageVd] = useState("sampul berita harus di ada");
+  const [titleVd, setTitleVd] = useState("");
+  const [statusVd, setStatusVd] = useState("");
+  const [estimatedVd, setEstimatedVd] = useState("");
+  const [captionVd, setCaptionVd] = useState("");
+  const [contentVd, setContentVd] = useState("");
+  const [imageVd, setImageVd] = useState("");
   const [titleError, setTitleError] = useState("");
 
   const everything =
     titleVd || statusVd || estimatedVd || imageVd || contentVd || captionVd;
 
   const navigate = useNavigate();
+  const { id } = useParams();
+
+  useEffect(() => {
+    axios
+      .get("http:///localhost:3001/plan/" + id)
+      .then((result) => {
+        console.log(result);
+        setTitle(result.data.title);
+        setStatus(result.data.status);
+        setEstimated(result.data.estimated);
+        setCaption(result.data.caption);
+        setContent(result.data.content);
+        setImage(result.data.image);
+        setSampulTampil(`http://localhost:3001/images/${result.data.image}`);
+      })
+      .catch((err) => console.log(err));
+  }, [id]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -42,7 +57,7 @@ const AddPlan = () => {
     formData.append("date", date);
 
     axios
-      .post("http://localhost:3001/plan", formData)
+      .put("http://localhost:3001/plan/" + id, formData)
       .then(() => {
         navigate("/admin/rencana");
       })
@@ -159,6 +174,7 @@ const AddPlan = () => {
                 className={`border rounded-[7px] px-3 block w-full border-slate-400 focus:outline-primary focus:ring-primary ${
                   titleError && "border-red-600"
                 }`}
+                value={title}
                 onChange={(e) => handleTitle(e)}
               />
               {titleVd && <small>{titleVd}</small>}
@@ -172,7 +188,7 @@ const AddPlan = () => {
                   <input
                     id="terencana"
                     type="radio"
-                    value="terencana"
+                    value="TERENCANA"
                     name="default-radio"
                     onChange={(e) => handleStatus(e)}
                     className="w-4 h-4  text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500  "
@@ -188,13 +204,13 @@ const AddPlan = () => {
                   <input
                     id="terpenuhi"
                     type="radio"
-                    value="terpenuhi"
+                    value="TERPENUHI"
                     name="default-radio"
                     onChange={(e) => handleStatus(e)}
                     className="w-4 h-4  text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500  "
                   />
                   <label
-                    htmlFor="tepenuhi"
+                    htmlFor="default-radio-2"
                     className="ml-2  font-medium text-xl text-primary"
                   >
                     Terpenuhi
@@ -210,6 +226,7 @@ const AddPlan = () => {
                   onChange={(e) => handleEstimated(e)}
                   type="date"
                   id="estimated"
+                  value={estimated}
                   className="block border rounded-[7px] px-3 border-slate-400 focus:outline-primary focus:ring-primary w-full"
                 />
                 {estimatedVd && <small>{estimatedVd}</small>}
@@ -240,6 +257,7 @@ const AddPlan = () => {
                   </label>
                   <input
                     onChange={(e) => handleCaption(e)}
+                    value={caption}
                     type="text"
                     id="caption"
                     className="block border rounded-[7px] px-3 border-slate-400 focus:outline-primary focus:ring-primary w-full"
@@ -299,4 +317,4 @@ const AddPlan = () => {
   );
 };
 
-export default AddPlan;
+export default EditPlan;

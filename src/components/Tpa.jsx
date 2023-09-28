@@ -87,7 +87,7 @@ const Tpa = () => {
             Rem qui iusto quam enim neque consequuntur odio veniam, voluptatum
             deserunt incidunt saepe!
           </div>
-          <Link to={"/lembaga/lupa"}>
+          <Link to={"/lembaga/fakm"}>
             <button className="flex gap-2 px-4 md:py-1.5 py-[1px] items-center bg-secondary text-white rounded-full md:text-lg mt-2 hover:bg-secondary-dark active:translate-y-1.5 transition-all duration-150">
               Info Selengkapnya <BsArrowRightCircle />
             </button>

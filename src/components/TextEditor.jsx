@@ -117,8 +117,6 @@ const QuillToolbar = () => (
     <span className="ql-formats">
       <button className="ql-script" value="super" />
       <button className="ql-script" value="sub" />
-      <button className="ql-blockquote" />
-      <button className="ql-direction" />
     </span>
     <span className="ql-formats">
       <select className="ql-align" />
@@ -126,13 +124,9 @@ const QuillToolbar = () => (
       <select className="ql-background" />
     </span>
     <span className="ql-formats">
-      <button className="ql-link" />
       <button className="ql-image" />
-      <button className="ql-video" />
     </span>
     <span className="ql-formats">
-      <button className="ql-formula" />
-      <button className="ql-code-block" />
       <button className="ql-clean" />
     </span>
     <span className="ql-formats">
@@ -146,19 +140,19 @@ const QuillToolbar = () => (
   </div>
 );
 
-export const TextEditor = ({ placeholder }) => {
-  const [state, setState] = React.useState({ value: null });
-  const handleChange = (value) => {
-    setState({ value });
-  };
+export const TextEditor = ({ placeholder, handleContent, content }) => {
+  // const [state, setState] = React.useState({ value: null });
+  // const handleChange = (value) => {
+  //   setState({ value });
+  // };
   return (
     <div className="text-editor w-full mx-auto">
       <QuillToolbar />
       <ReactQuill
         className="h-64 rounded-b-md"
         theme="snow"
-        value={state.value}
-        onChange={handleChange}
+        value={content}
+        onChange={handleContent}
         placeholder={placeholder}
         modules={modules}
         formats={formats}

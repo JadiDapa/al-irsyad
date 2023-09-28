@@ -1,27 +1,44 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { logo } from "../assets";
 import TextEditor from "../components/TextEditor";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import { format } from "date-fns";
 
-const AddNews = () => {
+const EditNews = () => {
   const [title, setTitle] = useState("");
-  const [category, setCategory] = useState("TAUSYIAH");
+  const [category, setCategory] = useState("");
   const [writer, setWriter] = useState("");
   const [image, setImage] = useState("");
   const [caption, setCaption] = useState("");
   const [content, setContent] = useState("");
-  const [titleVd, setTitleVd] = useState("Judul harus di Isi");
-  const [writerVd, setWriterVd] = useState("Penulis harus di Isi");
-  const [captionVd, setCaptionVd] = useState("Keterangan Gambar harus di isi");
-  const [contentVd, setContentVd] = useState("Konten Berita harus di isi");
-  const [imageVd, setImageVd] = useState("sampul berita harus di ada");
+  const [titleVd, setTitleVd] = useState("");
+  const [writerVd, setWriterVd] = useState("");
+  const [captionVd, setCaptionVd] = useState("");
+  const [contentVd, setContentVd] = useState("");
+  const [imagetVd, setImageVd] = useState("");
   const [titleError, setTitleError] = useState("");
 
-  const everything = titleVd || writerVd || imageVd || contentVd || captionVd;
-
   const navigate = useNavigate();
+  const { id } = useParams();
+
+  useEffect(() => {
+    axios
+      .get("http:///localhost:3001/news/" + id)
+      .then((result) => {
+        console.log(result);
+        setTitle(result.data.title);
+        setCategory(result.data.category);
+        setWriter(result.data.writer);
+        setCaption(result.data.caption);
+        setContent(result.data.content);
+        setImage(result.data.image);
+        setSampulTampil(`http://localhost:3001/images/${result.data.image}`);
+      })
+      .catch((err) => console.log(err));
+  }, [id]);
+
+  const everything = titleVd || writerVd || imagetVd || contentVd || captionVd;
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -38,8 +55,8 @@ const AddNews = () => {
     formData.append("date", date);
 
     axios
-      .post("http://localhost:3001/news", formData)
-      .then((result) => {
+      .put("http://localhost:3001/news/" + id, formData)
+      .then(() => {
         navigate("/admin/berita");
       })
       .catch((err) => {
@@ -124,6 +141,7 @@ const AddNews = () => {
       reader.readAsDataURL(file);
     }
   };
+
   return (
     <form
       onSubmit={handleSubmit}
@@ -153,7 +171,7 @@ const AddNews = () => {
           <div className="md:w-[73%] w-full">
             <div className="flex flex-col gap-y-4">
               <div className="w-full">
-                <label htmlFor="title" className="text-lg text-slate-700">
+                <label htmlFor="judul" className="text-lg text-slate-700">
                   Judul Berita
                 </label>
                 <input
@@ -161,7 +179,9 @@ const AddNews = () => {
                   className={`border rounded-[7px] px-3 block w-full border-slate-400 focus:outline-primary focus:ring-primary ${
                     titleError && "border-red-600"
                   }`}
-                  id="title"
+                  value={title}
+                  id="judul"
+                  name="judul"
                   onChange={(e) => handleTitle(e)}
                 />
                 {titleVd && <small>{titleVd}</small>}
@@ -177,6 +197,7 @@ const AddNews = () => {
                   <select
                     name=""
                     id=""
+                    value={category}
                     className=" block w-full py-[5px] border rounded-[6px] border-slate-400 focus:outline-primary focus:ring-primary"
                     onChange={(e) => handleCategory(e)}
                   >
@@ -191,6 +212,7 @@ const AddNews = () => {
                   </label>
                   <input
                     type="text"
+                    value={writer}
                     onChange={(e) => handleWriter(e)}
                     className="block border rounded-[7px] px-3 border-slate-400 focus:outline-primary focus:ring-primary w-full"
                   />
@@ -200,10 +222,14 @@ const AddNews = () => {
               <div className="w-full md:flex gap-x-5">
                 <div className="md:w-[50%]">
                   <div className="w-full mb-3">
-                    <label htmlFor="" className="text-lg  text-slate-700 mr-6">
+                    <label
+                      htmlFor="image"
+                      className="text-lg  text-slate-700 mr-6"
+                    >
                       Sampul Berita
                     </label>
                     <input
+                      id="image"
                       type="file"
                       className="block w-full text-sm text-gray-900 border border-slate-400  cursor-pointer p-1 rounded-[5px] focus:outline-none"
                       onChange={(e) => handleImageChange(e)}
@@ -221,6 +247,7 @@ const AddNews = () => {
                     </label>
                     <input
                       type="text"
+                      value={caption}
                       onChange={(e) => handleCaption(e)}
                       className="block border rounded-[7px] px-3 border-slate-400 focus:outline-primary focus:ring-primary w-full"
                     />
@@ -241,7 +268,7 @@ const AddNews = () => {
                       </div>
                     )}
                   </div>
-                  {imageVd && <small>{imageVd}</small>}
+                  {imagetVd && <small>{imagetVd}</small>}
                 </div>
               </div>
             </div>
@@ -279,4 +306,4 @@ const AddNews = () => {
   );
 };
 
-export default AddNews;
+export default EditNews;

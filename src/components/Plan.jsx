@@ -1,47 +1,20 @@
 import { useState } from "react";
 import Modals from "./Modals";
+import { Link } from "react-router-dom";
+import { useEffect } from "react";
+import axios from "axios";
 
 const Plan = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [modalId, setModalId] = useState(null);
-  const plans = [
-    {
-      text: "Infak ke pesantren bla bla bla berupa bahan makanan dan uang tunai pada tangga 20 Oktober, 2023",
-      date: "12 September, 2023",
-      detail:
-        "Nomor 1 asd asd asd sad as ads   sa as as as  sa asdads asda dsaddd asdasdadsas asdasdsadsad asdsadsad adsad a d ad sada d sadsadsadsa sadsadsad asdsads asdsa das dasdsad sad sad asd as d as asd asdbasdasghgx t rtyry y jkh h jh bg j,n d nhg fj hgj nnfhn byuuunoik yiyj hb oiyni iuu 69 ",
-    },
-    {
-      text: "Infak ke pesantren bla bla bla berupa bahan makanan dan uang tunai pada tangga 20 Oktober, 2023",
-      date: "12 September, 2023",
-      detail:
-        "Nomor 2 asd asd asd sad as ads   sa as as as  sa asdads asda dsaddd asdasdadsas asdasdsadsad asdsadsad adsad a d ad sada d sadsadsadsa sadsadsad asdsads asdsa das dasdsad sad sad asd as d as asd asdbasdasghgx t rtyry y jkh h jh bg j,n d nhg fj hgj nnfhn byuuunoik yiyj hb oiyni iuu 69 ",
-    },
-    {
-      text: "Infak ke pesantren bla bla bla berupa bahan makanan dan uang tunai pada tangga 20 Oktober, 2023",
-      date: "12 September, 2023",
-      detail:
-        "Nomor 3 asd asd asd sad as ads   sa as as as  sa asdads asda dsaddd asdasdadsas asdasdsadsad asdsadsad adsad a d ad sada d sadsadsadsa sadsadsad asdsads asdsa das dasdsad sad sad asd as d as asd asdbasdasghgx t rtyry y jkh h jh bg j,n d nhg fj hgj nnfhn byuuunoik yiyj hb oiyni iuu 69 ",
-    },
-    {
-      text: "Infak ke pesantren bla bla bla berupa bahan makanan dan uang tunai pada tangga 20 Oktober, 2023",
-      date: "12 September, 2023",
-      detail:
-        "Nomor 4 asd asd asd sad as ads   sa as as as  sa asdads asda dsaddd asdasdadsas asdasdsadsad asdsadsad adsad a d ad sada d sadsadsadsa sadsadsad asdsads asdsa das dasdsad sad sad asd as d as asd asdbasdasghgx t rtyry y jkh h jh bg j,n d nhg fj hgj nnfhn byuuunoik yiyj hb oiyni iuu 69 ",
-    },
-    {
-      text: "Infak ke pesantren bla bla bla berupa bahan makanan dan uang tunai pada tangga 20 Oktober, 2023",
-      date: "12 September, 2023",
-      detail:
-        "Nomor 5 asd asd asd sad as ads   sa as as as  sa asdads asda dsaddd asdasdadsas asdasdsadsad asdsadsad adsad a d ad sada d sadsadsadsa sadsadsad asdsads asdsa das dasdsad sad sad asd as d as asd asdbasdasghgx t rtyry y jkh h jh bg j,n d nhg fj hgj nnfhn byuuunoik yiyj hb oiyni iuu 69 ",
-    },
-    {
-      text: "Infak ke pesantren bla bla bla berupa bahan makanan dan uang tunai pada tangga 20 Oktober, 2023",
-      date: "12 September, 2023",
-      detail:
-        "Nomor 6 asd asd asd sad as ads   sa as as as  sa asdads asda dsaddd asdasdadsas asdasdsadsad asdsadsad adsad a d ad sada d sadsadsadsa sadsadsad asdsads asdsa das dasdsad sad sad asd as d as asd asdbasdasghgx t rtyry y jkh h jh bg j,n d nhg fj hgj nnfhn byuuunoik yiyj hb oiyni iuu 69 ",
-    },
-  ];
+  const [plans, setPlans] = useState([]);
+
+  useEffect(() => {
+    axios.get("http://localhost:3001/plan").then((res) => {
+      const reversedNews = res.data.reverse();
+      setPlans(reversedNews);
+    });
+  }, []);
 
   function handleClose(index = null) {
     setIsOpen(!isOpen);
@@ -84,7 +57,7 @@ const Plan = () => {
                 className="line-clamp-3 leading-6 text-justify"
                 onClick={() => handleClose(index)}
               >
-                {plan.text}
+                {plan.title}
               </div>
             </div>
 
@@ -141,7 +114,9 @@ const Plan = () => {
         })}
       </div>
       <div className="text-center mt-6 md:text-xl text-base text-secondary underline cursor-pointer hover:text-secondary-dark">
-        <a href="#">Lihat agenda acara & kegiatan yang lainnya &raquo;</a>
+        <Link to={"/kegiatan/rencana"}>
+          Lihat agenda acara & kegiatan yang lainnya &raquo;
+        </Link>
       </div>
     </section>
   );

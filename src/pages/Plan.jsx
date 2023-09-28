@@ -3,6 +3,8 @@ import Modals from "../components/Modals";
 import { BreadCrumb } from "../components";
 import DotBg from "../assets/DotBg";
 import Pagination from "../components/Pagination";
+import { useEffect } from "react";
+import axios from "axios";
 
 const Plan = () => {
   const links = [
@@ -11,54 +13,52 @@ const Plan = () => {
   ];
   const [isOpen, setIsOpen] = useState(false);
   const [modalId, setModalId] = useState(null);
-  const plans = [
-    {
-      text: "Infak ke pesantren bla bla bla berupa bahan makanan dan uang tunai pada tangga 20 Oktober, 2023",
-      date: "12 September, 2023",
-      detail:
-        "Nomor 1 asd asd asd sad as ads   sa as as as  sa asdads asda dsaddd asdasdadsas asdasdsadsad asdsadsad adsad a d ad sada d sadsadsadsa sadsadsad asdsads asdsa das dasdsad sad sad asd as d as asd asdbasdasghgx t rtyry y jkh h jh bg j,n d nhg fj hgj nnfhn byuuunoik yiyj hb oiyni iuu 69 ",
-    },
-    {
-      text: "Infak ke pesantren bla bla bla berupa bahan makanan dan uang tunai pada tangga 20 Oktober, 2023",
-      date: "12 September, 2023",
-      detail:
-        "Nomor 2 asd asd asd sad as ads   sa as as as  sa asdads asda dsaddd asdasdadsas asdasdsadsad asdsadsad adsad a d ad sada d sadsadsadsa sadsadsad asdsads asdsa das dasdsad sad sad asd as d as asd asdbasdasghgx t rtyry y jkh h jh bg j,n d nhg fj hgj nnfhn byuuunoik yiyj hb oiyni iuu 69 ",
-    },
-    {
-      text: "Infak ke pesantren bla bla bla berupa bahan makanan dan uang tunai pada tangga 20 Oktober, 2023",
-      date: "12 September, 2023",
-      detail:
-        "Nomor 3 asd asd asd sad as ads   sa as as as  sa asdads asda dsaddd asdasdadsas asdasdsadsad asdsadsad adsad a d ad sada d sadsadsadsa sadsadsad asdsads asdsa das dasdsad sad sad asd as d as asd asdbasdasghgx t rtyry y jkh h jh bg j,n d nhg fj hgj nnfhn byuuunoik yiyj hb oiyni iuu 69 ",
-    },
-    {
-      text: "Infak ke pesantren bla bla bla berupa bahan makanan dan uang tunai pada tangga 20 Oktober, 2023",
-      date: "12 September, 2023",
-      detail:
-        "Nomor 4 asd asd asd sad as ads   sa as as as  sa asdads asda dsaddd asdasdadsas asdasdsadsad asdsadsad adsad a d ad sada d sadsadsadsa sadsadsad asdsads asdsa das dasdsad sad sad asd as d as asd asdbasdasghgx t rtyry y jkh h jh bg j,n d nhg fj hgj nnfhn byuuunoik yiyj hb oiyni iuu 69 ",
-    },
-    {
-      text: "Infak ke pesantren bla bla bla berupa bahan makanan dan uang tunai pada tangga 20 Oktober, 2023",
-      date: "12 September, 2023",
-      detail:
-        "Nomor 5 asd asd asd sad as ads   sa as as as  sa asdads asda dsaddd asdasdadsas asdasdsadsad asdsadsad adsad a d ad sada d sadsadsadsa sadsadsad asdsads asdsa das dasdsad sad sad asd as d as asd asdbasdasghgx t rtyry y jkh h jh bg j,n d nhg fj hgj nnfhn byuuunoik yiyj hb oiyni iuu 69 ",
-    },
-    {
-      text: "Infak ke pesantren bla bla bla berupa bahan makanan dan uang tunai pada tangga 20 Oktober, 2023",
-      date: "12 September, 2023",
-      detail:
-        "Nomor 6 asd asd asd sad as ads   sa as as as  sa asdads asda dsaddd asdasdadsas asdasdsadsad asdsadsad adsad a d ad sada d sadsadsadsa sadsadsad asdsads asdsa das dasdsad sad sad asd as d as asd asdbasdasghgx t rtyry y jkh h jh bg j,n d nhg fj hgj nnfhn byuuunoik yiyj hb oiyni iuu 69 ",
-    },
-  ];
+  const [plans, setPlans] = useState([]);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [filteredPlan, setFilteredPlan] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const planPerPage = 8;
+
+  useEffect(() => {
+    axios.get("http://localhost:3001/plan").then((res) => {
+      const reversedNews = res.data.reverse();
+      setPlans(reversedNews);
+    });
+  }, []);
 
   function handleClose(index = null) {
     setIsOpen(!isOpen);
     setModalId(index);
   }
 
+  useEffect(() => {
+    const filtered = plans.filter((newsItem) => {
+      return newsItem.title.toLowerCase().includes(searchQuery.toLowerCase());
+    });
+
+    setFilteredPlan(filtered);
+  }, [searchQuery, plans]);
+
+  const startIndex = (currentPage - 1) * planPerPage;
+  const endIndex = startIndex + planPerPage;
+
+  const displayedPlans = searchQuery
+    ? filteredPlan.slice(startIndex, endIndex)
+    : plans.slice(startIndex, endIndex);
+
+  const handleSearchInputChange = (e) => {
+    setSearchQuery(e.target.value);
+    setCurrentPage(1);
+  };
+
+  const handlePageChange = (newPage) => {
+    setCurrentPage(newPage);
+  };
+
   return (
     <section className="py-12 lg:pt-12 lg:px-8 px-2 overflow-hidden">
       <BreadCrumb links={links} />
-      <div className="text text-center mb-12 px-3">
+      <div className="flex flex-col items-center mb-12 px-3">
         <h2 className="text-3xl font-semibold text-text2  mt-8 tracking-wide font-play mb-2">
           Rencana Acara & Kegiatan Masjid{" "}
           <span className="font-arab tracking-wider text-primary font-bold">
@@ -68,9 +68,19 @@ const Plan = () => {
         <p className="lg:text-lg text-base max-lg:mt-2">
           Rencana kegiatan di Masjid Al-Irsyad kedepannya
         </p>
+        <div className="relative flex gap-x-[10px] items-center my-4">
+          <input
+            className="outline-none w-[200px] focus:w-[400px] focus:border-b-2 focus:border-primary text-primary placeholder:italic placeholder:text-base transition-all duration-200"
+            placeholder="Cari Data Donasi..."
+            type="text"
+            value={searchQuery}
+            id="searchNews"
+            onChange={handleSearchInputChange}
+          />
+        </div>
       </div>
       <div className="container mx-auto hidden md:grid grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-8 lg:px-8">
-        {plans.map((plan, index) => (
+        {displayedPlans.map((plan, index) => (
           <div
             key={index}
             className="rencana shadow-md bg-white px-4 relative group rounded-lg hover:shadow-sm"
@@ -95,7 +105,7 @@ const Plan = () => {
                 className="line-clamp-3 leading-6 text-justify"
                 onClick={() => handleClose(index)}
               >
-                {plan.text}
+                {plan.title}
               </div>
             </div>
 
@@ -108,7 +118,7 @@ const Plan = () => {
       </div>
       {/* Mobile */}
       <div className="container mx-auto md:hidden block">
-        {plans.map((plan, index) => {
+        {displayedPlans.map((plan, index) => {
           return (
             <>
               {isOpen && (
@@ -133,7 +143,7 @@ const Plan = () => {
                       className="border-b-2 line-clamp-3 text-sm  leading-[14px] pb-[1.5px] "
                       onClick={() => handleClose(index)}
                     >
-                      {plan.text}
+                      {plan.title}
                     </div>
                     <div className="flex text-xs justify-between mt-px">
                       <div className="">Ditambahkan :</div>
@@ -150,7 +160,15 @@ const Plan = () => {
         })}
       </div>
       <div className="mb-8 mt-4">
-        <Pagination />
+        <Pagination
+          currentPage={currentPage}
+          totalPages={Math.ceil(
+            searchQuery
+              ? filteredPlan.length / planPerPage
+              : plans.length / planPerPage
+          )}
+          onPageChange={handlePageChange}
+        />
       </div>
     </section>
   );

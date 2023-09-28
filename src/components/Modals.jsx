@@ -1,17 +1,19 @@
-const Modals = ({ isOpen, plan, index, handleClose, modalId }) => {
+import "react-quill/dist/quill.snow.css";
+
+const Modals = ({ plan, index, handleClose, modalId }) => {
   if (index === modalId) {
     return (
       <div
         id="hs-vertically-centered-scrollable-modal"
-        className={`hs-overlay w-full h-full fixed top-0 left-0 z-[60] overflow-x-hidden overflow-y-auto`}
+        className={`hs-overlay w-full h-full fixed top-0 left-0 z-[60] overflow-x-hidden overflow-y-auto border border-slate-600`}
       >
         <div
           className={`mt-7 opacity-100 duration-500  ease-out transition-all md:max-w-2xl md:w-full m-3 md:mx-auto h-[calc(100%-3.5rem)] min-h-[calc(100%-3.5rem)] flex items-center`}
         >
-          <div className="max-h-full overflow-hidden flex flex-col bg-white  shadow-sm rounded-lg ">
-            <div className="flex justify-between items-center py-3 px-4 border-b ">
-              <h3 className="font-bold text-gray-800 ">
-                Rencana Kegiatan No. 0{index + 1} {isOpen}
+          <div className="max-h-full overflow-hidden flex flex-col bg-white shadow-sm rounded-lg ">
+            <div className="flex justify-between items-center py-3 px-4">
+              <h3 className="text-3xl font-[500] text-primary mt-4">
+                {plan.title}
               </h3>
               <button
                 type="button"
@@ -36,12 +38,34 @@ const Modals = ({ isOpen, plan, index, handleClose, modalId }) => {
               </button>
             </div>
             <div className="p-4 overflow-y-auto">
-              <div className="space-y-4">
+              <div className="">
                 <div>
-                  <h3 className="text-lg font-semibold text-gray-800 ">
-                    {plan.text}
-                  </h3>
-                  <p className="mt-1 text-gray-800 ">{plan.detail}</p>
+                  <div className="w-full flex mb-6">
+                    <div className="w-2/3 overflow-hidden p-2 shadow-lg rounded-lg">
+                      <img
+                        src={`http://localhost:3001/images/${plan.image}`}
+                        className="w-full rounded-lg"
+                      />
+                    </div>
+                    <div className="pt-2 flex w-1/3 flex-col justify-between text-end text-sm leading-5 mb-4 text-slate-700 font-light">
+                      <div className="">
+                        Ditambahhkan :
+                        <div className="text-secondary text-base font-[500]">
+                          {plan.date}
+                        </div>
+                      </div>
+                      <div className="">
+                        Estimasi :{" "}
+                        <div className="text-primary text-base font-[500]">
+                          {plan.estimated}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    className="display-quill text-slate-700 leading-6 flex flex-col gap-4 w-full"
+                    dangerouslySetInnerHTML={{ __html: plan.content }}
+                  />
                 </div>
               </div>
             </div>
@@ -49,7 +73,6 @@ const Modals = ({ isOpen, plan, index, handleClose, modalId }) => {
               <button
                 type="button"
                 className="hs-dropdown-toggle py-2 px-4 inline-flex justify-center items-center gap-2 rounded-md border font-medium bg-white text-gray-700 shadow-sm align-middle hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-blue-600 transition-all text-sm"
-                data-hs-overlay="#hs-vertically-centered-scrollable-modal"
                 onClick={handleClose}
               >
                 Tutup
@@ -64,29 +87,23 @@ const Modals = ({ isOpen, plan, index, handleClose, modalId }) => {
 
 export default Modals;
 
-export const ModalsDonation = ({
-  isOpen,
-  financial,
-  index,
-  handleClose,
-  modalId,
-}) => {
+export const ModalsDonation = ({ donasi, index, handleClose, modalId }) => {
   if (index === modalId) {
     return (
       <div
-        id="hs-vertically-centered-scrollable-modal"
-        className={`hs-overlay w-full h-full absolute top-0 left-0 z-[60] overflow-x-hidden overflow-y-auto`}
+        className={`hs-overlay w-full h-full fixed top-0 left-0 z-[60] overflow-x-hidden overflow-y-auto border border-slate-600`}
       >
         <div
           className={`mt-7 opacity-100 duration-500  ease-out transition-all md:max-w-2xl md:w-full m-3 md:mx-auto h-[calc(100%-3.5rem)] min-h-[calc(100%-3.5rem)] flex items-center`}
         >
-          <div className="max-h-full overflow-hidden flex flex-col bg-white  shadow-sm rounded-lg ">
-            <div className="flex justify-between items-center py-3 px-4 border-b ">
-              <h3 className="font-bold text-gray-800 ">{financial.date}</h3>
+          <div className="max-h-full overflow-hidden flex flex-col bg-white shadow-sm rounded-lg">
+            <div className="flex justify-between items-center py-3 px-4">
+              <h3 className="text-3xl font-[500] text-primary mt-4">
+                {donasi.title}
+              </h3>
               <button
                 type="button"
                 className="hs-dropdown-toggle inline-flex flex-shrink-0 justify-center items-center h-8 w-8 rounded-md text-gray-500 hover:text-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:ring-offset-white transition-all text-sm"
-                data-hs-overlay="#hs-vertically-centered-scrollable-modal"
                 onClick={handleClose}
               >
                 <span className="sr-only">Close</span>
@@ -106,34 +123,35 @@ export const ModalsDonation = ({
               </button>
             </div>
             <div className="p-4 overflow-y-auto">
-              <div className="space-y-4">
+              <div className="">
                 <div>
-                  <h3 className="text-lg font-semibold text-gray-800 ">
-                    {financial.title}
-                  </h3>
-                  <p className="mt-1 text-gray-800 ">{financial.content}</p>
-                </div>
-              </div>
-              <h3 className="text-xl font-play font-semibold mt-6 mb-3">
-                Galery :
-              </h3>
-              <div className="flex justify-between flex-wrap">
-                {financial.image.map((img, index) => (
-                  <div key={index} className="w-[31%] p-1 shadow-lg rounded-md">
-                    <img
-                      src={img}
-                      alt=""
-                      className="w-full aspect-video rounded-md"
-                    />
+                  <div className="w-full flex mb-6">
+                    <div className="pt-2 flex w-full justify-between text-sm leading-5 mb-4 text-slate-700 font-light">
+                      <div className="">
+                        Ditambahhkan :
+                        <span className="text-secondary text-base font-[500]">
+                          {donasi.date}
+                        </span>
+                      </div>
+                      <div className="">
+                        Status :
+                        <span className="text-primary text-base font-[500]">
+                          {donasi.status}
+                        </span>
+                      </div>
+                    </div>
                   </div>
-                ))}
+                  <div
+                    className="display-quill text-slate-700 leading-6 flex flex-col gap-4 w-full"
+                    dangerouslySetInnerHTML={{ __html: donasi.content }}
+                  />
+                </div>
               </div>
             </div>
             <div className="flex justify-end items-center gap-x-2 py-3 px-4 ">
               <button
                 type="button"
                 className="hs-dropdown-toggle py-2 px-4 inline-flex justify-center items-center gap-2 rounded-md border font-medium bg-white text-gray-700 shadow-sm align-middle hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-blue-600 transition-all text-sm"
-                data-hs-overlay="#hs-vertically-centered-scrollable-modal"
                 onClick={handleClose}
               >
                 Tutup

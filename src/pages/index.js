@@ -33,4 +33,9 @@ export { default as AddPlan } from "./AddPlan";
 export { default as AddFinancial } from "./AddFinancial";
 export { default as AddDonation } from "./AddDonation";
 
+export { default as EditNews } from "./EditNews";
+export { default as EditPlan } from "./EditPlan";
+export { default as EditFinancial } from "./EditFinancial";
+export { default as EditDonation } from "./EditDonation";
+
 export { default as NoPage } from "./NoPage";

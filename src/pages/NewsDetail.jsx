@@ -3,6 +3,7 @@ import { BreadCrumb } from "../components";
 import { BsFacebook } from "react-icons/bs";
 import { FaXTwitter } from "react-icons/fa6";
 import { useEffect, useState } from "react";
+import "react-quill/dist/quill.snow.css";
 import axios from "axios";
 
 const NewsDetail = () => {
@@ -34,7 +35,7 @@ const NewsDetail = () => {
   ]);
 
   useEffect(() => {
-    axios.get("http://localhost:3000/news").then((res) => {
+    axios.get("http://localhost:3001/news").then((res) => {
       const fetchedNewsDetail = res.data;
       setNewsDetail(fetchedNewsDetail.find((news) => news.title === title));
       setRecentNews(fetchedNewsDetail.splice(-5).reverse());
@@ -50,30 +51,26 @@ const NewsDetail = () => {
             {newsDetail.title}
           </h2>
           <div className="text-primary">Berita Masjid AL-ISYAD</div>
-          <div className="mb-4">Minggu, {newsDetail.date}</div>
+          <div className="mb-4">{newsDetail.date}</div>
           <div className="flex items-center gap-4 mb-8">
             <div className="text-sm">Bagikan : </div>
             <BsFacebook className="text-2xl text-blue-500" />
             <FaXTwitter className="text-2xl text-slate-700" />
           </div>
           <div className="w-full aspect-video overflow-hiiden">
-            <img src={newsDetail.image} alt="" className="" />
+            <img
+              src={`http://localhost:3001/images/${newsDetail.image}`}
+              alt=""
+              className=""
+            />
           </div>
           <div className="text-sm  text-justify mb-8">
             {newsDetail.imageCaption}
           </div>
-          <div className="text-slate-700 leading-6 flex flex-col gap-4">
-            <p>
-              <b className="font-bold">Palembang, Masjid AL-ISYAD</b> -- Lorem
-              ipsum dolor sit amet consectetur adipisicing elit. Reiciendis
-              deleniti nesciunt illo atque hic ut quae voluptas necessitatibus
-              perspiciatis impedit commodi aperiam assumenda quidem alias totam
-              inventore delectus vero voluptatum, et ab quas aliquam amet natus.
-              Quos aut ratione nihil distinctio. Itaque sunt ratione veniam
-              dicta consequuntur nesciunt qui ipsum?
-            </p>
-            <p>{newsDetail.content}</p>
-          </div>
+          <div
+            className="display-quill text-slate-700 leading-6 flex flex-col gap-4 w-full"
+            dangerouslySetInnerHTML={{ __html: newsDetail.content }}
+          />
           <div className="flex items-center gap-4 mt-8">
             <div className="text-sm">Bagikan : </div>
             <BsFacebook className="text-2xl text-blue-500" />
@@ -90,7 +87,10 @@ const NewsDetail = () => {
                 className="mb-5"
               >
                 <div className="w-11/12 overflow-hidden aspect-video mb-1">
-                  <img src={recentNews[0].image} alt="" />
+                  <img
+                    src={`http://localhost:3001/images/${recentNews[0].image}`}
+                    alt=""
+                  />
                 </div>
                 <div className=" leading-5 text-[15px] font-[500]">
                   {recentNews[0].title}
@@ -111,7 +111,11 @@ const NewsDetail = () => {
                       className="flex gap-3 content-start"
                     >
                       <div className="w-2/5 overflow-hidden aspect-[6/5]">
-                        <img src={news.image} alt="" className="object-cover" />
+                        <img
+                          src={`http://localhost:3001/images/${news.image}`}
+                          alt=""
+                          className="object-cover"
+                        />
                       </div>
                       <div className="w-3/5">
                         <div className="leading-5 text-[15px] font-[500] mb-2">

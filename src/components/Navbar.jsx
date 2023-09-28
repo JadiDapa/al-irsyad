@@ -144,7 +144,7 @@ export default function Navbar() {
                   type="text"
                   id="search"
                   placeholder="Search..."
-                  className="outline-none w-40 border-b-2 focus:border-b-2 focus:border-pritext-primary placeholder:italic"
+                  className="outline-none w-40 border-b-2 focus:border-b-2 focus:border-primary text-primary placeholder:italic"
                 />
               </form>
               <div

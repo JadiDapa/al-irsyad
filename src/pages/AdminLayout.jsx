@@ -4,10 +4,11 @@ import Sidebar from "../components/Sidebar";
 
 const Layout = () => {
   const [showLogin, setShowLogin] = useState(true);
+  const [isOpen, setisOpen] = useState(true);
   return (
     <div>
-      <Sidebar />
-      <Outlet />
+      <Sidebar isOpen={isOpen} setisOpen={setisOpen} />
+      <Outlet context={[isOpen, setisOpen]} />
     </div>
   );
 };

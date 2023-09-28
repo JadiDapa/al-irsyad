@@ -27,8 +27,11 @@ import {
   AddDonation,
   Majelis,
   Fakm,
+  EditPlan,
+  EditFinancial,
+  EditDonation,
+  EditNews,
 } from "./pages";
-import Organisasi from "./pages/Organization";
 
 const App = () => {
   return (
@@ -66,6 +69,11 @@ const App = () => {
         <Route path="/tambah-rencana" element={<AddPlan />} />
         <Route path="/tambah-finansial" element={<AddFinancial />} />
         <Route path="/tambah-donasi" element={<AddDonation />} />
+
+        <Route path="/edit-berita/:id" element={<EditNews />} />
+        <Route path="/edit-rencana/:id" element={<EditPlan />} />
+        <Route path="/edit-finansial/:id" element={<EditFinancial />} />
+        <Route path="/edit-donasi/:id" element={<EditDonation />} />
 
         <Route path="*" element={<NoPage />} />
       </Routes>

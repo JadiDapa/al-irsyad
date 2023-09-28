@@ -2,16 +2,44 @@ import { Link } from "react-router-dom";
 import { BiRightArrow } from "react-icons/bi";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import Pagination from "./Pagination";
 
 const News = () => {
   const [news, setNews] = useState([]);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [filteredNews, setFilteredNews] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const newsPerPage = 8;
 
   useEffect(() => {
-    axios.get("http://localhost:3000/news").then((res) => {
+    axios.get("http://localhost:3001/news").then((res) => {
       const reversedNews = res.data.reverse();
       setNews(reversedNews);
     });
   }, []);
+
+  useEffect(() => {
+    const filtered = news.filter((newsItem) =>
+      newsItem.title.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+    setFilteredNews(filtered);
+  }, [searchQuery, news]);
+
+  const startIndex = (currentPage - 1) * newsPerPage;
+  const endIndex = startIndex + newsPerPage;
+
+  const displayedNews = searchQuery
+    ? filteredNews.slice(startIndex, endIndex)
+    : news.slice(startIndex, endIndex);
+
+  const handleSearchInputChange = (e) => {
+    setSearchQuery(e.target.value);
+    setCurrentPage(1);
+  };
+
+  const handlePageChange = (newPage) => {
+    setCurrentPage(newPage);
+  };
   if (news.length > 0) {
     return (
       <section className="my-12" id="berita">
@@ -25,22 +53,25 @@ const News = () => {
             className="big md:w-1/2 w-full p-2 shadow-lg rounded-md hover:-translate-y-1 duration-150 cursor-pointer"
           >
             <div className="mb-2">
-              <img src={news[0].image} alt="" />
+              <img
+                src={`http://localhost:3001/images/${news[0].image}`}
+                alt=""
+              />
             </div>
             <div className="">
               <div className="text-xl text-text2 line-clamp-2 leading-9">
-                {news[0].title}
+                {displayedNews[0].title}
               </div>
               <div className="flex justify-between items-center">
                 <div className="mr-2 uppercase text-primary font-semibold">
-                  {news[0].category}
+                  {displayedNews[0].category}
                 </div>
                 <div className="text-red-600 font-semibold">25-11-2023</div>
               </div>
             </div>
           </Link>
           <div className="w-full flex flex-wrap md:w-1/2 gap-x-3 gap-y-2">
-            {news.map((news, index) => {
+            {displayedNews.map((news, index) => {
               if (index !== 0 && index <= 3) {
                 return (
                   <div
@@ -49,7 +80,7 @@ const News = () => {
                   >
                     <Link to={`/kegiatan/berita/${news.title}`} className="">
                       <img
-                        src={news.image}
+                        src={`http://localhost:3001/images/${news.image}`}
                         alt=""
                         className="w-full aspect-video"
                       />
@@ -98,7 +129,7 @@ const News = () => {
                   >
                     <div className="w-[30%] aspect-square overflow-hidden rounded-md">
                       <img
-                        src={news.image}
+                        src={`http://localhost:3001/images/${news.image}`}
                         alt=""
                         className="object-cover h-full mx-auto"
                       />

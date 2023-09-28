@@ -1,15 +1,19 @@
 import { FiSearch } from "react-icons/fi";
-import { Link } from "react-router-dom";
+import { Link, useOutletContext } from "react-router-dom";
 import { adminIcon } from "../assets";
-import { AiOutlineHome } from "react-icons/ai";
 import { TbMoneybag, TbLogout2 } from "react-icons/tb";
 import { BiDonateHeart } from "react-icons/bi";
 import { BsNewspaper } from "react-icons/bs";
 import { AiOutlineSchedule } from "react-icons/ai";
 
 function Admin() {
+  const [isOpen, setisOpen] = useOutletContext();
   return (
-    <section className="w-full lg:pl-[288px] overflow-hidden bg-gray-100 h-screen">
+    <section
+      className={`w-full ${
+        isOpen ? "md:pl-[288px]" : "md:translate-x-0"
+      } transition-all duration-300 min-h-screen bg-gray-100`}
+    >
       <div className="w-full p-6 flex flex-col gap-6">
         <div className="search bg-white flex px-4 py-4 rounded-md shadow-md justify-between items-center">
           <div className="flex gap-3 items-center">
@@ -22,8 +26,8 @@ function Admin() {
             </div>
           </div>
         </div>
-        <div className="flex gap-6">
-          <div className="w-5/12">
+        <div className="md:flex gap-6">
+          <div className="md:w-5/12 md:mb-0 mb-4">
             <div className="wfull bg-white rounded-md shadow-md p-4 relative overflow-hidden h-48">
               <div className="text-2xl text-gray-600 font-semibold">
                 Selamat Datang, Admin! ⚙️
@@ -43,7 +47,7 @@ function Admin() {
               />
             </div>
           </div>
-          <div className=" w-7/12 h-96">
+          <div className="md:w-7/12 h-96">
             <div className="w-full bg-white rounded-md shadow-md p-4 relative overflow-hidden h-48 flex flex-col justify-between">
               <div className="text-2xl text-gray-600 font-semibold">
                 Rangkuman Data

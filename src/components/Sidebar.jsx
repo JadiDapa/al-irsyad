@@ -1,12 +1,13 @@
 import logo from "../assets/logo.png";
 import { AiOutlineHome } from "react-icons/ai";
 import { TbMoneybag, TbLogout2 } from "react-icons/tb";
-import { BiDonateHeart } from "react-icons/bi";
+import { BiDonateHeart, BiMenuAltLeft, BiX } from "react-icons/bi";
 import { BsNewspaper } from "react-icons/bs";
 import { AiOutlineSchedule } from "react-icons/ai";
 import { Link, useLocation } from "react-router-dom";
+import { useState } from "react";
 
-const Sidebar = () => {
+const Sidebar = ({ isOpen, setisOpen }) => {
   const links = [
     { nama: "Dashboard", link: "/admin", icon: <AiOutlineHome /> },
     { nama: "Berita", link: "/admin/berita", icon: <BsNewspaper /> },
@@ -15,19 +16,36 @@ const Sidebar = () => {
     { nama: "Donasi", link: "/admin/donasi", icon: <BiDonateHeart /> },
     { nama: "Keluar", link: "/", icon: <TbLogout2 /> },
   ];
+
   const location = useLocation();
   return (
     <>
       <aside
         id="logo-sidebar"
-        className="shadow-[5px_0px_7px_-3px_rgba(0,0,0,0.1)] fixed top-0 left-0 z-40 w-72 h-screen pt-7 transition-transform -translate-x-full bg-white  sm:translate-x-0"
+        className={`shadow-[5px_0px_7px_-3px_rgba(0,0,0,0.1)] fixed top-0 left-0 z-40 w-72 h-screen pt-7 transition-transform ${
+          isOpen ? "translate-x-0" : "-translate-x-full"
+        } bg-white`}
         aria-label="Sidebar"
       >
-        <div className="h-full px-5 pb-6 overflow-y-auto bg-white">
+        <div
+          className="mnav_close-btn bg-text2 w-8 h-8 relative -right-full top-8 flex justify-center items-center rounded-tr-lg rounded-br-lg cursor-pointer transition-all"
+          onClick={() => setisOpen(!isOpen)}
+        >
+          {isOpen ? (
+            <BiX className="close-btn text-2xl text-white" />
+          ) : (
+            <BiMenuAltLeft className="close-btn text-2xl text-white" />
+          )}
+        </div>
+        <div className="h-full md: px-5 pb-6 overflow-y-auto bg-white">
           <ul className="space-y-2 font-medium">
             <li>
               <a href="#" className="flex justify-center items-center mb-7">
-                <img src={logo} alt="" className="lg:w-14 max-lg:mb-2 mr-2" />
+                <img
+                  src={logo}
+                  alt=""
+                  className="md:w-14 w-[60%] max-lg:mb-2 mr-2"
+                />
                 <div className="hidden lg:block font-arab text-3xl text-emerald-600 font-semibold">
                   AL-IRSYAD
                 </div>
