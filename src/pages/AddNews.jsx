@@ -19,6 +19,8 @@ const AddNews = () => {
   const [imageVd, setImageVd] = useState("sampul berita harus di ada");
   const [titleError, setTitleError] = useState("");
 
+  axios.defaults.withCredentials = true;
+
   const everything = titleVd || writerVd || imageVd || contentVd || captionVd;
 
   const navigate = useNavigate();
@@ -38,7 +40,7 @@ const AddNews = () => {
     formData.append("date", date);
 
     axios
-      .post("http://localhost:3001/news", formData)
+      .post("https://al-irysad-backend-api.vercel.app/news", formData)
       .then((result) => {
         navigate("/admin/berita");
       })
