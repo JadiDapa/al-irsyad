@@ -39,7 +39,7 @@ const DataBerita = () => {
   function handleDelete(id, e) {
     e.preventDefault();
     axios
-      .delete("http:///localhost:3001/news/" + id)
+      .delete("https://al-irysad-backend-api.vercel.app/news" + id)
       .then(() => {
         window.location.reload();
       })
