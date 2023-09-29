@@ -21,8 +21,9 @@ const DataBerita = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const newsPerPage = 8;
 
+  axios.defaults.withCredentials = true;
   useEffect(() => {
-    axios.get("http://localhost:3001/news").then((res) => {
+    axios.get("https://al-irysad-backend-api.vercel.app//news").then((res) => {
       const reversedNews = res.data.reverse();
       setNews(reversedNews);
     });
