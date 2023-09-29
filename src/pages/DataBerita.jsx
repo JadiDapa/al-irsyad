@@ -23,7 +23,7 @@ const DataBerita = () => {
 
   axios.defaults.withCredentials = true;
   useEffect(() => {
-    axios.get("https://al-irysad-backend-api.vercel.app//news").then((res) => {
+    axios.get("https://al-irysad-backend-api.vercel.app/news").then((res) => {
       const reversedNews = res.data.reverse();
       setNews(reversedNews);
     });
