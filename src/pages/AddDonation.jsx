@@ -20,6 +20,7 @@ const AddDonation = () => {
 
   const navigate = useNavigate();
 
+  axios.defaults.withCredentials = true;
   const handleSubmit = (e) => {
     e.preventDefault();
     const dateToFormat = new Date();
@@ -32,7 +33,7 @@ const AddDonation = () => {
       date,
     };
     axios
-      .post("http://localhost:3001/donation", datas)
+      .post("https://al-irysad-backend-api.vercel.app/news", datas)
       .then((res) => {
         navigate("/admin/donasi");
       })
