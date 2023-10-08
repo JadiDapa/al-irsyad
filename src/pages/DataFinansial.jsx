@@ -56,8 +56,9 @@ const DataFinancial = () => {
     return formattedValue(totalMoney);
   }, [previousFinancials, financials]);
 
+  axios.defaults.withCredentials = true;
   useEffect(() => {
-    axios.get("http://localhost:3001/financial").then((res) => {
+    axios.get("https://al-irysad-backend-api.vercel.app/financial").then((res) => {
       const reversedNews = res.data.reverse();
       setFinancials(reversedNews);
     });
@@ -80,7 +81,7 @@ const DataFinancial = () => {
   function handleDelete(id, e) {
     e.preventDefault();
     axios
-      .delete("http://localhost:3001/financial/" + id)
+      .delete("https://al-irysad-backend-api.vercel.app/financial/" + id)
       .then(() => {
         window.location.reload();
       })
