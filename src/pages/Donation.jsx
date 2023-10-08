@@ -25,7 +25,7 @@ const Donation = () => {
   const planPerPage = 8;
 
   useEffect(() => {
-    axios.get("http://localhost:3001/donation").then((res) => {
+    axios.get("https://al-irysad-backend-api.vercel.app/donation").then((res) => {
       const reversedNews = res.data.reverse();
       setDonation(reversedNews);
     });
@@ -44,7 +44,7 @@ const Donation = () => {
   function handleDelete(id, e) {
     e.preventDefault();
     axios
-      .delete("http:///localhost:3001/donation/" + id)
+      .delete("https://al-irysad-backend-api.vercel.app/donation/" + id)
       .then(() => {
         window.location.reload();
       })
