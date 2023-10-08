@@ -19,12 +19,11 @@ const AddNews = () => {
   const [imageVd, setImageVd] = useState("sampul berita harus di ada");
   const [titleError, setTitleError] = useState("");
 
-  axios.defaults.withCredentials = true;
-
   const everything = titleVd || writerVd || imageVd || contentVd || captionVd;
 
   const navigate = useNavigate();
 
+  axios.defaults.withCredentials = true;
   const handleSubmit = (e) => {
     e.preventDefault();
     const formData = new FormData();
