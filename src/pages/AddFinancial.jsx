@@ -20,13 +20,14 @@ const AddFinancial = () => {
 
   const navigate = useNavigate();
 
+  axios.defaults.withCredentials = true;
   const handleSubmit = (e) => {
     e.preventDefault();
     const dateToFormat = new Date();
     const date = format(dateToFormat, "MMMM d, yyyy");
     const data = { title, status, value, content, date };
     axios
-      .post("http://localhost:3001/financial", data)
+      .post("https://al-irysad-backend-api.vercel.app/financial", data)
       .then((res) => {
         navigate("/admin/finansial");
       })
