@@ -27,6 +27,7 @@ const AddPlan = () => {
 
   const navigate = useNavigate();
 
+  axios.defaults.withCredentials = true;
   const handleSubmit = (e) => {
     e.preventDefault();
     const formData = new FormData();
@@ -42,7 +43,7 @@ const AddPlan = () => {
     formData.append("date", date);
 
     axios
-      .post("http://localhost:3001/plan", formData)
+      .post("https://al-irysad-backend-api.vercel.app/plan", formData)
       .then(() => {
         navigate("/admin/rencana");
       })
