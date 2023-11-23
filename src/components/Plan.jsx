@@ -35,7 +35,7 @@ const Plan = () => {
         {plans.map((plan, index) => (
           <div
             key={index}
-            className="rencana px-4 relative group rounded-lg hover:shadow-sm"
+            className="rencana px-4 relative group rounded-lg border-grey border-2 py-4 cursor-pointer hover:border-primary  transition-all duration-300"
           >
             {isOpen && (
               <Modals
@@ -46,9 +46,6 @@ const Plan = () => {
                 modalId={modalId}
               />
             )}
-            <div className="absolute left-0 -top-1/4 text-sm opacity-0 group-hover:opacity-100 px-2 py-1 bg-secondary text-white duration-150 rounded-t-lg ">
-              SELENGKAPNYA
-            </div>
             <div className="flex gap-3 border-b-2">
               <div className="text-red-400 text-2xl font-semibold">
                 0{index + 1}.
@@ -69,7 +66,7 @@ const Plan = () => {
         ))}
       </div>
       {/* Mobile */}
-      <div className="container mx-auto md:hidden block">
+      <div className="container mx-auto md:hidden flex flex-wrap justify-between">
         {plans.map((plan, index) => {
           if (index <= 3) {
             return (
@@ -85,25 +82,19 @@ const Plan = () => {
                 )}
                 <div
                   key={index}
-                  className="rencana mb-5 relative group overflow-hidden rounded-lg hover:shadow-sm"
+                  className="rencana mb-5 relative group overflow-hidden rounded-lg border-grey border-2 p-4 w-[49%] hover:border-primary  transition-all duration-300"
                 >
                   <div className="flex gap-3 ">
-                    <div className="text-red-400 text-2xl font-semibold">
-                      0{index + 1}.
-                    </div>
                     <div className="text-justify overflow-hidden">
                       <div
-                        className="border-b-2 line-clamp-3 text-sm  leading-[14px] pb-[1.5px] "
+                        className="border-b-2 line-clamp-3 text-sm leading-[14px] pb-[12px] "
                         onClick={() => handleClose(index)}
                       >
-                        {plan.text}
+                        {plan.title}
                       </div>
                       <div className="flex text-xs justify-between mt-px">
                         <div className="">Ditambahkan :</div>
                         <div className="font-semibold">{plan.date}</div>
-                      </div>
-                      <div className="absolute left-0 bottom-0 text-xs opacity-0 group-hover:opacity-100 px-2 py-1 bg-secondary text-white duration-150 rounded-tr-lg text">
-                        SELENGKAPNYA
                       </div>
                     </div>
                   </div>

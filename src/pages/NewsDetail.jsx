@@ -101,7 +101,7 @@ const NewsDetail = () => {
                 </div>
               </Link>
             )}
-            <div className="flex flex-col leading-6">
+            <div className="flex flex-col leading-6 gap-3">
               {recentNews.map((news, index) => {
                 if (index > 0 && news.title !== newsDetail.title) {
                   return (
@@ -110,7 +110,7 @@ const NewsDetail = () => {
                       key={index}
                       className="flex gap-3 content-start"
                     >
-                      <div className="w-2/5 overflow-hidden aspect-[6/5]">
+                      <div className="w-2/5 overflow-hidden aspect-[6/5] rounded-md">
                         <img
                           src={`http://localhost:3001/images/${news.image}`}
                           alt=""

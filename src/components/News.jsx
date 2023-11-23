@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import { BiRightArrow } from "react-icons/bi";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import Pagination from "./Pagination";
 
 const News = () => {
   const [news, setNews] = useState([]);
@@ -12,7 +11,7 @@ const News = () => {
   const newsPerPage = 8;
 
   useEffect(() => {
-    axios.get("http://localhost:3001/news").then((res) => {
+    axios.get("https://masjidal-irsyad.com/api/berita").then((res) => {
       const reversedNews = res.data.reverse();
       setNews(reversedNews);
     });
@@ -52,10 +51,11 @@ const News = () => {
             to={`/kegiatan/berita/${news[0].title}`}
             className="big md:w-1/2 w-full p-2 shadow-lg rounded-md hover:-translate-y-1 duration-150 cursor-pointer"
           >
-            <div className="mb-2">
+            <div className="mb-2 aspect-video overflow-hidden">
               <img
                 src={`http://localhost:3001/images/${news[0].image}`}
                 alt=""
+                className="w-full"
               />
             </div>
             <div className="">

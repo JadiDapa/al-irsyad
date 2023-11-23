@@ -13,7 +13,7 @@ const DonationTable = () => {
   const [donation, setDonation] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:3000/donation").then((res) => {
+    axios.get("http://localhost:3001/donation").then((res) => {
       const reversedNews = res.data.reverse();
       setDonation(reversedNews);
     });

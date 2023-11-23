@@ -157,7 +157,7 @@ export default function Navbar() {
             </div>
           </nav>
           {/* Dekstop */}
-          <nav className="bg-white absolute w-full left-0 -bottom-[86px] shadow-custom1 h-16 rounded-[10px] hidden lg:flex lg:items-center lg:px-[50px] lg:justify-between">
+          <nav className="bg-white absolute w-full left-0 -bottom-[86px] shadow-custom1 h-16 rounded-[10px] hidden lg:flex lg:items-center lg:px-[50px] lg:justify-between z-50">
             <ul className="flex">
               {links.map((link, index) => (
                 <div
@@ -188,7 +188,7 @@ export default function Navbar() {
                               return (
                                 <li key={index} className="">
                                   <Link
-                                    className="rounded-t bg-white hover:text-primary py-1 px-4 block whitespace-no-wrap"
+                                    className=" bg-white hover:text-primary py-1 px-4 block whitespace-no-wrap"
                                     to={sublink.link}
                                   >
                                     {sublink.name}
@@ -202,7 +202,7 @@ export default function Navbar() {
                               return (
                                 <li key={index} className="">
                                   <a
-                                    className="rounded-t bg-white hover:text-primary py-1 px-4 block whitespace-no-wrap"
+                                    className=" bg-white hover:text-primary py-1 px-4 block whitespace-no-wrap"
                                     href={sublink.link}
                                   >
                                     {sublink.name}

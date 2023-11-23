@@ -22,7 +22,7 @@ const DataBerita = () => {
   const newsPerPage = 8;
 
   useEffect(() => {
-    axios.get("http://localhost:3001/news").then((res) => {
+    axios.get("https://masjidal-irsyad.com/api/berita").then((res) => {
       const reversedNews = res.data.reverse();
       setNews(reversedNews);
     });

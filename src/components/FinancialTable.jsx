@@ -24,10 +24,12 @@ const FinancialTable = ({ financials, formattedValue }) => {
                   <td className=" py-2 w-6/12">{financial.title}</td>
                   <td
                     className={`py-2 w-1/12 text-green-500 font-bold text-xl leading-6 ${
-                      financial.status ? "text-primary" : "text-red-500"
+                      financial.status === "masuk"
+                        ? "text-primary"
+                        : "text-red-500"
                     }`}
                   >
-                    {financial.status ? (
+                    {financial.status === "masuk" ? (
                       <BiSolidUpArrow className="mx-auto" />
                     ) : (
                       <BiSolidDownArrow className="mx-auto" />
@@ -35,7 +37,9 @@ const FinancialTable = ({ financials, formattedValue }) => {
                   </td>
                   <td
                     className={`pl-[10px] py-2 w-3/12 text-xl leading-6 ${
-                      financial.status ? "text-primary" : "text-red-500"
+                      financial.status === "masuk"
+                        ? "text-primary"
+                        : "text-red-500"
                     }`}
                   >
                     {financial.status

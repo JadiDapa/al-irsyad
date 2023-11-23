@@ -38,7 +38,7 @@ const AddNews = () => {
     formData.append("date", date);
 
     axios
-      .post("http://localhost:3001/news", formData)
+      .post("http://masjidal-irsyad-api.my.id/api/berita", formData)
       .then((result) => {
         navigate("/admin/berita");
       })

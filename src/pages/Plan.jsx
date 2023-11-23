@@ -117,46 +117,42 @@ const Plan = () => {
         ))}
       </div>
       {/* Mobile */}
-      <div className="container mx-auto md:hidden block">
+      <div className="container mx-auto md:hidden flex flex-wrap justify-between">
         {displayedPlans.map((plan, index) => {
-          return (
-            <>
-              {isOpen && (
-                <Modals
-                  isOpen
-                  handleClose={handleClose}
-                  plan={plan}
-                  index={index}
-                  modalId={modalId}
-                />
-              )}
-              <div
-                key={index}
-                className="rencana px-4 py-2 shadow-md bg-white mb-8 relative group overflow-hidden rounded-lg hover:shadow-sm"
-              >
-                <div className="flex gap-3 ">
-                  <div className="text-red-400 text-2xl font-semibold">
-                    0{index + 1}.
-                  </div>
-                  <div className="text-justify overflow-hidden">
-                    <div
-                      className="border-b-2 line-clamp-3 text-sm  leading-[14px] pb-[1.5px] "
-                      onClick={() => handleClose(index)}
-                    >
-                      {plan.title}
-                    </div>
-                    <div className="flex text-xs justify-between mt-px">
-                      <div className="">Ditambahkan :</div>
-                      <div className="font-semibold">{plan.date}</div>
-                    </div>
-                    <div className="absolute left-0 bottom-0 text-xs opacity-0 group-hover:opacity-100 px-2 py-1 bg-secondary text-white duration-150 rounded-tr-lg text">
-                      SELENGKAPNYA
+          if (index <= 3) {
+            return (
+              <>
+                {isOpen && (
+                  <Modals
+                    isOpen
+                    handleClose={handleClose}
+                    plan={plan}
+                    index={index}
+                    modalId={modalId}
+                  />
+                )}
+                <div
+                  key={index}
+                  className="rencana mb-5 relative group overflow-hidden rounded-lg border-grey border-2 hover:border-primary p-4 w-[49%] transition-all duration-300"
+                >
+                  <div className="flex gap-3 ">
+                    <div className="text-justify overflow-hidden">
+                      <div
+                        className="border-b-2 line-clamp-3 text-sm leading-[14px] pb-[12px] "
+                        onClick={() => handleClose(index)}
+                      >
+                        {plan.title}
+                      </div>
+                      <div className="flex text-xs justify-between mt-px">
+                        <div className="">Ditambahkan :</div>
+                        <div className="font-semibold">{plan.date}</div>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </>
-          );
+              </>
+            );
+          }
         })}
       </div>
       <div className="mb-8 mt-4">
