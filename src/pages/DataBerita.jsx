@@ -21,8 +21,13 @@ const DataBerita = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const newsPerPage = 8;
 
+  axios.defaults.withCredentials = true;
   useEffect(() => {
+<<<<<<< HEAD
     axios.get("https://masjidal-irsyad.com/api/berita").then((res) => {
+=======
+    axios.get("https://al-irysad-backend-api.vercel.app/news").then((res) => {
+>>>>>>> a5d2eb7d3ac02bb77eff208a9c4983f879d3be02
       const reversedNews = res.data.reverse();
       setNews(reversedNews);
     });
@@ -38,7 +43,7 @@ const DataBerita = () => {
   function handleDelete(id, e) {
     e.preventDefault();
     axios
-      .delete("http:///localhost:3001/news/" + id)
+      .delete("https://al-irysad-backend-api.vercel.app/news/" + id)
       .then(() => {
         window.location.reload();
       })

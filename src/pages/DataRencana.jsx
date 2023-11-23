@@ -25,7 +25,7 @@ const DataRencana = () => {
   const [selectedStatus, setSelectedStatus] = useState(null);
 
   useEffect(() => {
-    axios.get("http://localhost:3001/plan").then((res) => {
+    axios.get("https://al-irysad-backend-api.vercel.app/plan").then((res) => {
       const reversedNews = res.data.reverse();
       setPlan(reversedNews);
     });
@@ -42,7 +42,7 @@ const DataRencana = () => {
   function handleDelete(id, e) {
     e.preventDefault();
     axios
-      .delete("http:///localhost:3001/plan/" + id)
+      .delete("https://al-irysad-backend-api.vercel.app/plan/" + id)
       .then(() => {
         window.location.reload();
       })
