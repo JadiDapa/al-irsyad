@@ -27,10 +27,12 @@ const Donasi = () => {
   const [activeElement, setActiveElement] = useState("");
 
   useEffect(() => {
-    axios.get("https://al-irysad-backend-api.vercel.app/donation").then((res) => {
-      const reversedNews = res.data.reverse();
-      setDonation(reversedNews);
-    });
+    axios
+      .get("https://al-irysad-backend-api.vercel.app/donation")
+      .then((res) => {
+        const reversedNews = res.data.reverse();
+        setDonation(reversedNews);
+      });
   }, []);
 
   useEffect(() => {
@@ -98,7 +100,7 @@ const Donasi = () => {
           </div>
           <div className="">
             <Link
-              to={"/tambah-donasi"}
+              to={"/admin/tambah-donasi"}
               className="py-0.5 px-3 bg-primary text-white rounded-md flex items-center gap-2"
             >
               Tambah Data
@@ -163,7 +165,7 @@ const Donasi = () => {
                               <FaInfo />
                             </div>
                             <Link
-                              to={`/edit-rencana/${donasi._id}`}
+                              to={`/admin/edit-rencana/${donasi._id}`}
                               className="bg-yellow-300 p-2 cursor-pointer hover:brightness-105 rounded-full text-gray-100"
                             >
                               <MdOutlineModeEditOutline />
@@ -226,7 +228,7 @@ const Donasi = () => {
                       <FaInfo />
                     </div>
                     <Link
-                      to={`/edit-rencana/${donasi._id}`}
+                      to={`/admin/edit-rencana/${donasi._id}`}
                       className="bg-yellow-300 p-2 cursor-pointer hover:brightness-105 rounded-full text-gray-100"
                     >
                       <MdOutlineModeEditOutline />

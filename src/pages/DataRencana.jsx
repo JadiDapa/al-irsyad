@@ -94,7 +94,7 @@ const DataRencana = () => {
           </div>
           <div className="">
             <Link
-              to={"/tambah-rencana"}
+              to={"/admin/tambah-rencana"}
               className="py-0.5 px-3 bg-primary text-white rounded-md flex items-center gap-2"
             >
               Tambah Data{" "}
@@ -197,7 +197,7 @@ const DataRencana = () => {
                             <FaInfo />
                           </div>
                           <Link
-                            to={`/edit-rencana/${plan._id}`}
+                            to={`/admin/edit-rencana/${plan._id}`}
                             className="bg-yellow-300 p-2 cursor-pointer hover:brightness-105 rounded-full text-gray-100"
                           >
                             <MdOutlineModeEditOutline />
@@ -258,7 +258,7 @@ const DataRencana = () => {
                         <FaInfo />
                       </div>
                       <Link
-                        to={`/edit-rencana/${plan._id}`}
+                        to={`/admin/edit-rencana/${plan._id}`}
                         className="bg-yellow-300 p-2 cursor-pointer hover:brightness-105 rounded-full text-gray-100"
                       >
                         <MdOutlineModeEditOutline />

@@ -141,7 +141,7 @@ const Footer = ({ showLogin, setShowLogin }) => {
         <div className="container mx-auto text-center">
           <div
             className="hover:text-primary-light transition-all duration-300 cursor-pointer"
-            onClick={() => setShowLogin(!showLogin)}
+            // onClick={() => setShowLogin(!showLogin)}
           >
             Dewan Operasional Masjid AL-IRSYAD <br /> 2023
           </div>

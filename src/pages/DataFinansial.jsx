@@ -58,10 +58,12 @@ const DataFinancial = () => {
 
   axios.defaults.withCredentials = true;
   useEffect(() => {
-    axios.get("https://al-irysad-backend-api.vercel.app/financial").then((res) => {
-      const reversedNews = res.data.reverse();
-      setFinancials(reversedNews);
-    });
+    axios
+      .get("https://al-irysad-backend-api.vercel.app/financial")
+      .then((res) => {
+        const reversedNews = res.data.reverse();
+        setFinancials(reversedNews);
+      });
   }, []);
 
   const [money, setMoney] = useState(calculateTotalMoney());
@@ -174,7 +176,7 @@ const DataFinancial = () => {
           </div>
           <div className="">
             <Link
-              to={"/tambah-finansial"}
+              to={"/admin/tambah-finansial"}
               className="py-0.5 px-3 bg-primary text-white rounded-md flex items-center gap-2"
             >
               Tambah Data
@@ -285,7 +287,7 @@ const DataFinancial = () => {
                               <FaInfo />
                             </div>
                             <Link
-                              to={`/edit-rencana/${financial._id}`}
+                              to={`/admin/edit-rencana/${financial._id}`}
                               className="bg-yellow-300 p-2 cursor-pointer hover:brightness-105 rounded-full text-gray-100"
                             >
                               <MdOutlineModeEditOutline />
@@ -334,7 +336,7 @@ const DataFinancial = () => {
                         <FaInfo />
                       </div>
                       <Link
-                        to={`/edit-rencana/${financial._id}`}
+                        to={`/admin/edit-rencana/${financial._id}`}
                         className="bg-yellow-300 p-2 cursor-pointer hover:brightness-105 rounded-full text-gray-100"
                       >
                         <MdOutlineModeEditOutline />

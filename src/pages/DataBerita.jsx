@@ -101,7 +101,7 @@ const DataBerita = () => {
           </div>
           <div className="">
             <Link
-              to="/tambah-berita"
+              to="/admin/tambah-berita"
               className="py-0.5 px-3 bg-primary text-white rounded-md flex items-center gap-2"
             >
               Tambah Data{" "}
@@ -183,7 +183,7 @@ const DataBerita = () => {
                             <FaInfo />
                           </Link>
                           <Link
-                            to={`/edit-berita/${news._id}`}
+                            to={`/admin/edit-berita/${news._id}`}
                             className="bg-yellow-300 p-2 cursor-pointer hover:brightness-105 rounded-full text-gray-100"
                           >
                             <MdOutlineModeEditOutline />
@@ -231,7 +231,7 @@ const DataBerita = () => {
                       <FaInfo />
                     </Link>
                     <Link
-                      to={`/edit-berita/${news._id}`}
+                      to={`/admin/edit-berita/${news._id}`}
                       className="bg-yellow-300 p-2 cursor-pointer hover:brightness-105 rounded-full text-gray-100"
                     >
                       <MdOutlineModeEditOutline />

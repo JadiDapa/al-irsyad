@@ -1,17 +1,29 @@
-import { Outlet } from "react-router-dom";
-import { useContext, useState } from "react";
+import { Outlet, redirect } from "react-router-dom";
+import { useState } from "react";
 import Sidebar from "../components/Sidebar";
-import LoginAdmin from "../components/LoginAdmin";
-import { LoginContext } from "../utils/LoginContext";
+import { CookiesProvider, useCookies } from "react-cookie";
+import Login from "./Login";
 
 const Layout = () => {
-  const { isLogin, setLog } = useContext(LoginContext);
+  const [cookies, setCookie, removeCookie] = useCookies(["status"]);
+
+  function handleLogin(status) {
+    setCookie("status", status, { path: "/admin", maxAge: 3600 });
+  }
+
   const [isOpen, setisOpen] = useState(true);
   return (
     <div className="overflow-hidden">
-      {!isLogin && <LoginAdmin />}
-      <Sidebar isOpen={isOpen} setisOpen={setisOpen} />
-      <Outlet context={[isOpen, setisOpen]} />
+      <CookiesProvider>
+        {cookies.status ? (
+          <>
+            <Sidebar isOpen={isOpen} setisOpen={setisOpen} />
+            <Outlet context={[isOpen, setisOpen]} />
+          </>
+        ) : (
+          <Login onLogin={handleLogin} />
+        )}
+      </CookiesProvider>
     </div>
   );
 };

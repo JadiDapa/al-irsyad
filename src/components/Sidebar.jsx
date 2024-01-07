@@ -5,7 +5,6 @@ import { BiDonateHeart, BiMenuAltLeft, BiX } from "react-icons/bi";
 import { BsNewspaper } from "react-icons/bs";
 import { AiOutlineSchedule } from "react-icons/ai";
 import { Link, useLocation } from "react-router-dom";
-import { useState } from "react";
 
 const Sidebar = ({ isOpen, setisOpen }) => {
   const links = [
