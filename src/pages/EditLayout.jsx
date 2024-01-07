@@ -1,16 +1,13 @@
 import { Outlet } from "react-router-dom";
-import { useContext, useState } from "react";
-import Sidebar from "../components/Sidebar";
+import { useState } from "react";
 import LoginAdmin from "../components/LoginAdmin";
-import { LoginContext } from "../utils/LoginContext";
 
 const Layout = () => {
-  const { isLogin, setLog } = useContext(LoginContext);
+  const [isLogin, setIsLogin] = useState(true);
   const [isOpen, setisOpen] = useState(true);
   return (
     <div className="overflow-hidden">
-      {!isLogin && <LoginAdmin />}
-      <Sidebar isOpen={isOpen} setisOpen={setisOpen} />
+      {isLogin && <LoginAdmin />}
       <Outlet context={[isOpen, setisOpen]} />
     </div>
   );

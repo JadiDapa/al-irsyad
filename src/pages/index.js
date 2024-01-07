@@ -23,6 +23,8 @@ export { default as Fakm } from "./Fakm";
 
 export { default as Admin } from "./Admin";
 export { default as AdminLayout } from "./AdminLayout";
+export { default as AddLayout } from "./AddLayout";
+export { default as EditLayout } from "./EditLayout";
 export { default as DataBerita } from "./DataBerita";
 export { default as DataRencana } from "./DataRencana";
 export { default as DataFinansial } from "./DataFinansial";
@@ -38,4 +40,5 @@ export { default as EditPlan } from "./EditPlan";
 export { default as EditFinancial } from "./EditFinancial";
 export { default as EditDonation } from "./EditDonation";
 
+export { default as Login } from "./Login";
 export { default as NoPage } from "./NoPage";

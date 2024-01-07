@@ -1,5 +1,5 @@
 import logo from "../assets/logo.png";
-import { FaMapMarkerAlt, FaMailBulk } from "react-icons/fa";
+import { FaMapMarkerAlt } from "react-icons/fa";
 import {
   BiLogoFacebookCircle,
   BiLogoInstagram,
@@ -7,8 +7,6 @@ import {
   BiLogoTwitter,
 } from "react-icons/bi";
 import { BsFillTelephoneFill, BsEnvelopeAtFill } from "react-icons/bs";
-import Login from "./Login";
-import { useState } from "react";
 
 const Footer = ({ showLogin, setShowLogin }) => {
   return (
