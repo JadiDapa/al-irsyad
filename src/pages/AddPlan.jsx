@@ -27,7 +27,6 @@ const AddPlan = () => {
 
   const navigate = useNavigate();
 
-  axios.defaults.withCredentials = true;
   const handleSubmit = (e) => {
     e.preventDefault();
     const formData = new FormData();

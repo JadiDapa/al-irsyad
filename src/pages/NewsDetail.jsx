@@ -36,14 +36,11 @@ const NewsDetail = () => {
 
   useEffect(() => {
     axios.get("https://api.masjidal-irsyad.com/api/news").then((res) => {
-      // console.log(res.data);
       const fetchedNewsDetail = res.data.find((news) => news.slug === slug);
       setNewsDetail(fetchedNewsDetail);
       setRecentNews(res.data.splice(-5).reverse());
     });
   }, [recentNews, slug]);
-
-  console.log(newsDetail.image);
 
   return (
     <section className="pt-12 lg:pt-12 lg:px-10 overflow-hidden mb-16">

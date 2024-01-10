@@ -21,7 +21,6 @@ const DataBerita = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const newsPerPage = 8;
 
-  axios.defaults.withCredentials = true;
   useEffect(() => {
     axios.get("https://api.masjidal-irsyad.com/api/news").then((res) => {
       const reversedNews = res.data.reverse();

@@ -1,6 +1,5 @@
 import { AiOutlinePlusCircle } from "react-icons/ai";
 import { FiSearch } from "react-icons/fi";
-import { LuChevronsUp, LuChevronsDown } from "react-icons/lu";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { Link, useOutletContext } from "react-router-dom";
@@ -163,7 +162,7 @@ const Donasi = () => {
                               <FaInfo />
                             </div>
                             <Link
-                              to={`/admin/edit-rencana/${donasi.slug}`}
+                              to={`/admin/edit-donasi/${donasi.slug}`}
                               className="bg-yellow-300 p-2 cursor-pointer hover:brightness-105 rounded-full text-gray-100"
                             >
                               <MdOutlineModeEditOutline />
@@ -226,7 +225,7 @@ const Donasi = () => {
                       <FaInfo />
                     </div>
                     <Link
-                      to={`/admin/edit-rencana/${donasi.slug}`}
+                      to={`/admin/edit-donasi/${donasi.slug}`}
                       className="bg-yellow-300 p-2 cursor-pointer hover:brightness-105 rounded-full text-gray-100"
                     >
                       <MdOutlineModeEditOutline />

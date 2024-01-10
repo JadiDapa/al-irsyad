@@ -56,7 +56,6 @@ const DataFinancial = () => {
     return formattedValue(totalMoney);
   }, [previousFinancials, financials]);
 
-  axios.defaults.withCredentials = true;
   useEffect(() => {
     axios.get("https://api.masjidal-irsyad.com/api/financials").then((res) => {
       const reversedNews = res.data.reverse();
@@ -285,7 +284,7 @@ const DataFinancial = () => {
                               <FaInfo />
                             </div>
                             <Link
-                              to={`/admin/edit-rencana/${financial.slug}`}
+                              to={`/admin/edit-finansial/${financial.slug}`}
                               className="bg-yellow-300 p-2 cursor-pointer hover:brightness-105 rounded-full text-gray-100"
                             >
                               <MdOutlineModeEditOutline />
@@ -334,7 +333,7 @@ const DataFinancial = () => {
                         <FaInfo />
                       </div>
                       <Link
-                        to={`/admin/edit-rencana/${financial.slug}`}
+                        to={`/admin/edit-finansial/${financial.slug}`}
                         className="bg-yellow-300 p-2 cursor-pointer hover:brightness-105 rounded-full text-gray-100"
                       >
                         <MdOutlineModeEditOutline />

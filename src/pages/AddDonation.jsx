@@ -20,7 +20,6 @@ const AddDonation = () => {
 
   const navigate = useNavigate();
 
-  axios.defaults.withCredentials = true;
   const handleSubmit = (e) => {
     e.preventDefault();
     const dateToFormat = new Date();

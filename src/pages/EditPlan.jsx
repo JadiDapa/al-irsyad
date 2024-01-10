@@ -24,23 +24,25 @@ const EditPlan = () => {
     titleVd || statusVd || estimatedVd || imageVd || contentVd || captionVd;
 
   const navigate = useNavigate();
-  const { id } = useParams();
+  const { slug } = useParams();
 
   useEffect(() => {
     axios
-      .get("http:///localhost:3001/plan/" + id)
-      .then((result) => {
-        console.log(result);
-        setTitle(result.data.title);
-        setStatus(result.data.status);
-        setEstimated(result.data.estimated);
-        setCaption(result.data.caption);
-        setContent(result.data.content);
-        setImage(result.data.image);
-        setSampulTampil(`http://localhost:3001/images/${result.data.image}`);
+      .get("https://api.masjidal-irsyad.com/api/plans")
+      .then((res) => {
+        const result = res.data.find((news) => news.slug === slug);
+        setTitle(result.title);
+        setStatus(result.status);
+        setEstimated(result.estimated);
+        setCaption(result.caption);
+        setContent(result.content);
+        setImage(result.image);
+        setSampulTampil(
+          `https://api.masjidal-irsyad.com/image/${result.image}`
+        );
       })
       .catch((err) => console.log(err));
-  }, [id]);
+  }, [slug]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -57,7 +59,7 @@ const EditPlan = () => {
     formData.append("date", date);
 
     axios
-      .put("http://localhost:3001/plan/" + id, formData)
+      .post("https://api.masjidal-irsyad.com/api/plans/" + slug, formData)
       .then(() => {
         navigate("/admin/rencana");
       })
@@ -155,7 +157,7 @@ const EditPlan = () => {
           <img src={logo} alt="" className="md:w-[130px] w-28 aspect-square" />
           <div className="">
             <h1 className="text-primary uppercase text-2xl md:text-3xl font-bold mb-5">
-              Form Tambah Rencana
+              Form Edit Rencana
             </h1>
             <div className="text-xl font-[400] max-md:hidden">
               Isilah dengan ketentuan yang di sediakan
@@ -188,8 +190,9 @@ const EditPlan = () => {
                   <input
                     id="terencana"
                     type="radio"
-                    value="TERENCANA"
+                    value="terencana"
                     name="default-radio"
+                    checked={status === "terencana"}
                     onChange={(e) => handleStatus(e)}
                     className="w-4 h-4  text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500  "
                   />
@@ -204,7 +207,8 @@ const EditPlan = () => {
                   <input
                     id="terpenuhi"
                     type="radio"
-                    value="TERPENUHI"
+                    value="terpenuhi"
+                    checked={status === "terpenuhi"}
                     name="default-radio"
                     onChange={(e) => handleStatus(e)}
                     className="w-4 h-4  text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500  "

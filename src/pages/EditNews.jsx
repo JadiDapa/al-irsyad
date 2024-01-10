@@ -6,6 +6,9 @@ import axios from "axios";
 import { format } from "date-fns";
 
 const EditNews = () => {
+  const navigate = useNavigate();
+  const { slug } = useParams();
+
   const [title, setTitle] = useState("");
   const [category, setCategory] = useState("");
   const [writer, setWriter] = useState("");
@@ -19,24 +22,23 @@ const EditNews = () => {
   const [imagetVd, setImageVd] = useState("");
   const [titleError, setTitleError] = useState("");
 
-  const navigate = useNavigate();
-  const { id } = useParams();
-
   useEffect(() => {
     axios
-      .get("http:///localhost:3001/news/" + id)
-      .then((result) => {
-        console.log(result);
-        setTitle(result.data.title);
-        setCategory(result.data.category);
-        setWriter(result.data.writer);
-        setCaption(result.data.caption);
-        setContent(result.data.content);
-        setImage(result.data.image);
-        setSampulTampil(`http://localhost:3001/images/${result.data.image}`);
+      .get("https://api.masjidal-irsyad.com/api/news")
+      .then((res) => {
+        const result = res.data.find((news) => news.slug === slug);
+        setTitle(result.title);
+        setCategory(result.category);
+        setWriter(result.writer);
+        setCaption(result.caption);
+        setContent(result.content);
+        setImage(result.image);
+        setSampulTampil(
+          `https://api.masjidal-irsyad.com/image/${result.image}`
+        );
       })
       .catch((err) => console.log(err));
-  }, [id]);
+  }, [slug]);
 
   const everything = titleVd || writerVd || imagetVd || contentVd || captionVd;
 
@@ -55,7 +57,7 @@ const EditNews = () => {
     formData.append("date", date);
 
     axios
-      .put("http://localhost:3001/news/" + id, formData)
+      .post("https://api.masjidal-irsyad.com/api/news/" + slug, formData)
       .then(() => {
         navigate("/admin/berita");
       })
@@ -152,7 +154,7 @@ const EditNews = () => {
           <img src={logo} alt="" className="md:w-[130px] w-28 aspect-square" />
           <div className="">
             <h1 className="text-primary uppercase text-2xl md:text-3xl font-bold mb-5">
-              Form Tambah Berita
+              Form Edit Berita
             </h1>
             <div className="text-xl font-[400] max-md:hidden">
               Isilah dengan ketentuan yang di sediakan

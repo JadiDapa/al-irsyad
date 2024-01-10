@@ -13,7 +13,8 @@ const Hero = () => {
         style={{
           width: "100%",
           height: "110vh",
-          background: "linear-gradient(to right, #111, transparent)",
+          // background: "linear-gradient(to right, #414141, transparent)",
+          backgroundColor: "#2b2b2ba9",
           zIndex: 10,
           position: "absolute",
         }}
@@ -28,12 +29,17 @@ const Hero = () => {
                 Masjid Al-Irsyad
               </div>
             </div>
-            <h1 className="h1 lg:text-6xl/[65px] mb-6 text-slate-100">
-              Ayo Bersama Kita <br />
-              <span className="text-primary text-7xl">Makmurkan </span>
+            <h1 className="h1  lg:text-6xl/[65px] mb-6 text-slate-100">
+              <span className="text-4xl lg:text-6xl/[65px] ">
+                Ayo Bersama Kita
+              </span>{" "}
+              <br />
+              <span className="text-primary text-6xl lg:text-7xl">
+                Makmurkan{" "}
+              </span>
               Masjid!
             </h1>
-            <p className="mb-8 md:max-w-4xl lg:max-w-2xl text-slate-100">
+            <p className="mb-8 md:max-w-3xl lg:max-w-2xl text-slate-100">
               Rasulullah SAW bersabda: &quot;Siapa yang pergi ke masjid pada
               pagi dan petang hari, Allah mempersiapkan jamuan untuknya di surga
               setiap kali ia pergi atau pulang.&quot;

@@ -20,14 +20,13 @@ const AddFinancial = () => {
 
   const navigate = useNavigate();
 
-  axios.defaults.withCredentials = true;
   const handleSubmit = (e) => {
     e.preventDefault();
     const dateToFormat = new Date();
     const date = format(dateToFormat, "MMMM d, yyyy");
     const data = { title, status, value, content, date };
     axios
-      .post("https://al-irysad-backend-api.vercel.app/financial", data)
+      .post("https://api.masjidal-irsyad.com/api/financials", data)
       .then((res) => {
         navigate("/admin/finansial");
       })

@@ -70,10 +70,13 @@ const App = () => {
           <Route path="/admin/tambah-finansial" element={<AddFinancial />} />
           <Route path="/admin/tambah-donasi" element={<AddDonation />} />
 
-          <Route path="/admin/edit-berita/:id" element={<EditNews />} />
-          <Route path="/admin/edit-rencana/:id" element={<EditPlan />} />
-          <Route path="/admin/edit-finansial/:id" element={<EditFinancial />} />
-          <Route path="/admin/edit-donasi/:id" element={<EditDonation />} />
+          <Route path="/admin/edit-berita/:slug" element={<EditNews />} />
+          <Route path="/admin/edit-rencana/:slug" element={<EditPlan />} />
+          <Route
+            path="/admin/edit-finansial/:slug"
+            element={<EditFinancial />}
+          />
+          <Route path="/admin/edit-donasi/:slug" element={<EditDonation />} />
         </Route>
         <Route path="*" element={<NoPage />} />
       </Routes>

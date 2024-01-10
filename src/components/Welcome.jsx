@@ -67,7 +67,7 @@ const Welcome = () => {
             </button>
           </Link>
         </div>
-        <div className="image w-8/12 md:w-5/12 relative md:mt-6 flex md:justify-end mt-10 ">
+        <div className="image w-10/12 md:w-5/12 relative md:mt-6 flex md:justify-end mt-10 ">
           <div className="w-full xl:w-[500px] xl:aspect-square md:aspect-[3/5]  aspect-square border-[16px] border-gray-50 rounded-lg overflow-hidden relative bottom-[20px] left-[25px] shadow-2xl bg-gray-50"></div>
           <div className="w-full xl:w-[500px]  xl:aspect-square  md:aspect-[3/5] aspect-square rounded-lg border-white border-[16px] overflow-hidden absolute top-0 shadow-2xl bg-white flex justify-center items-center">
             <img

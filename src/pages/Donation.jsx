@@ -8,6 +8,7 @@ import { ModalsDonation } from "../components/Modals";
 import { FaInfo } from "react-icons/fa6";
 import { MdOutlineModeEditOutline } from "react-icons/md";
 import { RiDeleteBin2Line } from "react-icons/ri";
+import { BiSearch } from "react-icons/bi";
 
 const Donation = () => {
   const links = [
@@ -99,6 +100,9 @@ const Donation = () => {
             id="searchNews"
             onChange={handleSearchInputChange}
           />
+          <span className="text-primary">
+            <BiSearch />
+          </span>
         </div>
       </div>
       <div className="container mx-auto md:grid  gap-x-24 gap-y-8 relative pt-8 mt-8 w-full">
