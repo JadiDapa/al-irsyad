@@ -19,7 +19,7 @@ const News = () => {
   const newsPerPage = 8;
 
   useEffect(() => {
-    axios.get("http://localhost:3001/news").then((res) => {
+    axios.get("https://api.masjidal-irsyad.com/api/news").then((res) => {
       const reversedNews = res.data.reverse();
       setNews(reversedNews);
     });
@@ -56,7 +56,7 @@ const News = () => {
           Berita Masjid{" "}
           <span className="text-primary font-arab">AL-IRSYAD</span>
         </h2>
-        <p className="lg:text-lg text-base max-lg:mt-2">
+        <p className="lg:text-lg text-base max-lg:mt-2 text-center px-0.5">
           Daftar lengkap berita dan informasi yang terjadi di Masjid Al-Irsyad
         </p>
         <div className="relative flex gap-x-[10px] items-center my-4">
@@ -68,6 +68,9 @@ const News = () => {
             id="searchNews"
             onChange={handleSearchInputChange}
           />
+          <span className="text-primary">
+            <BiSearch />
+          </span>
         </div>
       </div>
       {displayedNews.length !== 0 && (
@@ -82,7 +85,7 @@ const News = () => {
             >
               <div className="mb-2">
                 <img
-                  src={`http://localhost:3001/images/${news[0].image}`}
+                  src={`https://api.masjidal-irsyad.com/image/${news[0].image}`}
                   alt=""
                 />
               </div>
@@ -107,9 +110,9 @@ const News = () => {
                       index === 3 ? "max-lg:hidden" : ""
                     } `}
                   >
-                    <Link to={`/kegiatan/berita/${news.title}`}>
+                    <Link to={`/kegiatan/berita/${news.slug}`}>
                       <img
-                        src={`http://localhost:3001/images/${news.image}`}
+                        src={`https://api.masjidal-irsyad.com/image/${news.image}`}
                         alt=""
                         className="w-full aspect-video"
                       />
@@ -137,13 +140,13 @@ const News = () => {
               {displayedNews.map((news, index) => {
                 return (
                   <Link
-                    to={`/kegiatan/berita/${news.title}`}
+                    to={`/kegiatan/berita/${news.slug}`}
                     key={index}
                     className="w-full flex gap-x-4 mb-4 leading-6 text-text2"
                   >
                     <div className="w-[30%] aspect-square overflow-hidden rounded-md">
                       <img
-                        src={`http://localhost:3001/images/${news.image}`}
+                        src={`https://api.masjidal-irsyad.com/image/${news.image}`}
                         alt=""
                         className="object-cover h-full mx-auto"
                       />

@@ -5,6 +5,7 @@ import DotBg from "../assets/DotBg";
 import Pagination from "../components/Pagination";
 import { useEffect } from "react";
 import axios from "axios";
+import { BiSearch } from "react-icons/bi";
 
 const Plan = () => {
   const links = [
@@ -20,7 +21,7 @@ const Plan = () => {
   const planPerPage = 8;
 
   useEffect(() => {
-    axios.get("http://localhost:3001/plan").then((res) => {
+    axios.get("https://api.masjidal-irsyad.com/api/plans").then((res) => {
       const reversedNews = res.data.reverse();
       setPlans(reversedNews);
     });
@@ -59,7 +60,7 @@ const Plan = () => {
     <section className="py-12 lg:pt-12 lg:px-8 px-2 overflow-hidden">
       <BreadCrumb links={links} />
       <div className="flex flex-col items-center mb-12 px-3">
-        <h2 className="text-3xl font-semibold text-text2  mt-8 tracking-wide font-play mb-2">
+        <h2 className="text-3xl font-semibold text-text2 text-center  mt-8 tracking-wide font-play mb-2">
           Rencana Acara & Kegiatan Masjid{" "}
           <span className="font-arab tracking-wider text-primary font-bold">
             AL-IRSYAD
@@ -77,14 +78,14 @@ const Plan = () => {
             id="searchNews"
             onChange={handleSearchInputChange}
           />
+          <span className="text-primary">
+            <BiSearch />
+          </span>
         </div>
       </div>
       <div className="container mx-auto hidden md:grid grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-8 lg:px-8">
         {displayedPlans.map((plan, index) => (
-          <div
-            key={index}
-            className="rencana shadow-md bg-white px-4 relative group rounded-lg hover:shadow-sm"
-          >
+          <>
             {isOpen && (
               <Modals
                 isOpen
@@ -94,26 +95,29 @@ const Plan = () => {
                 modalId={modalId}
               />
             )}
-            <div className="absolute left-0 -top-1/4 text-sm opacity-0 group-hover:opacity-100 px-2 py-1 bg-secondary text-white duration-150 rounded-t-lg ">
-              SELENGKAPNYA
-            </div>
-            <div className="flex gap-3 border-b-2">
-              <div className="text-red-400 text-2xl font-semibold">
-                0{index + 1}.
+            <div
+              key={index}
+              className="rencana px-4 relative group rounded-lg border-grey border-2 py-4 cursor-pointer hover:border-primary  transition-all duration-300"
+              onClick={() => handleClose(index)}
+            >
+              <div className="absolute left-0 -top-1/2 text-sm opacity-0 group-hover:opacity-100 px-2 py-1 bg-secondary text-white duration-150 rounded-t-lg ">
+                SELENGKAPNYA
               </div>
-              <div
-                className="line-clamp-3 leading-6 text-justify"
-                onClick={() => handleClose(index)}
-              >
-                {plan.title}
+              <div className="flex gap-3 border-b-2">
+                <div className="text-red-400 text-2xl font-semibold">
+                  0{index + 1}.
+                </div>
+                <div className="line-clamp-3 leading-6 text-justify">
+                  {plan.title}
+                </div>
               </div>
-            </div>
 
-            <div className="flex justify-between">
-              <div className="">Ditambahkan pada:</div>
-              <div className="font-semibold">{plan.date}</div>
+              <div className="flex justify-between">
+                <div className="">Ditambahkan pada:</div>
+                <div className="font-semibold">{plan.date}</div>
+              </div>
             </div>
-          </div>
+          </>
         ))}
       </div>
       {/* Mobile */}
@@ -133,17 +137,17 @@ const Plan = () => {
                 )}
                 <div
                   key={index}
-                  className="rencana mb-5 relative group overflow-hidden rounded-lg border-grey border-2 hover:border-primary p-4 w-[49%] transition-all duration-300"
+                  className="rencana mb-5 relative group overflow-hidden rounded-lg border-grey border-2 hover:border-primary p-4 w-full transition-all duration-300"
                 >
                   <div className="flex gap-3 ">
                     <div className="text-justify overflow-hidden">
                       <div
-                        className="border-b-2 line-clamp-3 text-sm leading-[14px] pb-[12px] "
+                        className="border-b-2 line-clamp-3 leading-[14px] pb-[12px]  "
                         onClick={() => handleClose(index)}
                       >
                         {plan.title}
                       </div>
-                      <div className="flex text-xs justify-between mt-px">
+                      <div className="flex text-xs justify-between mt-px ">
                         <div className="">Ditambahkan :</div>
                         <div className="font-semibold">{plan.date}</div>
                       </div>

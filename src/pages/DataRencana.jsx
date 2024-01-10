@@ -25,7 +25,7 @@ const DataRencana = () => {
   const [selectedStatus, setSelectedStatus] = useState(null);
 
   useEffect(() => {
-    axios.get("https://al-irysad-backend-api.vercel.app/plan").then((res) => {
+    axios.get("https://api.masjidal-irsyad.com/api/plans").then((res) => {
       const reversedNews = res.data.reverse();
       setPlan(reversedNews);
     });
@@ -39,10 +39,10 @@ const DataRencana = () => {
     setFilteredPlan(filtered);
   }, [searchQuery, plan, selectedStatus]);
 
-  function handleDelete(id, e) {
+  function handleDelete(slug, e) {
     e.preventDefault();
     axios
-      .delete("https://al-irysad-backend-api.vercel.app/plan/" + id)
+      .delete("https://api.masjidal-irsyad.com/api/plans/" + slug)
       .then(() => {
         window.location.reload();
       })
@@ -197,13 +197,13 @@ const DataRencana = () => {
                             <FaInfo />
                           </div>
                           <Link
-                            to={`/admin/edit-rencana/${plan._id}`}
+                            to={`/admin/edit-rencana/${plan.slug}`}
                             className="bg-yellow-300 p-2 cursor-pointer hover:brightness-105 rounded-full text-gray-100"
                           >
                             <MdOutlineModeEditOutline />
                           </Link>
                           <div
-                            onClick={(e) => handleDelete(plan._id, e)}
+                            onClick={(e) => handleDelete(plan.slug, e)}
                             className="bg-red-300 p-2 cursor-pointer hover:brightness-105 rounded-full text-gray-100"
                           >
                             <RiDeleteBin2Line />
@@ -258,13 +258,13 @@ const DataRencana = () => {
                         <FaInfo />
                       </div>
                       <Link
-                        to={`/admin/edit-rencana/${plan._id}`}
+                        to={`/admin/edit-rencana/${plan.slug}`}
                         className="bg-yellow-300 p-2 cursor-pointer hover:brightness-105 rounded-full text-gray-100"
                       >
                         <MdOutlineModeEditOutline />
                       </Link>
                       <div
-                        onClick={(e) => handleDelete(plan._id, e)}
+                        onClick={(e) => handleDelete(plan.slug, e)}
                         className="bg-red-300 p-2 cursor-pointer hover:brightness-105 rounded-full text-gray-100"
                       >
                         <RiDeleteBin2Line />

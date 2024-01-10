@@ -10,7 +10,7 @@ const Plan = () => {
   const [plans, setPlans] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:3001/plan").then((res) => {
+    axios.get("https://api.masjidal-irsyad.com/api/plans").then((res) => {
       const reversedNews = res.data.reverse();
       setPlans(reversedNews);
     });

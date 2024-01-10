@@ -7,11 +7,11 @@ import "react-quill/dist/quill.snow.css";
 import axios from "axios";
 
 const NewsDetail = () => {
-  const { title } = useParams();
+  const { slug } = useParams();
   const links = [
     { link: "/kegiatan", text: "Kegiatan" },
     { link: "/kegiatan/berita", text: "Berita" },
-    { link: "#", text: title },
+    { link: "#", text: slug },
   ];
 
   const [newsDetail, setNewsDetail] = useState({
@@ -35,12 +35,15 @@ const NewsDetail = () => {
   ]);
 
   useEffect(() => {
-    axios.get("http://localhost:3001/news").then((res) => {
-      const fetchedNewsDetail = res.data;
-      setNewsDetail(fetchedNewsDetail.find((news) => news.title === title));
-      setRecentNews(fetchedNewsDetail.splice(-5).reverse());
+    axios.get("https://api.masjidal-irsyad.com/api/news").then((res) => {
+      // console.log(res.data);
+      const fetchedNewsDetail = res.data.find((news) => news.slug === slug);
+      setNewsDetail(fetchedNewsDetail);
+      setRecentNews(res.data.splice(-5).reverse());
     });
-  }, [recentNews, title]);
+  }, [recentNews, slug]);
+
+  console.log(newsDetail.image);
 
   return (
     <section className="pt-12 lg:pt-12 lg:px-10 overflow-hidden mb-16">
@@ -59,7 +62,7 @@ const NewsDetail = () => {
           </div>
           <div className="w-full aspect-video overflow-hiiden">
             <img
-              src={`http://localhost:3001/images/${newsDetail.image}`}
+              src={`https://api.masjidal-irsyad.com/image/${newsDetail.image}`}
               alt=""
               className=""
             />
@@ -88,7 +91,7 @@ const NewsDetail = () => {
               >
                 <div className="w-11/12 overflow-hidden aspect-video mb-1">
                   <img
-                    src={`http://localhost:3001/images/${recentNews[0].image}`}
+                    src={`https://api.masjidal-irsyad.com/image/${recentNews[0].image}`}
                     alt=""
                   />
                 </div>
@@ -112,7 +115,7 @@ const NewsDetail = () => {
                     >
                       <div className="w-2/5 overflow-hidden aspect-[6/5] rounded-md">
                         <img
-                          src={`http://localhost:3001/images/${news.image}`}
+                          src={`https://api.masjidal-irsyad.com/image/${news.image}`}
                           alt=""
                           className="object-cover"
                         />

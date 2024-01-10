@@ -43,7 +43,7 @@ const Modals = ({ plan, index, handleClose, modalId }) => {
                   <div className="w-full flex mb-6">
                     <div className="w-2/3 overflow-hidden p-2 shadow-lg rounded-lg">
                       <img
-                        src={`http://localhost:3001/images/${plan.image}`}
+                        src={`https://api.masjidal-irsyad.com/image/${plan.image}`}
                         className="w-full rounded-lg"
                       />
                     </div>

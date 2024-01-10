@@ -7,6 +7,7 @@ import {
   BiLogoTwitter,
 } from "react-icons/bi";
 import { BsFillTelephoneFill, BsEnvelopeAtFill } from "react-icons/bs";
+import { Link } from "react-router-dom";
 
 const Footer = ({ showLogin, setShowLogin }) => {
   return (
@@ -139,12 +140,13 @@ const Footer = ({ showLogin, setShowLogin }) => {
       </div>
       <div className="py-[20px] border-t">
         <div className="container mx-auto text-center">
-          <div
+          <Link
+            to={"/admin"}
             className="hover:text-primary-light transition-all duration-300 cursor-pointer"
             // onClick={() => setShowLogin(!showLogin)}
           >
             Dewan Operasional Masjid AL-IRSYAD <br /> 2023
-          </div>
+          </Link>
         </div>
       </div>{" "}
     </footer>

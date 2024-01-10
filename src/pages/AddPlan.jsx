@@ -43,7 +43,11 @@ const AddPlan = () => {
     formData.append("date", date);
 
     axios
-      .post("https://al-irysad-backend-api.vercel.app/plan", formData)
+      .post("https://api.masjidal-irsyad.com/api/plans", formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      })
       .then(() => {
         navigate("/admin/rencana");
       })

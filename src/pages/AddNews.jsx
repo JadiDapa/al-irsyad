@@ -38,7 +38,11 @@ const AddNews = () => {
     formData.append("date", date);
 
     axios
-      .post("http://masjidal-irsyad-api.my.id/api/berita", formData)
+      .post("https://api.masjidal-irsyad.com/api/news", formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      })
       .then((result) => {
         navigate("/admin/berita");
       })

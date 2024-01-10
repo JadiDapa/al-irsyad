@@ -43,7 +43,7 @@ const Financial = () => {
   }, [previousFinancials, financials]);
 
   useEffect(() => {
-    axios.get("http://localhost:3001/financial").then((res) => {
+    axios.get("https://api.masjidal-irsyad.com/api/financials").then((res) => {
       const reversedNews = res.data.reverse();
       setFinancials(reversedNews);
     });

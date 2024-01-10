@@ -11,7 +11,7 @@ const News = () => {
   const newsPerPage = 8;
 
   useEffect(() => {
-    axios.get("https://masjidal-irsyad.com/api/berita").then((res) => {
+    axios.get("https://api.masjidal-irsyad.com/api/news").then((res) => {
       const reversedNews = res.data.reverse();
       setNews(reversedNews);
     });
@@ -44,16 +44,18 @@ const News = () => {
       <section className="my-12" id="berita">
         <div className="text text-center mb-6">
           <h2 className="h2 font-play">Berita & Informasi</h2>
-          <p className="text-lg">Berita terbaru dari Masjid Al-Irsyad</p>
+          <p className="text-lg text-center">
+            Berita terbaru dari Masjid Al-Irsyad
+          </p>
         </div>
         <div className="md:flex container hidden mx-auto justify-between gap-3 flex-row">
           <Link
-            to={`/kegiatan/berita/${news[0].title}`}
+            to={`/kegiatan/berita/${news[0].slug}`}
             className="big md:w-1/2 w-full p-2 shadow-lg rounded-md hover:-translate-y-1 duration-150 cursor-pointer"
           >
             <div className="mb-2 aspect-video overflow-hidden">
               <img
-                src={`http://localhost:3001/images/${news[0].image}`}
+                src={`https://api.masjidal-irsyad.com/image/${news[0].image}`}
                 alt=""
                 className="w-full"
               />
@@ -78,9 +80,9 @@ const News = () => {
                     key={index}
                     className={`containersm md:w-[48%] w-full p-2 shadow-lg rounded-md hover:-translate-y-1 duration-150 cursor-pointer `}
                   >
-                    <Link to={`/kegiatan/berita/${news.title}`} className="">
+                    <Link to={`/kegiatan/berita/${news.slug}`} className="">
                       <img
-                        src={`http://localhost:3001/images/${news.image}`}
+                        src={`https://api.masjidal-irsyad.com/image/${news.image}`}
                         alt=""
                         className="w-full aspect-video"
                       />
@@ -123,13 +125,13 @@ const News = () => {
               if (index < 5) {
                 return (
                   <Link
-                    to={`/kegiatan/berita/${news.title}`}
+                    to={`/kegiatan/berita/${news.slug}`}
                     key={index}
                     className="w-full flex gap-x-4 mb-4 leading-6 text-text2"
                   >
                     <div className="w-[30%] aspect-square overflow-hidden rounded-md">
                       <img
-                        src={`http://localhost:3001/images/${news.image}`}
+                        src={`https://api.masjidal-irsyad.com/image/${news.image}`}
                         alt=""
                         className="object-cover h-full mx-auto"
                       />

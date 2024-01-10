@@ -46,7 +46,7 @@ const App = () => {
 
           <Route path="/kegiatan" element={<Activity />} />
           <Route path="/kegiatan/berita" element={<News />} />
-          <Route path="/kegiatan/berita/:title" element={<NewsDetail />} />
+          <Route path="/kegiatan/berita/:slug" element={<NewsDetail />} />
           <Route path="/kegiatan/rencana" element={<Plan />} />
 
           <Route path="/ekonomi" element={<Economy />} />

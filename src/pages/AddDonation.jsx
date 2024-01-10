@@ -33,7 +33,7 @@ const AddDonation = () => {
       date,
     };
     axios
-      .post("https://al-irysad-backend-api.vercel.app/donation", datas)
+      .post("https://api.masjidal-irsyad.com/api/donations", datas)
       .then((res) => {
         navigate("/admin/donasi");
       })

@@ -1,13 +1,48 @@
 import { FiSearch } from "react-icons/fi";
 import { Link, useOutletContext } from "react-router-dom";
 import { adminIcon } from "../assets";
-import { TbMoneybag, TbLogout2 } from "react-icons/tb";
+import { TbMoneybag } from "react-icons/tb";
 import { BiDonateHeart } from "react-icons/bi";
 import { BsNewspaper } from "react-icons/bs";
 import { AiOutlineSchedule } from "react-icons/ai";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 function Admin() {
   const [isOpen, setisOpen] = useOutletContext();
+  const [totalNews, setTotalNews] = useState("-");
+  const [totalPlans, setTotalPlans] = useState("-");
+  const [totalFinancials, setTotalFinancials] = useState("-");
+  const [totalDonations, setTotalDonations] = useState("-");
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const [
+          newsResponse,
+          plansResponse,
+          financialsResponse,
+          donationsResponse,
+        ] = await Promise.all([
+          axios.get("https://api.masjidal-irsyad.com/api/news"),
+          axios.get("https://api.masjidal-irsyad.com/api/plans"),
+          axios.get("https://api.masjidal-irsyad.com/api/financials"),
+          axios.get("https://api.masjidal-irsyad.com/api/donations"),
+        ]);
+
+        setTotalNews(newsResponse.data.length);
+        setTotalPlans(plansResponse.data.length);
+        setTotalFinancials(financialsResponse.data.length);
+        setTotalDonations(donationsResponse.data.length);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+        // Handle error as needed, e.g., set an error state or display a message to the user.
+      }
+    };
+
+    fetchData();
+  }, []);
+
   return (
     <section
       className={`w-full ${
@@ -20,10 +55,8 @@ function Admin() {
             <FiSearch className="text-2xl" />
             <input type="text" placeholder="Search..." />
           </div>
-          <div className="">
-            <div className="flex items-center justify-center aspect-square rounded-full text-white bg-primary-light text-sm">
-              ADM
-            </div>
+          <div className="flex items-center w-8 h-8 justify-center aspect-square rounded-full text-white bg-primary-light text-sm">
+            <div className="">AM</div>
           </div>
         </div>
         <div className="md:flex gap-6">
@@ -59,7 +92,7 @@ function Admin() {
                   </div>
                   <div className="">
                     <div className="leading-6 text-2xl font-semibold text-slate-600">
-                      64
+                      {totalNews}
                     </div>
                     <div className="leading-6 font-[500]">Berita</div>
                   </div>
@@ -70,7 +103,7 @@ function Admin() {
                   </div>
                   <div className="">
                     <div className="leading-6 text-2xl font-semibold text-slate-600">
-                      12
+                      {totalPlans}
                     </div>
                     <div className="leading-6 font-[500]">Rencana</div>
                   </div>
@@ -81,7 +114,7 @@ function Admin() {
                   </div>
                   <div className="">
                     <div className="leading-6 text-2xl font-semibold text-slate-600">
-                      90
+                      {totalFinancials}
                     </div>
                     <div className="leading-6 font-[500]">Finansial</div>
                   </div>
@@ -92,7 +125,7 @@ function Admin() {
                   </div>
                   <div className="">
                     <div className="leading-6 text-2xl font-semibold text-slate-600">
-                      4
+                      {totalDonations}
                     </div>
                     <div className="leading-6 font-[500]">Donasi</div>
                   </div>

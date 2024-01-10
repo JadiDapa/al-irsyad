@@ -58,12 +58,10 @@ const DataFinancial = () => {
 
   axios.defaults.withCredentials = true;
   useEffect(() => {
-    axios
-      .get("https://al-irysad-backend-api.vercel.app/financial")
-      .then((res) => {
-        const reversedNews = res.data.reverse();
-        setFinancials(reversedNews);
-      });
+    axios.get("https://api.masjidal-irsyad.com/api/financials").then((res) => {
+      const reversedNews = res.data.reverse();
+      setFinancials(reversedNews);
+    });
   }, []);
 
   const [money, setMoney] = useState(calculateTotalMoney());
@@ -80,10 +78,10 @@ const DataFinancial = () => {
     setFilteredFinancial(filtered);
   }, [searchQuery, financials, selectedStatus]);
 
-  function handleDelete(id, e) {
+  function handleDelete(slug, e) {
     e.preventDefault();
     axios
-      .delete("https://al-irysad-backend-api.vercel.app/financial/" + id)
+      .delete("https://api.masjidal-irsyad.com/api/financials/" + slug)
       .then(() => {
         window.location.reload();
       })
@@ -287,13 +285,13 @@ const DataFinancial = () => {
                               <FaInfo />
                             </div>
                             <Link
-                              to={`/admin/edit-rencana/${financial._id}`}
+                              to={`/admin/edit-rencana/${financial.slug}`}
                               className="bg-yellow-300 p-2 cursor-pointer hover:brightness-105 rounded-full text-gray-100"
                             >
                               <MdOutlineModeEditOutline />
                             </Link>
                             <div
-                              onClick={(e) => handleDelete(financial._id, e)}
+                              onClick={(e) => handleDelete(financial.slug, e)}
                               className="bg-red-300 p-2 cursor-pointer hover:brightness-105 rounded-full text-gray-100"
                             >
                               <RiDeleteBin2Line />
@@ -336,13 +334,13 @@ const DataFinancial = () => {
                         <FaInfo />
                       </div>
                       <Link
-                        to={`/admin/edit-rencana/${financial._id}`}
+                        to={`/admin/edit-rencana/${financial.slug}`}
                         className="bg-yellow-300 p-2 cursor-pointer hover:brightness-105 rounded-full text-gray-100"
                       >
                         <MdOutlineModeEditOutline />
                       </Link>
                       <div
-                        onClick={(e) => handleDelete(financial._id, e)}
+                        onClick={(e) => handleDelete(financial.slug, e)}
                         className="bg-red-300 p-2 cursor-pointer hover:brightness-105 rounded-full text-gray-100"
                       >
                         <RiDeleteBin2Line />

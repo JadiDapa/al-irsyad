@@ -3,80 +3,21 @@ import { LuChevronsUp, LuChevronsDown } from "react-icons/lu";
 import FinancialTable from "../components/FinancialTable";
 import { BreadCrumb } from "../components";
 import Pagination from "../components/Pagination";
+import axios from "axios";
 
 const Finance = () => {
   const [isDescend, setisDescend] = useState(true);
 
-  const [financials, setFinancials] = useState([
-    {
-      date: "1/09/2023",
-      title: "Infak pesantren JadiDapa",
-      status: true,
-      value: "1000000",
-    },
-    {
-      date: "3/09/2023",
-      title: "Infak pesantren JadiDapa",
-      status: false,
-      value: "200000",
-    },
-    {
-      date: "4/09/2023",
-      title: "Infak pesantren JadiDapa",
-      status: false,
-      value: "400000",
-    },
-    {
-      date: "7/09/2023",
-      title: "Infak pesantren JadiDapa",
-      status: true,
-      value: "5000000",
-    },
-    {
-      date: "8/09/2023",
-      title: "Infak pesantren JadiDapa",
-      status: true,
-      value: "100000",
-    },
-    {
-      date: "10/09/2023",
-      title: "Infak pesantren JadiDapa",
-      status: false,
-      value: "100000",
-    },
-    {
-      date: "12/09/2023",
-      title: "Infak pesantren JadiDapa",
-      status: true,
-      value: "400000",
-    },
-    {
-      date: "12/09/2023",
-      title: "Infak pesantren JadiDapa",
-      status: false,
-      value: "5000000",
-    },
-    {
-      date: "15/09/2023",
-      title: "Infak pesantren JadiDapa",
-      status: true,
-      value: "700000",
-    },
-    {
-      date: "19/09/2023",
-      title: "Infak pesantren JadiDapa",
-      status: false,
-      value: "1000000",
-    },
-    {
-      date: "21/09/2023",
-      title: "Infak pesantren JadiDapa",
-      status: true,
-      value: "100000",
-    },
-  ]);
+  const [financials, setFinancials] = useState([]);
 
   const [financialState, setFinancialState] = useState(financials);
+
+  useEffect(() => {
+    axios.get("https://api.masjidal-irsyad.com/api/financials").then((res) => {
+      const reversedNews = res.data.reverse();
+      setFinancials(reversedNews);
+    });
+  }, []);
 
   const formattedValue = (value) => {
     const splittedMoney = value.toString().split(".");

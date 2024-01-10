@@ -23,7 +23,7 @@ const DataBerita = () => {
 
   axios.defaults.withCredentials = true;
   useEffect(() => {
-    axios.get("http://masjidal-irsyad-api.my.id/api/berita").then((res) => {
+    axios.get("https://api.masjidal-irsyad.com/api/news").then((res) => {
       const reversedNews = res.data.reverse();
       setNews(reversedNews);
     });
@@ -36,10 +36,10 @@ const DataBerita = () => {
     setFilteredNews(filtered);
   }, [searchQuery, news]);
 
-  function handleDelete(id, e) {
+  function handleDelete(slug, e) {
     e.preventDefault();
     axios
-      .delete("https://al-irysad-backend-api.vercel.app/news/" + id)
+      .delete("https://api.masjidal-irsyad.com/api/news/" + slug)
       .then(() => {
         window.location.reload();
       })
@@ -161,7 +161,7 @@ const DataBerita = () => {
                       </td>
                       <td className="py-3 w-[17%] overflow-hidden">
                         <img
-                          src={`http://localhost:3001/images/${news.image}`}
+                          src={`https://api.masjidal-irsyad.com/image/${news.image}`}
                           alt=""
                           className="mx-auto w-10/12 aspect-video bg-white rounded-sm m-1"
                         />
@@ -177,19 +177,19 @@ const DataBerita = () => {
                       <td className="pl-2 py-3 w-2/12 ">
                         <div className="flex items-center gap-2 text-xl justify-center">
                           <Link
-                            to={`/kegiatan/berita/${news.title}`}
+                            to={`/kegiatan/berita/${news.slug}`}
                             className="bg-blue-300 p-2 cursor-pointer hover:brightness-105 rounded-full text-gray-100"
                           >
                             <FaInfo />
                           </Link>
                           <Link
-                            to={`/admin/edit-berita/${news._id}`}
+                            to={`/admin/edit-berita/${news.slug}`}
                             className="bg-yellow-300 p-2 cursor-pointer hover:brightness-105 rounded-full text-gray-100"
                           >
                             <MdOutlineModeEditOutline />
                           </Link>
                           <div
-                            onClick={(e) => handleDelete(news._id, e)}
+                            onClick={(e) => handleDelete(news.slug, e)}
                             className="bg-red-300 p-2 cursor-pointer hover:brightness-105 rounded-full text-gray-100"
                           >
                             <RiDeleteBin2Line />
@@ -213,7 +213,7 @@ const DataBerita = () => {
               >
                 <div className="w-full aspect-video overflow-hidden relative">
                   <img
-                    src={`http://localhost:3001/images/${news.image}`}
+                    src={`https://api.masjidal-irsyad.com/image/${news.image}`}
                     alt=""
                     className="object-center mx-auto"
                   />
@@ -225,19 +225,19 @@ const DataBerita = () => {
                     }`}
                   >
                     <Link
-                      to={`/kegiatan/berita/${news.title}`}
+                      to={`/kegiatan/berita/${news.slug}`}
                       className="bg-blue-300 p-2 cursor-pointer hover:brightness-105 rounded-full text-gray-100"
                     >
                       <FaInfo />
                     </Link>
                     <Link
-                      to={`/admin/edit-berita/${news._id}`}
+                      to={`/admin/edit-berita/${news.slug}`}
                       className="bg-yellow-300 p-2 cursor-pointer hover:brightness-105 rounded-full text-gray-100"
                     >
                       <MdOutlineModeEditOutline />
                     </Link>
                     <div
-                      onClick={(e) => handleDelete(news._id, e)}
+                      onClick={(e) => handleDelete(news.slug, e)}
                       className="bg-red-300 p-2 cursor-pointer hover:brightness-105 rounded-full text-gray-100"
                     >
                       <RiDeleteBin2Line />

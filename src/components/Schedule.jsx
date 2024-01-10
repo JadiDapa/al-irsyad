@@ -87,7 +87,7 @@ const Schedule = () => {
 
     axios
       .get(
-        `https://api.myquran.com/v1/sholat/jadwal/0816/${year}/${month}/${date}`
+        `https://api.myquran.com/v2/sholat/jadwal/0816/${year}/${month}/${date}`
       )
       .then((res) => {
         const jadwal = res.data.data.jadwal;

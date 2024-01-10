@@ -25,7 +25,7 @@ const Donation = () => {
   const planPerPage = 8;
 
   useEffect(() => {
-    axios.get("https://al-irysad-backend-api.vercel.app/donation").then((res) => {
+    axios.get("https://api.masjidal-irsyad.com/api/donations").then((res) => {
       const reversedNews = res.data.reverse();
       setDonation(reversedNews);
     });
@@ -41,10 +41,10 @@ const Donation = () => {
     setFilteredDonation(filtered);
   }, [searchQuery, donation]);
 
-  function handleDelete(id, e) {
+  function handleDelete(slug, e) {
     e.preventDefault();
     axios
-      .delete("https://al-irysad-backend-api.vercel.app/donation/" + id)
+      .delete("https://api.masjidal-irsyad.com/api/donations/" + slug)
       .then(() => {
         window.location.reload();
       })
@@ -157,13 +157,13 @@ const Donation = () => {
                               <FaInfo />
                             </div>
                             <Link
-                              to={`/edit-rencana/${donasi._id}`}
+                              to={`/edit-rencana/${donasi.slug}`}
                               className="bg-yellow-300 p-2 cursor-pointer hover:brightness-105 rounded-full text-gray-100"
                             >
                               <MdOutlineModeEditOutline />
                             </Link>
                             <div
-                              onClick={(e) => handleDelete(donasi._id, e)}
+                              onClick={(e) => handleDelete(donasi.slug, e)}
                               className="bg-red-300 p-2 cursor-pointer hover:brightness-105 rounded-full text-gray-100"
                             >
                               <RiDeleteBin2Line />
@@ -219,13 +219,13 @@ const Donation = () => {
                         <FaInfo />
                       </div>
                       <Link
-                        to={`/edit-rencana/${donasi._id}`}
+                        to={`/edit-rencana/${donasi.slug}`}
                         className="bg-yellow-300 p-2 cursor-pointer hover:brightness-105 rounded-full text-gray-100"
                       >
                         <MdOutlineModeEditOutline />
                       </Link>
                       <div
-                        onClick={(e) => handleDelete(donasi._id, e)}
+                        onClick={(e) => handleDelete(donasi.slug, e)}
                         className="bg-red-300 p-2 cursor-pointer hover:brightness-105 rounded-full text-gray-100"
                       >
                         <RiDeleteBin2Line />
